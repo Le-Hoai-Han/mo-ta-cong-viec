@@ -1,0 +1,47 @@
+/* text success__ error */
+
+.alert-success,
+.alert-error {
+    color: white;
+}
+
+.over-flow-y {
+    overflow-y: auto;
+}
+
+.navbar-vertical.navbar-expand-xs .navbar-collapse {
+    height: calc(100vh - 100px) !important;
+}
+
+
+/* search index khach hang */
+
+.search-index-khach-hang {
+    justify-content: end;
+}
+
+
+/* phân trang index khach hang */
+
+.paginate>.list-paginate {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-content: right;
+}
+
+.list-paginate li {
+    list-style: none;
+}
+
+.list-paginate li a {
+    color: #8392ab;
+    padding: 5px 10px;
+    border-radius: 50%;
+    border: solid 1px #8392ab;
+    width: 35px !important;
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    align-items: center;
+}
