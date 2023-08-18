@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Vitri extends Model
 {
     use HasFactory;
-protected $table = 'vi_tri';
+    protected $table = 'vi_tri';
     protected $fillable = [
         'ten_vi_tri',
         'id_vi_tri_quan_ly',
@@ -26,6 +26,34 @@ protected $table = 'vi_tri';
         return $this->hasMany(Vitri::class,'id_vi_tri_quan_ly','id');
     }
 
+    
+
+    public function user(){
+        return $this->hasOne(User::class,'id','id_user');
+    }
+
+    public function nhiemVu(){
+        return $this->hasMany(NhiemVu::class,'id_vi_tri','id');
+    }
+
+    public function thamQuyen(){
+        return $this->hasMany(ThamQuyen::class,'id_vi_tri','id');
+    }
+
+    public function quanHe(){
+        return $this->hasMany(QuanHe::class,'id_vi_tri','id');
+    }
+
+    public function tieuChuan(){
+        return $this->hasMany(TieuChuanTuyenChon::class,'id_vi_tri','id');
+    }
+
+    
+
+
+    /**
+     * dung hien thi so do
+     */
     public function soDoToChucCapDuoi($viTri){
         $nodeStructure=[];
         $mang1 = [];
@@ -63,28 +91,7 @@ protected $table = 'vi_tri';
                     ];
                 }
             }
-    $nodeStructure = $mang1;
+        $nodeStructure = $mang1;
         return $nodeStructure;
     }
-
-    public function user(){
-        return $this->hasOne(User::class,'id','id_user');
-    }
-
-    public function nhiemVu(){
-        return $this->hasMany(NhiemVu::class,'id_vi_tri','id');
-    }
-
-    public function thamQuyen(){
-        return $this->hasMany(ThamQuyen::class,'id_vi_tri','id');
-    }
-
-    public function quanHe(){
-        return $this->hasMany(QuanHe::class,'id_vi_tri','id');
-    }
-
-    public function tieuChuan(){
-        return $this->hasMany(TieuChuanTuyenChon::class,'id_vi_tri','id');
-    }
-
 }
