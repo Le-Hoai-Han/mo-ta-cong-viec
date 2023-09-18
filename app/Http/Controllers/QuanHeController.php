@@ -31,9 +31,22 @@ class QuanHeController extends Controller
      */
     public function create()
     {
+        $viTriHT = Vitri::find(2);
         $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
         return view('back-end.quan-he.create',[
-            'listViTri'=>$listViTri
+            'listViTri'=>$listViTri,
+            'viTriHT' => $viTriHT,
+        ]);
+    }
+
+
+    public function createFront($viTri)
+    {
+        $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
+        $viTriHT = Vitri::find($viTri);
+        return view('back-end.quan-he.create',[
+            'listViTri'=>$listViTri,
+            'viTriHT' => $viTriHT,
         ]);
     }
 
@@ -47,7 +60,7 @@ class QuanHeController extends Controller
     {
         $validate = $this->__validate($request);
         QuanHe::create($validate);
-        return redirect()->route('quan-he.index')->with('success','Thêm thành công');
+        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Thêm thành công');
     }
 
     /**
@@ -87,7 +100,7 @@ class QuanHeController extends Controller
     {
         $validate = $this->__validate($request);
         $quanHe->update($validate);
-        return redirect()->route('quan-he.index')->with('success','Cập nhật thành công');
+        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Cập nhật thành công');
     }
 
     /**

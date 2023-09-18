@@ -26,9 +26,9 @@ $current = "Nhiệm vụ";
                                 <label class="label" for="ten_nhiem_vu">
                                     Tên nhiệm vụ
                                 </label>
-                                <select name="id_nhiem_vu" id="" class="form-control">
+                                <select name="id_nhiem_vu" class="form-control">
                                     @foreach($listNhiemVu as $nhiemVu)
-                                    <option value="{{$nhiemVu->id}}">{{$nhiemVu->ten_nhiem_vu}}</option>
+                                    <option {{$nhiemVuHT->id == $nhiemVu->id ? 'selected':''}} value="{{$nhiemVu->id}}">{{$nhiemVu->ten_nhiem_vu}}</option>
                                     @endforeach
                                 </select>
                                 @error('ten_nhiem_vu')
@@ -41,7 +41,7 @@ $current = "Nhiệm vụ";
                                     Chi tiết 
                                 </label>
                                 <textarea rows="5" class="form-control" 
-                                id="chi_tiet" 
+                                id="" 
                                 name="chi_tiet" 
                                 type="text" 
                                 placeholder="Chi tiết"                        
@@ -70,8 +70,7 @@ $current = "Nhiệm vụ";
                                 <label class="label" for="mo_ta">
                                     Mô tả 
                                 </label>
-                                <textarea rows="5" class="form-control" 
-                                id="mo_ta" 
+                                <textarea rows="5" class="form-control"  
                                 name="mo_ta" 
                                 type="text" 
                                 placeholder="Mô tả"                        

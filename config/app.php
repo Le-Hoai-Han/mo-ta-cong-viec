@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'name' => env('APP_NAME', 'Hệ thống tính thưởng kinh doanh'),
+    'name' => env('APP_NAME', 'Sơ đồ tổ chức'),
 
     /*
     |--------------------------------------------------------------------------

@@ -42,6 +42,8 @@
             });
         });
 
+       
+
        function handleClick(event){
         let id=  event.replace("nhan-vien-", "");
         let routeURL = "http://localhost:8000/vi-tri/" + id;

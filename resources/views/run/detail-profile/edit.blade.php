@@ -351,7 +351,6 @@
                                 },
                             success: function(results) {
                                 select_city.enable();
-                                console.log(results.length);
                                 callback(JSON.parse(results));
                             },
                             error: function() {

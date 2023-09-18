@@ -32,7 +32,7 @@ class ViTriController extends Controller
      */
     public function create()
     {
-        $listViTri = ViTri::select(['id','ten_vi_tri'])->get();
+        $listViTri = ViTri::select(['id','ten_vi_tri','id_user'])->get();
         $listUser = User::select(['id','name'])->get();
         return view('back-end.vi-tri.create',[
             'listViTri'=>$listViTri,
@@ -75,7 +75,7 @@ class ViTriController extends Controller
      */
     public function edit(Vitri $viTri)
     {
-        $listViTri = ViTri::select(['id','ten_vi_tri'])->get();
+        $listViTri = ViTri::select(['id','ten_vi_tri','id_user'])->get();
         $listUser = User::select(['id','name'])->get();
         return view('back-end.vi-tri.edit',[
             'listViTri' =>  $listViTri,

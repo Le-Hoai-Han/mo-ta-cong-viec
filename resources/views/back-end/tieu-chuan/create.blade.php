@@ -26,9 +26,9 @@ $current = "Tiêu chuẩn";
                                 <label class="label" for="ten_nhiem_vu">
                                     Vị trí
                                 </label>
-                                <select name="id_vi_tri" id="" class="form-control">
+                                <select name="id_vi_tri" class="form-control">
                                     @foreach($listViTri as $viTri)
-                                    <option value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
+                                    <option {{$viTriHT->id == $viTri->id ?'selected' :''}} value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
                                     @endforeach
                                 </select>
                                 @error('id_vi_tri')
@@ -40,7 +40,7 @@ $current = "Tiêu chuẩn";
                                 <label class="label" for="gioi_tinh">
                                     Giới tính 
                                 </label>
-                                <select class="form-control" name="gioi_tinh" id="">
+                                <select class="form-control" name="gioi_tinh">
                                     <option value="Nam">Nam</option>
                                     <option value="Nữ">Nữ</option>
                                 </select>

@@ -13,6 +13,9 @@
   <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('argon/css/img/apple-icon.png') }}">
   <link rel="icon" type="image/png" href="{{ asset('argon/css/img/favicon.png') }}">
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
+  
   
   <link rel="stylesheet" href="{{url('css/master.css')}}">
   <!-- Bootstrap CSS -->
@@ -88,6 +91,20 @@
 
   
   <script src="{{ asset('js/jquery-3.5.1.min.js') }}" crossorigin="anonymous"></script>
+
+  <script>
+     var settings = {};
+        new TomSelect('#tom-select-it',settings);
+
+      var settings1 = {};
+      new TomSelect('#tom-select-it1',settings);
+      var settings2 = {};
+      new TomSelect('#tom-select-it2',settings);
+
+     
+
+        
+  </script>
 
   @stack('scripts')
 </body>

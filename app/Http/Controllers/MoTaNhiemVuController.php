@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\MoTaCongViec;
 use App\Models\MoTaNhiemVu;
 use App\Models\NhiemVu;
+use App\Models\Vitri;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -33,8 +34,20 @@ class MoTaNhiemVuController extends Controller
     public function create()
     {
         $listNhiemVu = NhiemVu::select(['id','ten_nhiem_vu'])->get();
+        $nhiemVuHT = NhiemVu::find(1);
         return view('back-end.mo-ta-nhiem-vu.create',[
-            'listNhiemVu' => $listNhiemVu
+            'listNhiemVu' => $listNhiemVu,
+            'nhiemVuHT' => $nhiemVuHT,
+        ]);
+    }
+
+    public function createFront($nhiemVu)
+    {
+        $listNhiemVu = NhiemVu::select(['id','ten_nhiem_vu'])->get();
+        $nhiemVuHT = NhiemVu::find($nhiemVu);
+        return view('back-end.mo-ta-nhiem-vu.create',[
+            'listNhiemVu' => $listNhiemVu,
+            'nhiemVuHT' => $nhiemVuHT,
         ]);
     }
 
@@ -48,8 +61,8 @@ class MoTaNhiemVuController extends Controller
     {
         $validate = $this->__validate($request);
 
-        MoTaNhiemVu::create($validate);
-        return redirect()->route('mo-ta-nhiem-vu.index')->with('success','Thêm thành công');
+        $moTaNhiemVu = MoTaNhiemVu::create($validate);
+        return redirect()->route('front.vi-tri.show',$moTaNhiemVu->nhiemVu->id_vi_tri)->with('success','Thêm thành công');
     }
 
     /**
@@ -89,7 +102,7 @@ class MoTaNhiemVuController extends Controller
     {
         $validate = $this->__validate($request);
         $moTaNhiemVu ->update($validate);
-        return redirect()->route('mo-ta-nhiem-vu.index')->with('success','Cập nhật thành công');
+        return redirect()->route('front.vi-tri.show',$moTaNhiemVu->nhiemVu->id_vi_tri)->with('success','Cập nhật thành công');
     }
 
     /**

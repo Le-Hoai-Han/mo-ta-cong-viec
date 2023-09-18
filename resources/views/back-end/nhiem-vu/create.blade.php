@@ -27,7 +27,6 @@ $current = "Nhiệm vụ";
                                     Tên nhiệm vụ
                                 </label>
                                 <input class="form-control" 
-                                    id="name" 
                                     name="ten_nhiem_vu" 
                                     type="text" 
                                     placeholder="Tên nhiệm vụ"                        
@@ -44,9 +43,9 @@ $current = "Nhiệm vụ";
                                 <label class="label" for="id_vi_tri">
                                     Vị trí
                                 </label>
-                                <select  name="id_vi_tri" id="" class="form-control">
+                                <select  name="id_vi_tri" class="form-control">
                                     @foreach($listViTri as $viTri)
-                                    <option value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
+                                    <option {{$viTriHT->id == $viTri->id ? 'selected' :''}}  value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
                                     @endforeach
                                 </select>
                                 @error('id_vi_tri')

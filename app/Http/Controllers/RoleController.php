@@ -8,12 +8,14 @@ use App\Authorizable;
 use Spatie\Permission\Models\Permission;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Routing\Controller;
 use Illuminate\Validation\Rule;
 
 class RoleController extends Controller
 {
     use AuthorizesRequests;
+    use ValidatesRequests;
     /**
      * Display a listing of the resource.
      *

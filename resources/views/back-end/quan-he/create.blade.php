@@ -28,9 +28,9 @@ $current = "Quan hệ";
                                     <label class="label" for="id_vi_tri">
                                         Tên vị trí
                                     </label>
-                                    <select name="id_vi_tri" id="" class="form-control">
+                                    <select name="id_vi_tri" class="form-control">
                                         @foreach($listViTri as $viTri)
-                                        <option value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
+                                        <option {{$viTriHT->id == $viTri->id ? 'selected' :''}} value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
                                         @endforeach
                                     </select>
                                     @error('id_vi_tri')
@@ -43,7 +43,7 @@ $current = "Quan hệ";
                                     <label class="label" for="loai">
                                         Loại 
                                     </label>
-                                    <select name="loai" id="" class="form-control">
+                                    <select name="loai" class="form-control">
                                         <option value="0">Bên trong công ty</option>
                                         <option value="1">Bên ngoài công ty</option>
                                     </select>

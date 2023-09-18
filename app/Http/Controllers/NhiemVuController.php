@@ -33,7 +33,19 @@ class NhiemVuController extends Controller
     public function create()
     {
         $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
+        $viTriHT = Vitri::find(2);
         return view('back-end.nhiem-vu.create',[
+            'listViTri' => $listViTri,
+            'viTriHT' => $viTriHT,
+        ]);
+    }
+
+    public function createFront($viTri)
+    {
+        $viTriHT = Vitri::find($viTri);
+        $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
+        return view('back-end.nhiem-vu.create',[
+            'viTriHT' => $viTriHT,
             'listViTri' => $listViTri
         ]);
     }
@@ -59,9 +71,7 @@ class NhiemVuController extends Controller
      */
     public function show(NhiemVu $nhiemVu)
     {
-        return view('back-end.nhiem-vu.show',[
-            'nhiemVu' =>$nhiemVu
-        ]);
+       //
     }
 
     /**
@@ -90,7 +100,7 @@ class NhiemVuController extends Controller
     {
         $validate = $this->__validate($request->all());
         $nhiemVu->update($validate);
-        return redirect()->route('nhiem-vu.index')->with('success','Cập nhật thành công');
+        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Cập nhật thành công');
     }
 
     /**
@@ -106,7 +116,7 @@ class NhiemVuController extends Controller
 
     public function __validate($data){
         $validate = Validator::make($data,[
-            'ten_nhiem_vu' => 'required|unique:Nhiem_Vu',
+            'ten_nhiem_vu' => 'required',
             'id_vi_tri' => 'required',
             
         ],[

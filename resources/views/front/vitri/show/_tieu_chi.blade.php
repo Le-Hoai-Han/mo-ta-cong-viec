@@ -1,10 +1,29 @@
 <div class="tieu-chuan-tuyen-chon">
-    <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>7. Tiêu chuẩn tuyển chọn</b></p>
+    <p style="text-align: left" class="so-do-to-chuc_tieu_de">
+        <b>7. Tiêu chuẩn tuyển chọn</b>
+        @if( (auth()->user()->hasRole('admin') && $viTri->tieuChuan->isEmpty()) || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isEmpty())
+            <a id="btn_add_tieu_chuan" id-vi-tri="{{$viTri->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
+                <span class="material-icons">
+                    add_circle_outline
+                </span>
+            </a>
+            
+        @endif
+    </p>
         <table>
         <thead>
             <tr>
                 <th>Tiêu chí</th>
-                <th>Yêu cầu</th>
+                <th>
+                    Yêu cầu
+                @if((auth()->user()->hasRole('admin') || auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isNotEmpty())
+                    <a id="btn_edit_tieu_chuan" id-tieu-chuan="{{$viTri->tieuChuan[0]->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
+                        <span class="material-icons">
+                            edit
+                        </span>
+                    </a>
+                @endif
+                </th>
             </tr>
         </thead>
         <tbody>
@@ -12,7 +31,7 @@
             @foreach($viTri->tieuChuan as $tieuChi)
                 <tr>
                     <td>Giới tính</td>
-                    <td> <p>{{$tieuChi->gioi_tinh == 0? 'Nam' :'Nữ'}}</p></td>
+                    <td> <p>{{$tieuChi->gioi_tinh == 0 ? 'Nam' :'Nữ'}}</p></td>
                 </tr>
                 <tr>
                     <td>Độ tuổi</td>
@@ -65,4 +84,5 @@
             @endforeach
         </tbody>
         </table>
+    <x-tieu-chuan :viTri="$viTri" :listViTri="$listViTri" />
 </div>

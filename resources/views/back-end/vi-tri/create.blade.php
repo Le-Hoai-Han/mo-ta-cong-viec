@@ -27,7 +27,6 @@ $current = "Vị trí";
                                     Tên vị trí
                                 </label>
                                 <input class="form-control" 
-                                    id="name" 
                                     name="ten_vi_tri" 
                                     type="text" 
                                     placeholder="Tên vị trí"                        
@@ -42,10 +41,11 @@ $current = "Vị trí";
                                 <label class="label" for="ten_vi_tri">
                                     Tên user
                                 </label>
-                                <select name="id_user" id="" class="form-control">
+                                <select name="id_user" id="tom-select-it" class="form-control">
                                     @foreach($listUser as $user)
                                     <option value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
+                                    <option value="0">null</option>
                                 </select>
                                 @error('id_user')
                                     <span class="help text-red-500"> {{ $message}}</span>
@@ -57,7 +57,6 @@ $current = "Vị trí";
                                     Phòng ban
                                 </label>
                                 <input class="form-control" 
-                                    id="name" 
                                     name="phong_ban" 
                                     type="text" 
                                     placeholder="Tên phòng ban"                        
@@ -73,7 +72,6 @@ $current = "Vị trí";
                                     Nơi làm việc
                                 </label>
                                 <input class="form-control" 
-                                    id="name" 
                                     name="noi_lam_viec" 
                                     type="text" 
                                     placeholder="Nơi làm việc"                        
@@ -88,9 +86,9 @@ $current = "Vị trí";
                                 <label class="label" for="noi_lam_viec">
                                     Vị trí cấp trên
                                 </label>
-                                <select name="id_vi_tri_quan_ly" id="" class="form-control">
+                                <select name="id_vi_tri_quan_ly" id="tom-select-it1" class="form-control">
                                     @foreach($listViTri as $viTri)
-                                    <option value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
+                                    <option value="{{$viTri->id}}">{{$viTri->ten_vi_tri}} - {{$viTri->user != null ?$viTri->user->name : 'Đang tuyển'}}</option>
                                     @endforeach
                                 </select>
                                 @error('id_vi_tri_quan_ly')
@@ -103,7 +101,6 @@ $current = "Vị trí";
                                     Mục đích
                                 </label>
                                 <textarea rows="5" class="form-control" 
-                                    id="name" 
                                     name="muc_dich" 
                                     type="text" 
                                     placeholder="Mục đích"                        
@@ -124,5 +121,13 @@ $current = "Vị trí";
             </div>
         </div>
     </div>
+
+    <script>
+        var settings = {};
+        new TomSelect('#tom-select-it',settings);
+
+        var settings1 = {};
+        new TomSelect('#tom-select-it1',settings);
+    </script>
     
 </x-dashboard-layout>

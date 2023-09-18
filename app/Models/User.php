@@ -152,6 +152,32 @@ class User extends Authenticatable
             return 0;
         return $this->nhanVien->id;
     }
+
+    public function viTri(){
+        return $this->hasOne(Vitri::class,'id_user','id');
+    }
+
+    public function isCapTren($viTriKiemTra)
+    {
+        $viTriUser = $this->viTri;
+        $listIDCapDuoi = $this->listIdCapDuoi($viTriUser);
+        
+        return in_array($viTriKiemTra->id, $listIDCapDuoi);
+        
+    }
+
+    public function listIdCapDuoi($viTri)
+    {
+        $listID = [$viTri->id];
+        if($viTri->capDuoi->isNotEmpty()){
+            foreach ($viTri->capDuoi as $capDuoi) {
+                // Gọi đệ quy để lấy danh sách ID cấp dưới của viTri
+                $listID = array_merge($listID, $this->listIdCapDuoi($capDuoi));
+            }
+        }
+
+       return $listID;
+    }
  
 
 }

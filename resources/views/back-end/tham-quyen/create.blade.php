@@ -26,9 +26,9 @@ $current = "Thẩm quyền";
                                 <label class="label" for="id_vi_tri">
                                     Vị trí
                                 </label>
-                                <select class="form-control" name="id_vi_tri" id="">
+                                <select class="form-control" name="id_vi_tri">
                                     @foreach($listViTri as $viTri)
-                                        <option value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
+                                        <option {{$viTriHT->id == $viTri->id ?'selected' :''}} value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
                                     @endforeach
                                 </select>
                                 @error('id_vi_tri')
@@ -41,7 +41,6 @@ $current = "Thẩm quyền";
                                     Nội dung
                                 </label>
                                 <input class="form-control" 
-                                    id="name" 
                                     name="noi_dung" 
                                     type="text" 
                                     placeholder="Nội dung"                        
@@ -56,7 +55,7 @@ $current = "Thẩm quyền";
                                 <label class="label" for="loai">
                                     Loại
                                 </label>
-                                <select class="form-control" name="loai" id="">
+                                <select class="form-control" name="loai">
                                     <option value="1">Đề xuất</option>
                                     <option value="2">Ra quyết định</option>
                                 </select>

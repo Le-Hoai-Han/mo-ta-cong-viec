@@ -68,7 +68,7 @@
     }
     .cap_tren_truc_tiep{
         border: solid 2px #000;
-        width: 300px;
+        width: 400px;
         height: 100px;
         display: inline-flex;
         align-items: center;
@@ -424,7 +424,6 @@
         function showChiTiet(){
             let showChiTiet = document.getElementById('show-chi-tiet');
             let xemThem = document.getElementById('xem-them');
-            console.log(showChiTiet)
             showChiTiet.style.display = "block";
             xemThem.style.display = "none";
         }

@@ -26,16 +26,16 @@ window.parseCongThuc = function(congThucID, showID) {
                 displayPosition.innerHTML = "";
                 const noiDung = document.createElement('div');
                 noiDung.classList.add('noi-dung-cong-thuc');
-               
-                noiDung.innerHTML = '<div class="row">'
-                +'<div class="col-12 col-md-2" style="text-align:right" ><label>Tên công thức</label></div><div class="col-12 col-md-10"><h5 >'+resData.tenCongThuc+'</h5></div>'
-                +"</div>";
 
-                noiDung.innerHTML += '<div class="row">'
-                + '<div class="col-12 col-md-2" style="text-align:right"><label>Nội dung</label></div><div class="col-12 col-md-10"><h5 >'
-                +resData.noiDung
-                +'</h5></div>'
-                + "</div>";
+                noiDung.innerHTML = '<div class="row">' +
+                    '<div class="col-12 col-md-2" style="text-align:right" ><label>Tên công thức</label></div><div class="col-12 col-md-10"><h5 >' + resData.tenCongThuc + '</h5></div>' +
+                    "</div>";
+
+                noiDung.innerHTML += '<div class="row">' +
+                    '<div class="col-12 col-md-2" style="text-align:right"><label>Nội dung</label></div><div class="col-12 col-md-10"><h5 >' +
+                    resData.noiDung +
+                    '</h5></div>' +
+                    "</div>";
 
                 displayPosition.appendChild(noiDung);
                 const infoTable = document.createElement('table');
@@ -82,8 +82,8 @@ window.parseCongThucKetQua = function(congThucID, ketQuaID) {
 
 window.thuGonSoLe = function(value, soLe = 2) {
     if (parseInt(value) === parseFloat(value)) {
-      return value.toLocaleString();
+        return value.toLocaleString();
     } else {
-      return Number(value).toFixed(soLe);
+        return Number(value).toFixed(soLe);
     }
-  }
+}

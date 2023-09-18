@@ -21,6 +21,7 @@
         font-size: 20px;
         background-color: #fff;
         padding: 0px 40px;
+        border: solid 1px #ccc;
     }
     table,tr, td,th{
         border: 1px solid black;
@@ -42,8 +43,9 @@
     }
 
     .img-profile{
-        max-height: 300px;
-        height: auto;
+        /* max-height: 185px; */
+        height: 185px;
+        width: 185px;
     }
     .text-thong-tin{
         margin: 5px 0px;
@@ -59,10 +61,11 @@
     }
     .so-do-to-chuc_tieu_de{
      margin-top: 50px;
+     display: flex;
     }
     .cap_tren_truc_tiep{
         border: solid 2px #000;
-        width: 300px;
+        width: 400px;
         height: 100px;
         display: inline-flex;
         align-items: center;
@@ -155,28 +158,77 @@
     .tieu-chuan-tuyen-chon td {
         font-size: 16px;
     }
+    /*  */
     
-</style>
+    body {font-family: Arial, Helvetica, sans-serif;}
+    
+    /* The Modal (background) */
+    .modal {
+      display: none; /* Hidden by default */
+      position: fixed; /* Stay in place */
+      z-index: 5; /* Sit on top */
+      padding-top: 100px; /* Location of the box */
+      left: 0;
+      top: 0;
+      width: 100%; /* Full width */
+      height: 100%; /* Full height */
+      overflow: auto; /* Enable scroll if needed */
+      background-color: rgb(0,0,0); /* Fallback color */
+      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    }
+    
+    /* Modal Content */
+    .modal-content {
+      background-color: #fefefe;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #888;
+      width: 80%;
+    }
+    
+    /* The Close Button */
+    .close {
+      color: #aaaaaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+    }
+    
+    .close:hover,
+    .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+    }
+
+    .show{
+        display: block !important;
+    }
+
+    #thong-bao-trang-thai{
+        position: fixed;
+        top: 15%;
+        left: 70%;
+        /* width: 100%; */
+        height: 70px;
+        color: white;
+        text-align: center;
+        background: rgba(40, 159, 4, 0.6);
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: height .2s;
+        z-index: 9999;
+    }
+    </style>
 @endpush
 <div class="container">
-        <table>
-            <tr>
-                <td style="width: 10%;text-align: center"></td>
-                <td style="width: 50%;">
-                    <h2><center>MÔ TẢ CÔNG VIỆC</center></h2>
-                </td>
-                <td>
-                    <table class="table-childrent">
-                        <tr>
-                            <td>Ngày ban hành</td>
-                        </tr>
-                        <tr>
-                            <td>Lần ban hành</td>
-                        </tr>
-                        <tr>
-                            <td>Số trang</td>
-                        </tr>
-                    </table>
+    <div id='thong-bao-trang-thai' class="alert" style="display: none">
+
+    </div>
+        <table style="border: none">
+            <tr style="border: none">
+                <td style="width: 50%;border: none">
+                    <h2><center>{{$viTri->ten_vi_tri}}</center></h2>
                 </td>
             </tr>
         </table>
@@ -198,9 +250,10 @@
         <div id="xem-them">
             <a class="xem-them-text" onclick="showChiTiet()">Xem thêm...</a>
         </div>
+       
         <div id="show-chi-tiet">
             @include('front.vitri.show._trach_nhiem',[
-                'viTri'=>$viTri
+                'viTri'=>$viTri,
             ])
 
             @include('front.vitri.show._quyen_han',[
@@ -215,23 +268,7 @@
                 'viTri'=>$viTri
             ])
                 
-            
-            
-    
-            
-    
-            
         </div>
+        
     </div>
-    @push('scripts')
-    <script>
-        function showChiTiet(){
-            let showChiTiet = document.getElementById('show-chi-tiet');
-            let xemThem = document.getElementById('xem-them');
-            console.log(showChiTiet)
-            showChiTiet.style.display = "block";
-            xemThem.style.display = "none";
-        }
-    </script>
-    @endpush
 </x-front-layout>

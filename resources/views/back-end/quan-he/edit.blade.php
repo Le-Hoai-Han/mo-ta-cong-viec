@@ -1,10 +1,10 @@
 <?php 
-$current = "Nhiệm vụ";
+$current = "Quan hệ";
 
 ?>
 
 <x-dashboard-layout :current="$current">
-    <x-slot name="title">quan hệ</x-slot>
+    <x-slot name="title">Quan hệ</x-slot>
 
     <?php 
     $list = [
@@ -30,7 +30,7 @@ $current = "Nhiệm vụ";
                                     <label class="label" for="id_vi_tri">
                                         Vị Trí
                                     </label>
-                                    <select name="id_vi_tri" id="" class="form-control">
+                                    <select name="id_vi_tri" class="form-control">
                                         @foreach($listViTri as $viTri)
                                         <option {{$viTri->id == $quanHe->viTri->id ?'selected':''}} value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
                                         @endforeach
@@ -45,9 +45,9 @@ $current = "Nhiệm vụ";
                                     <label class="label" for="loại">
                                         Loại 
                                     </label>
-                                   <select name="loai" class="form-control" id="">
-                                    <option {{$quanHe->loai == 1 ?'selected':''}} value="1">Bên trong công ty</option>
-                                    <option {{$quanHe->loai == 2 ?'selected':''}} value="2">Bên ngoài công ty</option>
+                                   <select name="loai" class="form-control">
+                                        <option {{$quanHe->loai == 1 ?'selected':''}} value="1">Bên trong công ty</option>
+                                        <option {{$quanHe->loai == 2 ?'selected':''}} value="2">Bên ngoài công ty</option>
                                    </select>
                                     @error('loai')
                                         <span class="help text-red-500" style="color: red"> {{ $message}}</span>

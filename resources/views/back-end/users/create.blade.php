@@ -27,7 +27,6 @@ $current = "User";
                                     Họ và tên
                                 </label>
                                 <input class="form-control" 
-                                    id="name" 
                                     name="name" 
                                     type="text" 
                                     placeholder="Họ và tên"                        

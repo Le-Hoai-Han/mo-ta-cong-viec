@@ -33,6 +33,8 @@
   <link rel="icon" type="image/png" href="{{ asset('argon/css/img/favicon.png') }}">
   <link rel="stylesheet" href="{{url('css/danh-muc-san-pham.css')}}">
   <link rel="stylesheet" href="{{url('css/master.css')}}">
+  <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>  
   <!-- Bootstrap CSS -->
         <style>
           .breadcrumb-item+.breadcrumb-item:before{

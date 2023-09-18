@@ -14,13 +14,13 @@ class AlterTableViTriAddIdUser extends Migration
     public function up()
     {
         Schema::table('vi_tri',function(Blueprint $table){
-            $table->unsignedTinyInteger('id_user')->default(1);
+            $table->unsignedBigInteger('id_user')->nullable();
 
             $table->foreign('id_user')
             ->on('users')
             ->references('id')
-            ->onDeleteCascade()
-            ->onUpdateCascade();
+            ->onDelete('cascade')
+            ->onUpdate('cascade');
         });
     }
 

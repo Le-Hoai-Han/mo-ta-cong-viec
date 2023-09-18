@@ -16,6 +16,7 @@
                         <div class="col-12 col-xl-4">Thẩm quyền</div>
                         <div class="col-12 col-xl-8 text-end">
                             {{-- @if(auth()->user()->can('add_orders')) --}}
+                            {{-- <a href="{{route('vi-tri.show',$viTri)}}" class="btn btn-dark btn-md mb-0">Trở về</a> --}}
                             <a href="{{route('tham-quyen.create')}}" class="btn btn-primary btn-md mb-0"><i class="fas fa-plus" aria-hidden="true"></i> Thêm</a>
                             {{-- @endif --}}
                         </div>

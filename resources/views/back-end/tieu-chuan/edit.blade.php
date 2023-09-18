@@ -30,7 +30,7 @@ $current = "Tiêu chuẩn";
                                     <label class="label" for="ten_nhiem_vu">
                                         Vị trí
                                     </label>
-                                    <select name="id_vi_tri" id="" class="form-control">
+                                    <select name="id_vi_tri" class="form-control">
                                         @foreach($listViTri as $viTri)
                                         <option {{$viTri->id == $tieuChuan->viTri->id ?'selected':''}} value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
                                         @endforeach
@@ -44,7 +44,7 @@ $current = "Tiêu chuẩn";
                                     <label class="label" for="gioi_tinh">
                                         Giới tính 
                                     </label>
-                                    <select class="form-control" name="gioi_tinh" id="">
+                                    <select class="form-control" name="gioi_tinh">
                                         <option {{ $tieuChuan->gioi_tinh == 1 ?'selected':''}} value="Nam">Nam</option>
                                         <option {{ $tieuChuan->gioi_tinh == 2 ?'selected':''}} value="Nữ">Nữ</option>
                                     </select>

@@ -15,15 +15,36 @@ class Vitri extends Model
         'phong_ban',
         'noi_lam_viec',
         'muc_dich',
-        'id_user'
+        'id_user',
+        'trang_thai',
+        'stroke'
     ];
 
+    const TT_KHOA = 1;
+    const TT_MO_KHOA = 0;
+
+
+    protected static function booted()
+    {
+        static::creating(function ($viTri) {
+            if ($viTri->id_user == 0) 
+                $viTri->id_user = null;
+                // $viTri->save();
+            } );
+
+        static::updating(function ($viTri) {
+            if ($viTri->id_user == 0) 
+                $viTri->id_user = null;
+                // $viTri->save();
+            } );
+    }
+    
     public function capQuanLy(){
         return $this->belongsTo(Vitri::class,'id_vi_tri_quan_ly','id');
     }
 
     public function capDuoi(){
-        return $this->hasMany(Vitri::class,'id_vi_tri_quan_ly','id');
+        return $this->hasMany(Vitri::class,'id_vi_tri_quan_ly','id')->orderBy('stt_cap_bac');
     }
 
     
@@ -63,12 +84,12 @@ class Vitri extends Model
             
                     $mang1 = [
                         'text' => [
-                            'name' => $item->user->name,
+                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
                             'title' => $item->ten_vi_tri,
-                            'contact' => $item->user->sdt
+                            'contact' => $item->user != null ? $item->user->sdt :'Đang cập nhật'
                         ],
                         'stackChildren' => $item->hien_thi_nhanh,
-                        'image' => asset('storage/'.$item->user->profile_photo_path),
+                        'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path:'')),
                         'HTMLid'=>'nhan-vien-'.$item->id,
                         'target' => 123,
                         'children' =>[]
@@ -78,15 +99,74 @@ class Vitri extends Model
                 }else{
                     $mang1[] = [
                         'text' => [
-                            'name' => $item->user->name,
+                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
                             'title' => $item->ten_vi_tri,
-                            'contact' => $item->user->sdt
+                            'contact' => $item->user ? $item->user->sdt :'Đang cập nhật'
                         ],
                         'stackChildren' => $item->hien_thi_nhanh,
-                        'image' => asset('storage/'.$item->user->profile_photo_path),
+                        'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path:'')),
                         'HTMLid'=>'nhan-vien-'.$item->id,
                         'target' => 123,
                         'children' =>$item->soDoToChucCapDuoi($item)
+    
+                    ];
+                }
+            }
+        $nodeStructure = $mang1;
+        return $nodeStructure;
+    }
+
+
+    public function soDoToChucCapDuoi2($viTri){
+        $nodeStructure=[];
+        $mang1 = [];
+     
+          foreach($viTri->capDuoi as $item){
+            if($viTri->capDuoi->isEmpty()){
+            
+                    $mang1 = [
+                        'text' => [
+                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
+                            // 'title' => $item->ten_vi_tri,
+                            // 'contact' => $item->user ? $item->user->sdt :'Đang cập nhật'
+                        ],
+                        // 'stackChildren' => $item->hien_thi_nhanh,
+                        'pseudo' =>'true',
+                        'connectors'=>[
+                            'type'=>$item->type,
+                            'style' => [
+                                'stroke' => $item->stroke,
+                                'arrow-end' => $item->arrow_end,
+                                // 'arrow-start' => $item->arrow_start,
+                                'stroke-dasharray' =>$item->stroke_dasharray
+                            ],
+                            'stackIndent'=>$item->stackIndent
+                       ],
+    
+                    ];
+
+                }else{
+                    $mang1[] = [
+                        'text' => [
+                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
+                            'title' => $item->ten_vi_tri,
+                            // 'contact' => $item->user ? $item->user->sdt :'Đang cập nhật'
+                        ],
+                        // 'stackChildren' => $item->hien_thi_nhanh,
+                        'connectors'=>[
+                            'type'=>$item->type,
+                            'style' => [
+                                'stroke' => $item->stroke,
+                                'arrow-end' => $item->arrow_end,
+                                // 'arrow-start' => $item->arrow_start,
+                                'stroke-dasharray' =>$item->stroke_dasharray
+                            ],
+                            'stackIndent'=>$item->stackIndent
+                       ],
+                        // 'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path:'')),
+                        'HTMLid'=>'nhan-vien-'.$item->id,
+                        // 'target' => 123,
+                        'children' =>$item->soDoToChucCapDuoi2($item)
     
                     ];
                 }

@@ -37,6 +37,15 @@ class ThamQuyenController extends Controller
         ]);
     }
 
+    public function createFront($viTri)
+    {
+        $listViTri = ViTri::select(['id','ten_vi_tri'])->get();
+        $viTriHT = Vitri::find($viTri);
+        return view('back-end.tham-quyen.create',[
+            'listViTri' => $listViTri,
+            'viTriHT' => $viTriHT,
+        ]);
+    }
     /**
      * Store a newly created resource in storage.
      *
@@ -48,7 +57,7 @@ class ThamQuyenController extends Controller
         $validate = $this->__validate($request);
 
         ThamQuyen::create($validate);
-        return redirect()->route('tham-quyen.index')->with('success','Thêm thành công');
+        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Thêm thành công');
     }
 
     /**
@@ -88,7 +97,7 @@ class ThamQuyenController extends Controller
     {
        $validate = $this->__validate($request);
        $thamQuyen->update($validate);
-       return redirect()->route('tham-quyen.index')->with('success','Cập nhật thành công');
+       return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Cập nhật thành công');
     }
 
     /**

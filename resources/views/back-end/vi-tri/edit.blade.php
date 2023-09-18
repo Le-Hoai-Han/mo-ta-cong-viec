@@ -29,8 +29,7 @@ $current = "Vị trí";
                                     <label class="label" for="ten_vi_tri">
                                         Tên vị trí
                                     </label>
-                                    <input class="form-control" 
-                                        id="name" 
+                                    <input class="form-control"  
                                         name="ten_vi_tri" 
                                         type="text" 
                                         placeholder="Tên vị trí"                        
@@ -46,8 +45,7 @@ $current = "Vị trí";
                                     <label class="label" for="phong_ban">
                                         Phòng ban
                                     </label>
-                                    <input class="form-control" 
-                                        id="name" 
+                                    <input class="form-control"  
                                         name="phong_ban" 
                                         type="text" 
                                         placeholder="Tên phòng ban"                        
@@ -63,10 +61,11 @@ $current = "Vị trí";
                                     <label class="label" for="noi_lam_viec">
                                         Vị trí cấp trên
                                     </label>
-                                    <select name="id_vi_tri_quan_ly" id="" class="form-control">
+                                    <select name="id_vi_tri_quan_ly" class="form-control">
                                         @foreach($listViTri as $item)
-                                        <option <?php echo $viTri->capQuanLy->id == $item->id ?'selected':' '?> value="{{$item->id}}">{{$item->ten_vi_tri}}</option>
+                                        <option <?php echo $viTri->capQuanLy->id == $item->id ?'selected':' '?> value="{{$item->id}}">{{$item->ten_vi_tri}} -{{$item->user != null ? $item->user->name :''}}</option>
                                         @endforeach
+                                        
                                     </select>
                                     @error('id_vi_tri_quan_ly')
                                         <span class="help text-red-500"> {{ $message}}</span>
@@ -78,10 +77,11 @@ $current = "Vị trí";
                                     <label class="label" for="id_user">
                                         User
                                     </label>
-                                   <select name="id_user" id="" class="form-control">
+                                   <select name="id_user" class="form-control">
                                     @foreach($listUser as $user)
-                                    <option {{$viTri->user->id == $user->id ? 'selected' :''}} value="{{$user->id}}">{{$user->name}}</option>
+                                    <option {{($viTri->user != null ? $viTri->user->id :'') == $user->id ? 'selected' :''}} value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
+                                    <option value="0">null</option>
                                    </select>
                                     @error('id_user')
                                         <span class="help text-red-500"> {{ $message}}</span>
@@ -93,8 +93,7 @@ $current = "Vị trí";
                                     <label class="label" for="noi_lam_viec">
                                         Nơi làm việc
                                     </label>
-                                    <input class="form-control" 
-                                        id="name" 
+                                    <input class="form-control"  
                                         name="noi_lam_viec" 
                                         type="text" 
                                         placeholder="Nơi làm việc"                        
@@ -110,8 +109,7 @@ $current = "Vị trí";
                                     <label class="label" for="muc_dich">
                                         Mục đích
                                     </label>
-                                    <textarea rows="5" class="form-control" 
-                                        id="name" 
+                                    <textarea rows="5" class="form-control"  
                                         name="muc_dich" 
                                         type="text" 
                                         placeholder="Mục đích"                        

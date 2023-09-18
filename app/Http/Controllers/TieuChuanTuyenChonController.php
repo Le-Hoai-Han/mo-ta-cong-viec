@@ -33,8 +33,20 @@ class TieuChuanTuyenChonController extends Controller
     public function create()
     {
         $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
+        $viTriHT = Vitri::find(2);
         return view('back-end.tieu-chuan.create',[
-            'listViTri' => $listViTri
+            'listViTri' => $listViTri,
+            'viTriHT' => $viTriHT,
+        ]);
+    }
+
+    public function createFront($viTri)
+    {
+        $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
+        $viTriHT = Vitri::find($viTri);
+        return view('back-end.tieu-chuan.create',[
+            'listViTri' => $listViTri,
+            'viTriHT' => $viTriHT,
         ]);
     }
 
@@ -49,7 +61,7 @@ class TieuChuanTuyenChonController extends Controller
         $validate = $this->__validate($request);
 
         TieuChuanTuyenChon::create($validate);
-        return redirect()->route('tieu-chuan.index')->with('Thêm thành công');
+        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('Thêm thành công');
     }
 
     /**
@@ -93,7 +105,7 @@ class TieuChuanTuyenChonController extends Controller
     {
         $validate = $this->__validate($request);
         $tieuChuan->update($validate);
-        return redirect()->route('tieu-chuan.index')->with('success','Cập nhật thành công');
+        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Cập nhật thành công');
 
     }
 
