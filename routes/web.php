@@ -143,9 +143,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         
         Route::get('getData-vi-tri',[FrontUserController::class,'getData'])->name('vi-tri.getData');
         Route::get('getData2-vi-tri',[FrontUserController::class,'getData2'])->name('vi-tri.getData2');
+        Route::get('getData3-vi-tri',[FrontUserController::class,'getData3'])->name('vi-tri.getData3');
 
     Route::prefix('/vi-tri')->as('front.vi-tri.')->group(function(){
         Route::get('/{viTri}',[FrontViTriController::class,'show'])->name('show');
     });    
     Route::get('/',[FrontUserController::class,'index']);
+    Route::get('/giao-dien-2',[FrontUserController::class,'index2']);
 });
