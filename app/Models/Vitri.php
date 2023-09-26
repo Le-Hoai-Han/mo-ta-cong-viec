@@ -140,8 +140,8 @@ class Vitri extends Model
                 ],
             ];
     
+            $node['HTMLid'] = 'nhan-vien-' . $item->id;
             if (!$item->capDuoi->isEmpty()) {
-                $node['HTMLid'] = 'nhan-vien-' . $item->id;
                 $node['children'] = $this->soDoToChucCapDuoi2($item);
             }
     
@@ -173,8 +173,8 @@ class Vitri extends Model
                 ],
             ];
     
+            $node['HTMLid'] = 'nhan-vien-' . $item->id;
             if (!$item->capDuoi->isEmpty()) {
-                $node['HTMLid'] = 'nhan-vien-' . $item->id;
                 $node['children'] = $this->soDoToChucCapDuoi3($item);
             }
     
