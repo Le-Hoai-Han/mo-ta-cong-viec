@@ -99,9 +99,61 @@ class UserController extends RoutingController
       return response()->json( $chartJson);
 
     }
+
+    public function getData3(){
+        $ceo = Vitri::find(2);
+       
+        $chartConfig = [
+           'container' => '#OrganiseChart-big-commpany',
+           'levelSeparation' => 45,
+           'rootOrientation' => 'NORTH',
+           'nodeAlign' => 'BOTTOM',
+           'connectors' => [
+               'type' => 'step',
+               'style' => [
+                'stroke-width' => 2
+               ]
+           ],
+           'node' => [
+               'HTMLclass' => 'big-commpany'
+           ]
+       ];
+
+       $nodeStructure = [
+           'text' => [
+               'name' => $ceo->user->name,
+               'title' => $ceo->ten_vi_tri,
+            //    'contact' => $ceo->user->sdt,
+               
+           ],
+           'connectors'=>[
+                // 'type' =>'curve',
+                'style' => [
+                    'stroke' => $ceo->stroke,
+                    'arrow-end' => 'oval-wide-long'
+                ]
+           ],
+        //    'image' =>  asset('storage/'.$ceo->user->profile_photo_path),
+           'HTMLid'=>'nhan-vien-' .$ceo->id,
+           'children' => $ceo->soDoToChucCapDuoi3($ceo),
+       ];
+
+       $chartJson = [
+           'chart' => $chartConfig,
+           'nodeStructure' => $nodeStructure
+       ];
+      return response()->json( $chartJson);
+
+    }
     public function index()
     {
         return view('front.user2.index');
+    }
+
+
+    public function index2()
+    {
+        return view('front.user2.index2');
     }
 
     /**

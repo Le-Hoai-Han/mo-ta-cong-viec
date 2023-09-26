@@ -117,61 +117,70 @@ class Vitri extends Model
     }
 
 
-    public function soDoToChucCapDuoi2($viTri){
-        $nodeStructure=[];
-        $mang1 = [];
-     
-          foreach($viTri->capDuoi as $item){
-            if($viTri->capDuoi->isEmpty()){
-            
-                    $mang1 = [
-                        'text' => [
-                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
-                            // 'title' => $item->ten_vi_tri,
-                            // 'contact' => $item->user ? $item->user->sdt :'Đang cập nhật'
-                        ],
-                        // 'stackChildren' => $item->hien_thi_nhanh,
-                        'pseudo' =>'true',
-                        'connectors'=>[
-                            'type'=>$item->type,
-                            'style' => [
-                                'stroke' => $item->stroke,
-                                'arrow-end' => $item->arrow_end,
-                                // 'arrow-start' => $item->arrow_start,
-                                'stroke-dasharray' =>$item->stroke_dasharray
-                            ],
-                            'stackIndent'=>$item->stackIndent
-                       ],
+    public function soDoToChucCapDuoi2($viTri) {
+        $nodeStructure = [];
     
-                    ];
-
-                }else{
-                    $mang1[] = [
-                        'text' => [
-                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
-                            'title' => $item->ten_vi_tri,
-                            // 'contact' => $item->user ? $item->user->sdt :'Đang cập nhật'
-                        ],
-                        // 'stackChildren' => $item->hien_thi_nhanh,
-                        'connectors'=>[
-                            'type'=>$item->type,
-                            'style' => [
-                                'stroke' => $item->stroke,
-                                'arrow-end' => $item->arrow_end,
-                                // 'arrow-start' => $item->arrow_start,
-                                'stroke-dasharray' =>$item->stroke_dasharray
-                            ],
-                            'stackIndent'=>$item->stackIndent
-                       ],
-                        // 'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path:'')),
-                        'HTMLid'=>'nhan-vien-'.$item->id,
-                        // 'target' => 123,
-                        'children' =>$item->soDoToChucCapDuoi2($item)
+        foreach ($viTri->capDuoi as $item) {
+            $userName = $item->user != null ? $item->user->name : 'Đang cập nhật';
     
-                    ];
-                }
+            $node = [
+                'text' => [
+                    'name' => $userName,
+                    'title' => $item->ten_vi_tri,
+                ],
+                'stackChildren' => true,
+                'connectors' => [
+                    'type' => $item->type,
+                    'style' => [
+                        'stroke' => $item->stroke,
+                        'arrow-end' => $item->arrow_end,
+                        'stroke-dasharray' => $item->stroke_dasharray
+                    ],
+                    // 'stackIndent' => $item->stackIndent
+                ],
+            ];
+    
+            if (!$item->capDuoi->isEmpty()) {
+                $node['HTMLid'] = 'nhan-vien-' . $item->id;
+                $node['children'] = $this->soDoToChucCapDuoi2($item);
             }
-        $nodeStructure = $mang1;
+    
+            $nodeStructure[] = $node;
+        }
         return $nodeStructure;
     }
+
+    public function soDoToChucCapDuoi3($viTri) {
+        $nodeStructure = [];
+    
+        foreach ($viTri->capDuoi as $item) {
+            $userName = $item->user != null ? $item->user->name : 'Đang cập nhật';
+    
+            $node = [
+                'text' => [
+                    'name' => $userName,
+                    'title' => $item->ten_vi_tri,
+                ],
+                // 'stackChildren' => true,
+                'connectors' => [
+                    'type' => $item->type,
+                    'style' => [
+                        'stroke' => $item->stroke,
+                        'arrow-end' => $item->arrow_end,
+                        'stroke-dasharray' => $item->stroke_dasharray
+                    ],
+                    // 'stackIndent' => $item->stackIndent
+                ],
+            ];
+    
+            if (!$item->capDuoi->isEmpty()) {
+                $node['HTMLid'] = 'nhan-vien-' . $item->id;
+                $node['children'] = $this->soDoToChucCapDuoi3($item);
+            }
+    
+            $nodeStructure[] = $node;
+        }
+        return $nodeStructure;
+    }
+    
 }

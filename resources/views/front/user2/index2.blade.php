@@ -23,7 +23,7 @@
      
         $(document).ready(function() {
             $.ajax({
-                url: '{{route('vi-tri.getData2')}}', // Đường dẫn đến phương thức trong controller
+                url: '{{route('vi-tri.getData3')}}', // Đường dẫn đến phương thức trong controller
                 type: 'GET',
                 dataType: 'json',
                 success: function(data) {console.log(data);
