@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\front\UserController as FrontUserController;
+use App\Http\Controllers\Front\UserController as FrontUserController;
 use App\Http\Controllers\MoTaNhiemVuController;
 use App\Http\Controllers\NhiemVuController;
 use App\Http\Controllers\QuanHeController;
