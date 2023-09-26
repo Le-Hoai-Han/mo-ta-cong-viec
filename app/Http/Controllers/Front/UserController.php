@@ -60,7 +60,7 @@ class UserController extends RoutingController
         $chartConfig = [
            'container' => '#OrganiseChart-big-commpany',
            'levelSeparation' => 45,
-           'rootOrientation' => 'WEST',
+           'rootOrientation' => 'NORTH',
            'nodeAlign' => 'BOTTOM',
            'connectors' => [
                'type' => 'step',
