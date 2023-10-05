@@ -148,7 +148,6 @@
     }
     .list-nhiem-vu,.list-quan-he, .list-tham-quyen{
         padding-left: 40px;
-        min-height: 100px;
     }
     .list-nhiem-vu li,.list-tham-quyen li,.list-quan-he li{
         margin: 5px 0px;
