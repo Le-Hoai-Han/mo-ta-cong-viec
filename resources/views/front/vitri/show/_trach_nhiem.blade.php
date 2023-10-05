@@ -19,63 +19,64 @@
         <tbody>
             <?php $i = 1; ?>
             @foreach($viTri->nhiemVu as $nhiemVu)
-                <tr>
-                    <td>
-                        <p style="font-size: 18px;"> <b>Trách nhiệm thứ {{$i++}}. {{$nhiemVu->ten_nhiem_vu}}</b>
+            <tr>
+                <td class="border-top-bottom-none">
+                    <b style="font-size: 18px;">Trách nhiệm thứ {{$i++}}. {{$nhiemVu->ten_nhiem_vu}}</b>
+                    @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                        <a id="edit-trach-nhiem" id-trach-nhiem="{{$nhiemVu->id}}" style="<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
+                            <span class="material-icons" style="font-size: 20px;cursor: pointer;">
+                                edit
+                        </span>
+                        </a>
+                        <a id="delete-trach-nhiem" id-trach-nhiem='{{$nhiemVu->id}}' style="<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
+                            <span class="material-icons" style="font-size: 20px;cursor: pointer;color:red;">
+                                delete
+                        </span>
+                        </a>
+                    @endif
+                </td>
+                <td class="border-top-bottom-none"></td>
+            </tr>
+        </tbody>
+        <tbody class="tbody_mo_ta">
+            @foreach($nhiemVu->moTaNhiemVu as $moTa)
+            <tr style="vertical-align: top">
+                <td class="border-bottom-none">    
+                    <ul class="list-nhiem-vu">
+                        <li>
+                            {{$moTa->chi_tiet}} 
                             @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
-                                <a id="edit-trach-nhiem" id-trach-nhiem="{{$nhiemVu->id}}" style="<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
-                                    <span class="material-icons" style="font-size: 20px;cursor: pointer;">
+                                <a id="edit-mo-ta-trach-nhiem" id-nhiem-vu="{{$nhiemVu->id}}" id-mo-ta="{{$moTa->id}}" style="cursor: pointer;<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
+                                    <span class="material-icons" style="font-size: 20px">
                                         edit
-                                </span>
+                                    </span>
                                 </a>
-                                <a id="delete-trach-nhiem" id-trach-nhiem='{{$nhiemVu->id}}' style="<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
+                                <a id="delete-mo-ta-nhiem-vu" id-mo-ta="{{$moTa->id}}" style="<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
                                     <span class="material-icons" style="font-size: 20px;cursor: pointer;color:red;">
                                         delete
                                 </span>
                                 </a>
                             @endif
-                        </p>
-                        <ul class="list-nhiem-vu">
-                            @foreach($nhiemVu->moTaNhiemVu as $moTa)
-                                <li>
-                                    {{$moTa->chi_tiet}} 
-                                    @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
-                                        <a id="edit-mo-ta-trach-nhiem" id-nhiem-vu="{{$nhiemVu->id}}" id-mo-ta="{{$moTa->id}}" style="cursor: pointer;<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
-                                            <span class="material-icons" style="font-size: 20px">
-                                                edit
-                                            </span>
-                                        </a>
-                                        <a id="delete-mo-ta-nhiem-vu" id-mo-ta="{{$moTa->id}}" style="<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
-                                            <span class="material-icons" style="font-size: 20px;cursor: pointer;color:red;">
-                                                delete
-                                        </span>
-                                        </a>
-                                    @endif
-                                </li>
-                                
-                            @endforeach
+                            </li>
+                        
                             @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
                             <a id="add-mo-ta-trach-nhiem" id-nhiem-vu="{{$nhiemVu->id}}" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                                 <span class="material-icons" style="font-size: 20px;cursor: pointer;">
                                     add_circle_outline
-                               </span>
+                                </span>
                             </a>
                             @endif
                         </ul>
                     </td>
-                    <td>
-                        <p><br></p>
+                    <td class="border-bottom-none">
                         <ul class="list-nhiem-vu">
-                            @foreach($nhiemVu->moTaNhiemVu as $moTa)
-                                <li>
-                                    {{$moTa->ket_qua}} 
-                                </li>
-                                
-                            @endforeach
-                           
+                            <li>
+                                {{$moTa->ket_qua}} 
+                            </li>
                         </ul>
                     </td>
-                </tr>
+                        </tr>
+                        @endforeach
                 @endforeach
                 <x-mo-ta-nhiem-vu :listNhiemVu="$listNhiemVu" :nhiemVuHienTai="($viTri->nhiemVu->isNotEmpty() ? $nhiemVu :[])" />
                 <x-trach-nhiem :nhiemVu="($viTri->nhiemVu->isNotEmpty() ? $nhiemVu :[])" :listViTri="$listViTri" :viTriHienTai="$viTri"/>
@@ -115,6 +116,7 @@
         {
             modal.classList.remove('show');
         }
+
     </script>
     @endpush
 

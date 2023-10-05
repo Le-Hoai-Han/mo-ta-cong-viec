@@ -421,12 +421,7 @@
         </div>
     </div>
     <script>
-        function showChiTiet(){
-            let showChiTiet = document.getElementById('show-chi-tiet');
-            let xemThem = document.getElementById('xem-them');
-            showChiTiet.style.display = "block";
-            xemThem.style.display = "none";
-        }
+        
     </script>
 </body>
 </html>

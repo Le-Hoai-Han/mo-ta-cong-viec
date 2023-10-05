@@ -63,6 +63,8 @@
      margin-top: 50px;
      display: flex;
     }
+
+    
     .cap_tren_truc_tiep{
         border: solid 2px #000;
         width: 400px;
@@ -129,10 +131,7 @@
         text-decoration: none;
         color: #000;
     }
-    .trach-nhiem-text:hover{
-        color: #b81717 ;
-        font-weight: bold;
-    }
+    
     #xem-them{
         text-align: center;
         margin: 20px 0px;
@@ -219,6 +218,24 @@
         transition: height .2s;
         z-index: 9999;
     }
+    .border-top-bottom-none{
+        border-top: #000 solid 1px;
+        border-bottom:  #ff000000 solid 1px;
+    }
+    .border-bottom-none{
+        border-bottom:  #ff000000 solid 1px;
+    }
+    .tbody_mo_ta> tr:nth-last-child(2) >.border-bottom-none,
+    .tbody_mo_ta:last-child >tr  >.border-bottom-none{
+        border-bottom:  #000 solid 1px;
+    }
+    #add-mo-ta-trach-nhiem{
+        display: none;
+    }
+    .tbody_mo_ta > tr:nth-last-child(2)  > .border-bottom-none > .list-nhiem-vu #add-mo-ta-trach-nhiem{
+        display: block;
+    }
+
     </style>
 @endpush
 <div class="container">
