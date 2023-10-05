@@ -24,6 +24,7 @@ class TieuChuanTuyenChon extends Model
         'suc_khoe',
         'ho_khau',
         'uu_tien',
+        'khac',
     ];
 
     public function viTri(){
