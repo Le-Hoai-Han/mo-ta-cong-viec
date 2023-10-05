@@ -39,9 +39,9 @@
 
                                 <div class="mb-4">
                                     <label class="label" for="tuoi">
-                                        Tuổi
+                                        Độ tuổi
                                     </label>
-                                    <textarea rows="1" class="form-control" id="tuoi" name="tuoi" type="text" placeholder="Tuổi"
+                                    <textarea rows="1" class="form-control" id="tuoi" name="tuoi" type="text" placeholder="Độ tuổi"
                                         value="">{!! old('tuoi', '') !!}</textarea>
                                     @error('tuoi')
                                         <span class="help text-red-500" style="color: red"> {{ $message }}</span>
@@ -72,9 +72,9 @@
 
                                 <div class="mb-4">
                                     <label class="label" for="vi_tinh">
-                                        Vi tính
+                                        Tin học
                                     </label>
-                                    <textarea rows="2" class="form-control" id="vi_tinh" name="vi_tinh" type="text" placeholder="Vi tính"
+                                    <textarea rows="2" class="form-control" id="vi_tinh" name="vi_tinh" type="text" placeholder="Tin học"
                                         value="">{!! old('vi_tinh', '') !!}</textarea>
                                     @error('vi_tinh')
                                         <span class="help text-red-500" style="color: red"> {{ $message }}</span>
@@ -149,9 +149,9 @@
 
                                 <div class="mb-4">
                                     <label class="label" for="ho_khau">
-                                        Hộ khẩu
+                                        Nơi ở
                                     </label>
-                                    <textarea rows="2" class="form-control" id="ho_khau" name="ho_khau" type="text" placeholder="Hộ khẩu"
+                                    <textarea rows="2" class="form-control" id="ho_khau" name="ho_khau" type="text" placeholder="Nơi ở"
                                         value="">{!! old('ho_khau', '') !!}</textarea>
                                     @error('ho_khau')
                                         <span class="help text-red-500" style="color: red"> {{ $message }}</span>
@@ -165,6 +165,16 @@
                                     <textarea rows="2" class="form-control" id="uu_tien" name="uu_tien" type="text" placeholder="Ưu tiên"
                                         value="">{!! old('uu_tien', '') !!}</textarea>
                                     @error('uu_tien')
+                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
+                                    @enderror
+                                </div>
+                                <div class="mb-4">
+                                    <label class="label" for="khac">
+                                        Khác
+                                    </label>
+                                    <textarea rows="2" class="form-control" id="khac" name="khac" type="text" placeholder="Khác"
+                                        value="">{!! old('khac', '') !!}</textarea>
+                                    @error('khac')
                                         <span class="help text-red-500" style="color: red"> {{ $message }}</span>
                                     @enderror
                                 </div>
@@ -227,9 +237,9 @@
 
                                         <div class="mb-4">
                                             <label class="label" for="tuoi">
-                                                Tuổi
+                                                Độ tuổi
                                             </label>
-                                            <textarea rows="1" class="form-control" id="textarea_tuoi_edit" name="tuoi" type="text" placeholder="Tuổi"
+                                            <textarea rows="1" class="form-control" id="textarea_tuoi_edit" name="tuoi" type="text" placeholder="Độ tuổi"
                                                 value="">{!! old('tuoi') !!}</textarea>
                                             @error('tuoi')
                                                 <span class="help text-red-500" style="color: red">
@@ -266,9 +276,9 @@
 
                                         <div class="mb-4">
                                             <label class="label" for="vi_tinh">
-                                                Vi tính
+                                                Tin học
                                             </label>
-                                            <textarea rows="2" class="form-control" id="textarea_vi_tinh_edit" name="vi_tinh" type="text" placeholder="Vi tính"
+                                            <textarea rows="2" class="form-control" id="textarea_vi_tinh_edit" name="vi_tinh" type="text" placeholder="Tin học"
                                                 value="">{!! old('vi_tinh') !!}</textarea>
                                             @error('vi_tinh')
                                                 <span class="help text-red-500" style="color: red">
@@ -358,9 +368,9 @@
                                     <div class="col-md-4">
                                         <div class="mb-4">
                                             <label class="label" for="ho_khau">
-                                                Hộ khẩu
+                                                Nơi ở
                                             </label>
-                                            <textarea rows="2" class="form-control" id="textarea_ho_khau_edit" name="ho_khau" type="text" placeholder="Hộ khẩu"
+                                            <textarea rows="2" class="form-control" id="textarea_ho_khau_edit" name="ho_khau" type="text" placeholder="Nơi ở"
                                                 value="">{!! old('ho_khau') !!}</textarea>
                                             @error('ho_khau')
                                                 <span class="help text-red-500" style="color: red">
@@ -375,6 +385,18 @@
                                             <textarea rows="2" class="form-control" id="textarea_uu_tien_edit" name="uu_tien" type="text" placeholder="Ưu tiên"
                                                 value="">{!! old('uu_tien') !!}</textarea>
                                             @error('uu_tien')
+                                                <span class="help text-red-500" style="color: red">
+                                                    {{ $message }}</span>
+                                            @enderror
+                                        </div>
+
+                                        <div class="mb-4">
+                                            <label class="label" for="khac">
+                                                Khác
+                                            </label>
+                                            <textarea rows="2" class="form-control" id="textarea_khac_edit" name="khac" type="text" placeholder="Khác"
+                                                value="">{!! old('khac') !!}</textarea>
+                                            @error('khac')
                                                 <span class="help text-red-500" style="color: red">
                                                     {{ $message }}</span>
                                             @enderror
@@ -471,6 +493,7 @@
                     var textareaHoKhauEdit = document.getElementById('textarea_ho_khau_edit');
                     var textareaNgoaiHinhEdit = document.getElementById('textarea_ngoai_hinh_edit');
                     var textareaUuTienEdit = document.getElementById('textarea_uu_tien_edit');
+                    var textareaKhacEdit = document.getElementById('textarea_khac_edit');
                     var textareaSucKhoeEdit = document.getElementById('textarea_suc_khoe_edit');
                     var formUpdateTieuChuan = document.getElementById('form_update_tieu_chuan');
 
@@ -487,6 +510,7 @@
                     textareaHoKhauEdit.value = res[0].ho_khau;
                     textareaNgoaiHinhEdit.value = res[0].ngoai_hinh;
                     textareaUuTienEdit.value = res[0].uu_tien;
+                    textareaKhacEdit.value = res[0].khac;
                     textareaSucKhoeEdit.value = res[0].suc_khoe;
                     if(res[0].gioi_tinh == 0){
                         optionGioiTinhNamEdit.selected = true;

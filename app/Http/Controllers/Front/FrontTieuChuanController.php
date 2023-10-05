@@ -109,6 +109,7 @@ class FrontTieuChuanController extends RoutingController
             'suc_khoe' => 'required',
             'ho_khau' => 'required',
             'uu_tien' => 'required',
+            'khac' => 'nullable',
         ],[
             'id_vi_tri.required' => 'Vui lòng chọn vị trí',
             'gioi_tinh.required' => 'Vui lòng nhập giới tính',

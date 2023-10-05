@@ -81,6 +81,10 @@
                     <td>Ưu tiên</td>
                     <td><p>{{$tieuChi->uu_tien}}</p></td>
                 </tr>
+                <tr>
+                    <td>Khác</td>
+                    <td><p>{{$tieuChi->khac}}</p></td>
+                </tr>
             @endforeach
         </tbody>
         </table>
