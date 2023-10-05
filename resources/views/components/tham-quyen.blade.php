@@ -243,9 +243,9 @@
 
                     var noiDungEdit = document.getElementById('noi-dung-edit');
                     noiDungEdit.value = res[0].noi_dung;
-
+                    console.log(res[0].loai);
                     if(res[0].loai == 1){
-                        var optionThamQuyenDeXuat = document.getElementById('optionThamQuyenDeXuat');
+                        var optionThamQuyenDeXuat = document.getElementById('option_tham_quyen_de_xuat');
                         optionThamQuyenDeXuat.selected = true;
                     }
 
