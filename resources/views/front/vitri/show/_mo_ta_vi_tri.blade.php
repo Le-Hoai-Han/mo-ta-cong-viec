@@ -73,7 +73,7 @@
     <tr>
         <td colspan=""><b>2. Mục đích công việc vị trí</b></td>
         <td>
-            <p>{{ $viTri->muc_dich }}</p>
+            <p><?php echo nl2br($viTri->muc_dich) ?></p>
         </td>
     </tr>
 </table>

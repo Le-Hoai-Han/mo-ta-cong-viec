@@ -111,7 +111,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <a class="btn btn-primary" onclick="updateViTri()">Lưu</a>
-                                    <a href="{{ url()->previous() }}" class="btn btn-secondary">Hủy</a>
+                                    <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                                 </div>
                             </div>
 
@@ -227,7 +227,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <a class="btn btn-primary" onclick="addViTri()">Lưu</a>
-                                    <a href="{{ url()->previous() }}" class="btn btn-secondary">Hủy</a>
+                                    <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                                 </div>
                             </div>
 

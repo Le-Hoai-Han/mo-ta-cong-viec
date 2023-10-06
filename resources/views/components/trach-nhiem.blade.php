@@ -49,7 +49,7 @@
                            
                             <div class="mb-4">
                                 <a class="btn btn-primary" onclick="addTrachNhiem()">Lưu</a>
-                                <a href="{{url()->previous()}}" class="btn btn-secondary">Hủy</a>
+                                <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                             </div>
                         </form>
                     </div>
@@ -81,8 +81,7 @@
                                     id="edit_name_nhiem_vu" 
                                     name="ten_nhiem_vu" 
                                     type="text" 
-                                    placeholder="Tên nhiệm vụ"                        
-                                    value="{!! old('ten_nhiem_vu') !!}"
+                                    placeholder="Tên nhiệm vụ"
                                 >
                                 @error('ten_nhiem_vu')
                                     <span class="help text-red-500"> {{ $message}}</span>
@@ -108,7 +107,7 @@
                            
                             <div class="mb-4">
                                 <a class="btn btn-primary" onclick="updateTrachNhiem()">Lưu</a>
-                                <a href="{{url()->previous()}}" class="btn btn-secondary">Hủy</a>
+                                <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                             </div>
                         </form>
                     </div>
@@ -156,7 +155,7 @@
         var editNameNhiemVu = document.getElementById('edit_name_nhiem_vu');
 
         //  Thay đổi giá trị tên nhiệm vụ(trách nhiệm)
-        var valueTenNhiemVuEdit = editNameNhiemVu.value;
+        var valueTenNhiemVuEdit = '';
         editNameNhiemVu.addEventListener("input",function(event){
             valueTenNhiemVuEditText = event.target.value;
             valueTenNhiemVuEdit = valueTenNhiemVuEditText;
@@ -216,6 +215,7 @@
             },
             success:function(res){
                 editNameNhiemVu.value = res.ten_nhiem_vu;
+                valueTenNhiemVuEdit = editNameNhiemVu.value;
                 routeUpdate = "{{ url('front-nhiem-vu') }}/"+res.id+"/update";
                 formEditTrachNhiem.action = routeUpdate;
             }
@@ -240,6 +240,10 @@
                     }
 
                     closeSetTimeOut(500,modalEditTrachNhiem);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    console.log(xhr.status);
+                    console.log(thrownError);
                 }
             });
         }

@@ -122,7 +122,7 @@ $current = "Vị trí";
                             </div>
                             <div class="mb-4">
                                 <button class="btn btn-primary">Lưu</button>
-                                <a href="{{url()->previous()}}" class="btn btn-secondary">Hủy</a>
+                                <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                             </div>
                         </div>            
                            

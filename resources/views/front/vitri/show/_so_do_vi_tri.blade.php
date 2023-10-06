@@ -14,9 +14,9 @@
         </div>
         @endif
 
-        <div class="trach-nhiem">
+        <div class="trach-nhiem"><?php $i = 1 ?>
             @foreach($viTri->nhiemVu as $nhiemVu)
-                <a class="trach-nhiem-text"> - {{$nhiemVu->ten_nhiem_vu}}</a>
+                <a class="trach-nhiem-text" href="#trach-nhiem-{{$i++}}"> - {{$nhiemVu->ten_nhiem_vu}}</a>
             @endforeach
         </div>
 
