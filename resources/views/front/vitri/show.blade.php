@@ -142,16 +142,17 @@
     .xem-them-text:hover{
         color: #b81717;
     }
-    #show-chi-tiet{
-        display: none;
-        margin: 50px 0px;
+    .list-nhiem-vu{
+        margin-bottom: 0px;
     }
+    
     .list-nhiem-vu,.list-quan-he, .list-tham-quyen{
         padding-left: 40px;
     }
     .list-nhiem-vu li,.list-tham-quyen li,.list-quan-he li{
         margin: 5px 0px;
         font-size: 16px;
+        text-align: justify;
     }
     .tieu-chuan-tuyen-chon td {
         font-size: 16px;
@@ -261,13 +262,7 @@
         ])
 
     
-
-        
-        <div id="xem-them">
-            <a class="xem-them-text" onclick="showChiTiet()">Xem thêm...</a>
-        </div>
-       
-        <div id="show-chi-tiet">
+        <div id="">
             @include('front.vitri.show._trach_nhiem',[
                 'viTri'=>$viTri,
             ])

@@ -68,7 +68,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <a class="btn btn-primary" onclick="addMoTaNhiemVu()">Lưu</a>
-                                    <a href="{{url()->previous()}}" class="btn btn-secondary">Hủy</a>
+                                    <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                                 </div>
                             </form>
                         </div>
@@ -161,7 +161,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <button class="btn btn-primary">Lưu</button>
-                                    <a href="{{url()->previous()}}" class="btn btn-secondary">Hủy</a>
+                                    <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                                 </div>
                             </div>
                                 

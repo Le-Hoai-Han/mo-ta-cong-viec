@@ -254,10 +254,8 @@
 
             </div>
         </div>
-        <div id="xem-them">
-            <a class="xem-them-text" onclick="showChiTiet()">Xem thêm...</a>
-        </div>
-        <div id="show-chi-tiet">
+       
+        <div id="">
             <div class="">
                 <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>4. Các trách nhiệm và nhiệm vụ chính</b></p>
                 <div class="trach-nhiem-nhiem-vu">

@@ -19,9 +19,9 @@
         <tbody>
             <?php $i = 1; ?>
             @foreach($viTri->nhiemVu as $nhiemVu)
-            <tr>
-                <td class="border-top-bottom-none">
-                    <b style="font-size: 18px;">Trách nhiệm thứ {{$i++}}. {{$nhiemVu->ten_nhiem_vu}}</b>
+            <tr id="trach-nhiem-{{$i}}">
+                <td class="border-top-bottom-none" >
+                    <b style="font-size: 18px;" >{{$i++}}. {{$nhiemVu->ten_nhiem_vu}}</b>
                     @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
                         <a id="edit-trach-nhiem" id-trach-nhiem="{{$nhiemVu->id}}" style="<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
                             <span class="material-icons" style="font-size: 20px;cursor: pointer;">
@@ -85,14 +85,6 @@
     </div>
     @push('scripts')
     <script>
-        
-        function showChiTiet(){
-            let showChiTiet = document.getElementById('show-chi-tiet');
-            let xemThem = document.getElementById('xem-them');
-            showChiTiet.style.display = "block";
-            xemThem.style.display = "none";
-        }
-
         // phương thức thông báo biến mất theo time 
          function closeSetTimeOut(time,modal){
                 setTimeout(() => {
@@ -104,6 +96,11 @@
 
                
             }
+
+        // refresh
+        function refresh(id){
+            location.reload();
+        }
 
         // phương thức mở modal
         function openModal(modal)
