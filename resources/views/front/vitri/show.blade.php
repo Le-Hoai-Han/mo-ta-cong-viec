@@ -147,12 +147,13 @@
     }
     
     .list-nhiem-vu,.list-quan-he, .list-tham-quyen{
-        padding-left: 40px;
+        padding-left: 35px;
     }
     .list-nhiem-vu li,.list-tham-quyen li,.list-quan-he li{
         margin: 5px 0px;
         font-size: 16px;
         text-align: justify;
+        padding-right: 5px;
     }
     .tieu-chuan-tuyen-chon td {
         font-size: 16px;
