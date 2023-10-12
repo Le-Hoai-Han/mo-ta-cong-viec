@@ -57,7 +57,7 @@ class FrontViTriController extends RoutingController
      */
     public function show(Vitri $viTri)
     {
-        $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
+        $listViTri = Vitri::select(['id','ten_vi_tri','id_user'])->get();
         $listUser = User::select(['id','name'])->get();
         $listNhiemVu = NhiemVu::select(['id','ten_nhiem_vu'])->get();
         $roles = Role::pluck('name', 'id');

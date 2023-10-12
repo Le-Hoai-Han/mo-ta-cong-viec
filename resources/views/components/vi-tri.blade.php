@@ -47,8 +47,7 @@
                                         <select name="id_vi_tri_quan_ly" id="tom-select-it1" class="form-control select-vi-tri-cap-tren-edit-vi-tri" onchange="insertValueSelectViTriCapTrenEditViTri(this.value)">
                                             @foreach ($listViTri as $item)
                                                 <option <?php echo $viTri->capQuanLy->id == $item->id ? 'selected' : ' '; ?> value="{{ $item->id }}">
-                                                    {{ $item->ten_vi_tri }}
-                                                    - {{ $item->user != null ? $item->user->name : '' }}</option>
+                                                    {{ $item->ten_vi_tri }} - {{ $item->user != null ? $item->user->name : 'Đang cập nhật' }}</option>
                                             @endforeach
 
                                         </select>
@@ -168,7 +167,7 @@
                                             Vị trí cấp trên
                                         </label>
                                         <select name="id_vi_tri_quan_ly" class="form-control">
-                                            <option  value="{{$viTri->id}}" id="input-vi-tri-cap-tren-add-vi-tri">{{$viTri->ten_vi_tri}}</option> 
+                                            <option  value="{{$viTri->id}}" id="input-vi-tri-cap-tren-add-vi-tri">{{$viTri->ten_vi_tri}} - {{$viTri->user != null ? $viTri->user->name:''}}</option> 
                                         </select>
                                         @error('id_vi_tri_quan_ly')
                                             <span class="help text-red-500"> {{ $message }}</span>
