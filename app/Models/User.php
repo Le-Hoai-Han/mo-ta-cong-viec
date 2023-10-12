@@ -18,7 +18,7 @@ use Spatie\Permission\Traits\HasRoles;
 use App\Models\Trainings\Learning;
 use App\Models\Trainings\LearningSection;
 use App\Models\Trainings\TrainerCertification;
-
+use Spatie\Permission\Traits\HasPermissions;
 
 class User extends Authenticatable 
 {
@@ -28,6 +28,7 @@ class User extends Authenticatable
     use Notifiable;
     //use TwoFactorAuthenticatable;
     use HasRoles;
+    use HasPermissions;
     use Notifiable;
 
     /**
@@ -157,11 +158,20 @@ class User extends Authenticatable
         return $this->hasOne(Vitri::class,'id_user','id');
     }
 
-    public function isCapTren($viTriKiemTra)
+    public function isAddViTri($viTriKiemTra)
     {
         $viTriUser = $this->viTri;
         $listIDCapDuoi = $this->listIdCapDuoi($viTriUser);
         
+        return in_array($viTriKiemTra->id, $listIDCapDuoi);
+        
+    }
+
+    public function isCapTren($viTriKiemTra)
+    {
+        $viTriUser = $this->viTri;
+        $listIDCapDuoi = $this->listIdCapDuoi($viTriUser);
+        unset($listIDCapDuoi[0]);
         return in_array($viTriKiemTra->id, $listIDCapDuoi);
         
     }
