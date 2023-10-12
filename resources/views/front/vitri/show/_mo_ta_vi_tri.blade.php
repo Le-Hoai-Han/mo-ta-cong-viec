@@ -1,15 +1,17 @@
 <table>
     <tr>
         <td colspan="2"><b>1. Mô tả chung về chức danh/vị trí công việc</b>
+            @if(auth()->user()->hasPermissionTo('add_mtcv') && auth()->user()->isAddViTri($viTri) || auth()->user()->hasRole('admin'))
+            <a id="add-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
+                <span class="material-icons" style="color: green">
+                    add_circle_outline
+                </span>
+            </a>
+            @endif
             @if (auth()->user()->hasRole('admin') ||
                     (auth()->user()->hasRole('mo_ta_cong_viec') &&
                         auth()->user()->isCapTren($viTri)))
                 
-                    <a id="add-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
-                        <span class="material-icons" style="color: green">
-                            add_circle_outline
-                        </span>
-                    </a>
                     <a id="edit-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                         <span class="material-icons">
                             edit
