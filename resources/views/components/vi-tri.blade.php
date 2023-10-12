@@ -181,7 +181,7 @@
                                             User
                                         </label>
                                         <select name="id_user" id="tom-select-it2" class="form-control select-user-add-user" onchange="insertValueAddUser(this.value)">
-                                            <option value="0">null</option>
+                                            <option value="0">Trống</option>
                                             @foreach ($listUser as $user)
                                                 <option value="{{ $user->id }}">{{ $user->name }}</option>
                                             @endforeach
@@ -439,8 +439,8 @@
                     }else{
                         $('#thong-bao-trang-thai').addClass('alert-danger').removeClass('alert-success').html(res.message).show();
                     }
-                    closeModal(modalViTri);
-                    closeSetTimeOut(500);
+                    closeSetTimeOut(1000);
+                    // closeModal(modalViTri);
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     console.log(xhr.status);

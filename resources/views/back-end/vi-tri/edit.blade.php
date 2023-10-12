@@ -81,7 +81,7 @@ $current = "Vị trí";
                                     @foreach($listUser as $user)
                                     <option {{($viTri->user != null ? $viTri->user->id :'') == $user->id ? 'selected' :''}} value="{{$user->id}}">{{$user->name}}</option>
                                     @endforeach
-                                    <option value="0">null</option>
+                                    <option value="0">Trống</option>
                                    </select>
                                     @error('id_user')
                                         <span class="help text-red-500"> {{ $message}}</span>
