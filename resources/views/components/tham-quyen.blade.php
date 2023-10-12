@@ -169,10 +169,12 @@
         var btnCloseModalEditThamQuyen = document.getElementById('close-edit-tham-quyen');
         var btnCloseModalDeleteThamQuyen = document.getElementById('btn-close-xac-nhan-xoa-tham-quyen');
 
-        btnAddThamQuyen.onclick = function(){
-            openModal(modalAddThamQuyen);
-            idViTri = btnAddThamQuyen.getAttribute('id-vi-tri');
-            showMoDalThemThamQuyen(idViTri)
+        if(btnAddThamQuyen != null){
+            btnAddThamQuyen.onclick = function(){
+                openModal(modalAddThamQuyen);
+                idViTri = btnAddThamQuyen.getAttribute('id-vi-tri');
+                showMoDalThemThamQuyen(idViTri)
+            }
         }
 
         btnCloseModalAddThamQuyen.addEventListener("click",function(){

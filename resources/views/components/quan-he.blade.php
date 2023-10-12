@@ -175,10 +175,13 @@
         var btnCloseModalEditQuanHe = document.getElementById('close-edit-quan-he');
         var btnCloseModalDeleteQuanHe = document.getElementById('btn-close-xac-nhan-xoa-quan-he');
         
-        btnAddQuanHe.onclick = function(){
-            openModal(modelAddQuanHe);
-            var idViTri = this.getAttribute('id-vi-tri');
-            showModalThemQuanHe(idViTri)
+        if(btnAddQuanHe){
+            btnAddQuanHe.onclick = function(){
+                openModal(modelAddQuanHe);
+                var idViTri = this.getAttribute('id-vi-tri');
+                showModalThemQuanHe(idViTri)
+            }
+
         }
 
         btnCloseModalAddQuanHe.addEventListener("click",function(){

@@ -1,7 +1,9 @@
 <table>
     <tr>
         <td colspan="2"><b>1. Mô tả chung về chức danh/vị trí công việc</b>
-            @if(auth()->user()->hasPermissionTo('add_mtcv') && auth()->user()->isAddViTri($viTri) || auth()->user()->hasRole('admin'))
+            @if(auth()->user()->hasRole('mo_ta_cong_viec') 
+            // Trường hợp vừa có quyền và vừa là cấp trên
+            &&  auth()->user()->isViTri($viTri) || auth()->user()->hasRole('admin'))
             <a id="add-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                 <span class="material-icons" style="color: green">
                     add_circle_outline
@@ -114,16 +116,22 @@
         var modalXacNhanUnLock = document.getElementById('xac-nhan-unlock');
         var btnCloseXacNhanLock = document.getElementById('btn-close-xac-nhan-lock');
         var btnCloseXacNhanUnLock = document.getElementById('btn-close-xac-nhan-unlock');
-        var idViTri = btnLockVitri.getAttribute('id-vi-tri');
+        
 
 
-        btnLockVitri.addEventListener("click", function() {
-            modalXacNhanLock.classList.add('show');
-        })
+        if(btnLockVitri != null){
+            btnLockVitri.addEventListener("click", function() {
+                modalXacNhanLock.classList.add('show');
+            })
+            var idViTri = btnLockVitri.getAttribute('id-vi-tri');
+        }
 
-        btnUnlockVitri.addEventListener("click", function() {
-            modalXacNhanUnLock.classList.add('show');
-        })
+        if(btnUnlockVitri){
+            btnUnlockVitri.addEventListener("click", function() {
+                modalXacNhanUnLock.classList.add('show');
+            })
+        }
+
 
         btnCloseXacNhanLock.addEventListener("click", function() {
             modalXacNhanLock.classList.remove('show');

@@ -158,7 +158,7 @@ class User extends Authenticatable
         return $this->hasOne(Vitri::class,'id_user','id');
     }
 
-    public function isAddViTri($viTriKiemTra)
+    public function isViTri($viTriKiemTra)
     {
         $viTriUser = $this->viTri;
         $listIDCapDuoi = $this->listIdCapDuoi($viTriUser);

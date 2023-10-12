@@ -162,8 +162,11 @@
         })
         
         // When the user clicks the button, open the modal 
-        btnAddNhiemVu.onclick = function() {
-           openModal(modalAddTrachNhiem);
+        if(btnAddNhiemVu != null){
+            btnAddNhiemVu.onclick = function() {
+               openModal(modalAddTrachNhiem);
+            }
+
         }
 
         
