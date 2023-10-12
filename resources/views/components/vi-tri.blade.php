@@ -262,8 +262,13 @@
         var btnAddViTri = document.getElementById("add-vi-tri");
         var btnXoaViTri = document.getElementById('delete-vi-tri');
 
-        var jsonViTri = JSON.parse(btnEditViTri.getAttribute('vi-tri'));
-        var jsonAddViTri = JSON.parse(btnAddViTri.getAttribute('vi-tri'));
+        if( btnEditViTri != null){
+            var jsonViTri = JSON.parse(btnEditViTri.getAttribute('vi-tri'));
+        }
+
+        if(btnAddViTri != null){
+            var jsonAddViTri = JSON.parse(btnAddViTri.getAttribute('vi-tri'));
+        }
 
         // Get the <span> element that closes the modal
         var closeViTri = document.getElementById("close_vi_tri");
@@ -372,6 +377,7 @@
 
         // When the user clicks the button, open the modal 
        
+        if(btnEditViTri != null){
             btnEditViTri.addEventListener("click", function() {
                 if (jsonViTri.trang_thai == 1) {
                     $('#thong-bao-trang-thai').removeClass('alert-success').addClass('alert-danger').html(
@@ -384,9 +390,13 @@
                 }
             });
 
+        }
+            
+        if(btnAddViTri != null){
             btnAddViTri.addEventListener("click", function() {
                 openModal(modalAddViTri);
             });
+        }
 
 
         // Event listener for closing the modal
@@ -400,9 +410,12 @@
             closeModal(modalAddViTri);
         });
 
-        btnXoaViTri.addEventListener("click",function(){
-            openModal(modalXacNhanXoaViTri);
-        })
+        if(btnXoaViTri != null){
+            btnXoaViTri.addEventListener("click",function(){
+                openModal(modalXacNhanXoaViTri);
+            })
+
+        }
 
         btnCloseXacNhanXoaViTri.addEventListener("click",function(){
             closeModal(modalXacNhanXoaViTri);
