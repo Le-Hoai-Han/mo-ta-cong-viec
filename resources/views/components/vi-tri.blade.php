@@ -68,7 +68,7 @@
                                                     {{ ($viTri->user != null ? $viTri->user->id : '') == $user->id ? 'selected' : '' }}
                                                     value="{{ $user->id }}">{{ $user->name }}</option>
                                             @endforeach
-                                            <option value="0" {{$viTri->id_user == null ? 'selected' :''}}>null</option>
+                                            <option value="0" {{$viTri->id_user == null ? 'selected' :''}}>Trống</option>
                                         </select>
                                         @error('id_user')
                                             <span class="help text-red-500"> {{ $message }}</span>
