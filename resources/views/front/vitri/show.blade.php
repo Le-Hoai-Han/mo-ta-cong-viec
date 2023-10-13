@@ -226,16 +226,11 @@
     .border-bottom-none{
         border-bottom:  #ff000000 solid 1px;
     }
-    .tbody_mo_ta> tr:nth-last-child(2) >.border-bottom-none,
+    .tbody_mo_ta > tr:nth-last-child(2) >.border-bottom-none,
     .tbody_mo_ta:last-child >tr  >.border-bottom-none{
         border-bottom:  #000 solid 1px;
     }
-    #add-mo-ta-trach-nhiem{
-        display: none;
-    }
-    .tbody_mo_ta > tr:nth-last-child(2)  > .border-bottom-none > .list-nhiem-vu #add-mo-ta-trach-nhiem{
-        display: block;
-    }
+   
 
     </style>
 @endpush
