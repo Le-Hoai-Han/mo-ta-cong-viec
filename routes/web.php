@@ -101,7 +101,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
 
         // Front-end
         Route::put('front-tieu-chuan/{id}/update',[FrontTieuChuanController::class,'update']);
-        Route::resource('front-tieu-chuan','App\http\Controllers\Front\FrontTieuChuanController')->parameters([
+        Route::resource('front-tieu-chuan','App\Http\Controllers\Front\FrontTieuChuanController')->parameters([
             'front-tieu-chuan' => 'tieu-chuan:id'
         ])->except(['update']);
         
