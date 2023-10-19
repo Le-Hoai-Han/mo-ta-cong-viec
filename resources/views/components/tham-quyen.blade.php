@@ -18,7 +18,7 @@
                                 <label class="label" for="id_vi_tri">
                                     Vị trí
                                 </label>
-                                <select class="form-control" name="id_vi_tri">
+                                <select class="form-control" name="id_vi_tri" disabled>
                                         <option value="" id="option-vi-tri"></option>
                                 </select>
                                 @error('id_vi_tri')
@@ -88,7 +88,7 @@
                                     <label class="label" for="id_vi_tri">
                                         Vị trí
                                     </label>
-                                    <select class="form-control" name="id_vi_tri">
+                                    <select class="form-control" name="id_vi_tri" disabled>
                                             <option value="" id="option-vi-tri-edit"></option>
                                     </select>
                                     @error('id_vi_tri')

@@ -16,7 +16,7 @@
                                     <label class="label" for="ten_nhiem_vu">
                                         Tên nhiệm vụ
                                     </label>
-                                    <select name="id_nhiem_vu" class="form-control" id="select-ten-nhiem-vu-add-mo-ta">       
+                                    <select name="id_nhiem_vu" class="form-control" id="select-ten-nhiem-vu-add-mo-ta" disabled>       
                                         <option value="" id="option_trach_nhiem"></option>
                                     </select>
                                     @error('ten_nhiem_vu')
@@ -99,7 +99,7 @@
                                         <label class="label" for="ten_nhiem_vu">
                                             Tên nhiệm vụ
                                         </label>
-                                        <select name="id_nhiem_vu" class="form-control">
+                                        <select name="id_nhiem_vu" class="form-control" disabled>
                                             @foreach($listNhiemVu as $nhiemVu)
                                             <option value="" id="option_edit_trach_nhiem"></option>
                                             @endforeach
