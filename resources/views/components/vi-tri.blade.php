@@ -166,7 +166,7 @@
                                         <label class="label" for="noi_lam_viec">
                                             Vị trí cấp trên
                                         </label>
-                                        <select name="id_vi_tri_quan_ly" class="form-control">
+                                        <select name="id_vi_tri_quan_ly" class="form-control" disabled>
                                             <option  value="{{$viTri->id}}" id="input-vi-tri-cap-tren-add-vi-tri">{{$viTri->ten_vi_tri}} - {{$viTri->user != null ? $viTri->user->name:''}}</option> 
                                         </select>
                                         @error('id_vi_tri_quan_ly')

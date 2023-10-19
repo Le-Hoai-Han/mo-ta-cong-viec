@@ -20,7 +20,7 @@
                                     <label class="label" for="id_vi_tri">
                                         Tên vị trí
                                     </label>
-                                    <select name="id_vi_tri"  class="form-control"> 
+                                    <select name="id_vi_tri"  class="form-control" disabled> 
                                         <option value="" id="option_add_quan_he"></option>
                                     </select>
                                     @error('id_vi_tri')
@@ -94,7 +94,7 @@
                                         <label class="label" for="id_vi_tri">
                                             Vị Trí
                                         </label>
-                                        <select name="id_vi_tri" class="form-control">                             
+                                        <select name="id_vi_tri" class="form-control" disabled>                             
                                             <option  value="" id="option_edit_quan_he"></option>
                                         </select>
                                         @error('id_vi_tri')
