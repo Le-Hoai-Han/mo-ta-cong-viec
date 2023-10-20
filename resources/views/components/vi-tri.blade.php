@@ -21,7 +21,7 @@
                                             Tên vị trí
                                         </label>
                                         <input class="form-control" name="ten_vi_tri" type="text"
-                                            placeholder="Tên vị trí" value="{!! old('ten_vi_tri', $viTri->ten_vi_tri) !!}" disabled>
+                                            placeholder="Tên vị trí" value="{!! old('ten_vi_tri', $viTri->ten_vi_tri) !!}">
                                         @error('ten_vi_tri')
                                             <span class="help text-red-500"> {{ $message }}</span>
                                         @enderror
@@ -166,7 +166,7 @@
                                         <label class="label" for="noi_lam_viec">
                                             Vị trí cấp trên
                                         </label>
-                                        <select name="id_vi_tri_quan_ly" class="form-control" disabled>
+                                        <select name="id_vi_tri_quan_ly" class="form-control" >
                                             <option  value="{{$viTri->id}}" id="input-vi-tri-cap-tren-add-vi-tri">{{$viTri->ten_vi_tri}} - {{$viTri->user != null ? $viTri->user->name:''}}</option> 
                                         </select>
                                         @error('id_vi_tri_quan_ly')
