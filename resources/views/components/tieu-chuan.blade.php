@@ -16,7 +16,7 @@
                                     <label class="label" for="ten_nhiem_vu">
                                         Vị trí
                                     </label>
-                                    <select name="id_vi_tri" class="form-control" disabled>
+                                    <select name="id_vi_tri" class="form-control">
                                         <option value="" id="option_vi_tri"></option>
                                     </select>
                                     @error('id_vi_tri')
@@ -212,7 +212,7 @@
                                             <label class="label" for="ten_nhiem_vu">
                                                 Vị trí
                                             </label>
-                                            <select name="id_vi_tri" class="form-control" disabled>
+                                            <select name="id_vi_tri" class="form-control">
                                                 <option value="" id="option_vi_tri_edit"></option>
                                             </select>
                                             @error('id_vi_tri')
