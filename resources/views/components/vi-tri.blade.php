@@ -11,7 +11,7 @@
                         <h5>Edit vị trí</h5>
                     </div>
                     <div class="card-body">
-                        <form>
+                        <form method="POST">
                             @csrf
                             @method('PUT')
                             <div class="row">
@@ -21,7 +21,7 @@
                                             Tên vị trí
                                         </label>
                                         <input class="form-control" name="ten_vi_tri" type="text"
-                                            placeholder="Tên vị trí" value="{!! old('ten_vi_tri', $viTri->ten_vi_tri) !!}">
+                                            placeholder="Tên vị trí" value="{{ old('ten_vi_tri', $viTri->ten_vi_tri) }}" id="input-edit-ten-vi-tri">
                                         @error('ten_vi_tri')
                                             <span class="help text-red-500"> {{ $message }}</span>
                                         @enderror
@@ -278,10 +278,20 @@
          //Thêm giá trị input tên vị trí
          var inputAddTenViTri = document.getElementById('input-add-ten-vi-tri');
         var valueInputAddTenViTri = inputAddTenViTri.value;
+
+       
         
         inputAddTenViTri.addEventListener('input',function(element){
             var inputValueAdd = element.target.value;
             valueInputAddViTri = inputValueAdd
+        })
+
+         //Update giá trị input tên vị trí
+         var inputEditTenViTri = document.getElementById('input-edit-ten-vi-tri');
+        var valueInputEditTenViTri = inputEditTenViTri.value;
+        inputEditTenViTri.addEventListener('input',function(element){
+            var inputValueEdit = element.target.value;
+            valueInputEditTenViTri = inputValueEdit
         })
 
         //Thay đổi giá trị input phòng ban
@@ -437,7 +447,7 @@
                 dateType: 'json',
                 data: {
                     "_token": "{{ csrf_token() }}",
-                    "ten_vi_tri": "{{ $viTri->ten_vi_tri }}",
+                    "ten_vi_tri": valueInputEditTenViTri,
                     "phong_ban": valueInputPhongBanEditViTri,
                     "id_vi_tri_quan_ly": idViTriCapTren,
                     "id_user": idUser,
