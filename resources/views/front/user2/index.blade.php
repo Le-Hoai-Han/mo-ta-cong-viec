@@ -19,7 +19,7 @@
     
     {{-- <script src="{{asset('treant-js-master/examples/basic-example/basic-example.js')}}"></script> --}}
 
-   <script>
+   <script type="text/javascript">
      
         $(document).ready(function() {
             $.ajax({
