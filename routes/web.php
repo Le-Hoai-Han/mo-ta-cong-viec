@@ -20,6 +20,7 @@ use App\View\Components\FrontLayout;
 use App\Http\Controllers\Front\FrontQuanHeController;
 use App\Http\Controllers\Front\FrontThamQuyenController;
 use App\Http\Controllers\Front\FrontTieuChuanController;
+use App\Http\Controllers\Front\ASKController;
 
 /*
 |--------------------------------------------------------------------------
@@ -140,6 +141,12 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::resource('front-user','App\Http\Controllers\Front\UserController')->parameters([
             'front-user' =>'user:id'
         ]);
+
+        // ASK 
+        Route::put('front-ask/{id}/update',[ASKController::class,'update']);
+        Route::delete('front-ask-delete/{id}',[ASKController::class,'destroy']);
+        Route::get('/get-data-ask',[ASKController::class,'__getASK']);
+        Route::resource('/front-ask','App\Http\Controllers\Front\ASKController')->except(['update','destroy']);;
         
         Route::get('getData-vi-tri',[FrontUserController::class,'getData'])->name('vi-tri.getData');
         Route::get('getData2-vi-tri',[FrontUserController::class,'getData2'])->name('vi-tri.getData2');

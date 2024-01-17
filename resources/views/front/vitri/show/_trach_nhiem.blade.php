@@ -129,5 +129,8 @@
         function closeModal(modal) {
             modal.classList.remove('show');
         }
+
+    
+
     </script>
 @endpush

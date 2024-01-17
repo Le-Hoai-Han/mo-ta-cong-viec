@@ -150,11 +150,11 @@
         display: none;
         margin: 50px 0px;
     }
-    .list-nhiem-vu,.list-quan-he, .list-tham-quyen{
+    .list-nhiem-vu,.list-quan-he, .list-tham-quyen,.list-ask{
         padding-left: 40px;
         min-height: 100px;
     }
-    .list-nhiem-vu li,.list-tham-quyen li,.list-quan-he li{
+    .list-nhiem-vu li,.list-tham-quyen li,.list-quan-he li,.list-ask li{
         margin: 5px 0px;
         font-size: 16px;
     }
