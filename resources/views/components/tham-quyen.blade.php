@@ -187,10 +187,10 @@
 
         btnEditThamQuyen.forEach(function(element){
             element.addEventListener("click",function(){
-                if(isProcessing){
-                    return;
-                }
-                isProcessing = true;
+                // if(isProcessing){
+                //     return;
+                // }
+                // isProcessing = true;
                 openModal(modalEditThamQuyen);
                 var idViTri = element.getAttribute('id-vi-tri');
                 var idThamQuyen = element.getAttribute('id-tham-quyen');

@@ -69,6 +69,10 @@ class Vitri extends Model
         return $this->hasMany(TieuChuanTuyenChon::class,'id_vi_tri','id');
     }
 
+    public function ASK(){
+        return $this->hasMany(ASK::class,'id_vi_tri','id');
+    }
+
     
 
 

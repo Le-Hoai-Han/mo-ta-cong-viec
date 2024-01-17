@@ -52,7 +52,7 @@
                                     @enderror
                                 </div>
 
-                                <div class="mb-4">
+                                {{-- <div class="mb-4">
                                     <label class="label" for="mo_ta">
                                         Mô tả 
                                     </label>
@@ -65,7 +65,7 @@
                                     @error('mo_ta')
                                         <span class="help text-red-500" style="color: red"> {{ $message}}</span>
                                     @enderror
-                                </div>
+                                </div> --}}
                                 <div class="mb-4">
                                     <a class="btn btn-primary" onclick="addMoTaNhiemVu()">Lưu</a>
                                     <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
@@ -141,7 +141,7 @@
                                             @enderror
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    {{-- <div class="col-md-4">
                                         <div class="mb-4">
                                             <label class="label" for="mo_ta">
                                                 Mô tả 
@@ -157,7 +157,7 @@
                                                 <span class="help text-red-500" style="color: red"> {{ $message}}</span>
                                             @enderror
                                         </div>
-                                    </div>
+                                    </div> --}}
                                 </div>
                                 <div class="mb-4">
                                     <button class="btn btn-primary">Lưu</button>
@@ -204,10 +204,10 @@
         // KHi user click vào thêm mô tả sẽ show modal và truyền biến 
         btnAddMoTaTrachNhiem.forEach(function(element){
             element.addEventListener("click",function(){
-                if(isProcessing){
-                    return;
-                }
-                isProcessing = true;
+                // if(isProcessing){
+                //     return;
+                // }
+                // isProcessing = true;
                 openModal(modalAddMoTaTrachNhiem);
                 const idNhiemVu = this.getAttribute("id-nhiem-vu");
                 showMoDalThemMoTa(idNhiemVu);
@@ -232,10 +232,11 @@
 
         btnEditMoTaTrachNhiem.forEach(function(element){
             element.addEventListener("click",function(){
-                if(isProcessing){
-                    return;
-                }
-                isProcessing = true;
+                // console.log(isProcessing);
+                // if(isProcessing){
+                //     return;
+                // }
+                // isProcessing = true;
                openModal(modalEditMoTaTrachNhiem);
                 const idNhiemVu = this.getAttribute("id-nhiem-vu");
                 const idMoTa = this.getAttribute("id-mo-ta");
@@ -269,11 +270,11 @@
         })
 
         // Thay đổi giá trị của mô tả khi add thêm mô tả
-        var textAreaMoTaAddMoTa = document.getElementById('textarea-mo-ta-add-mo-ta');
-        var valueMoTaAddMoTa = '';
-        textAreaMoTaAddMoTa.addEventListener("input",function(event){
-            valueMoTaAddMoTa = event.target.value;
-        })
+        // var textAreaMoTaAddMoTa = document.getElementById('textarea-mo-ta-add-mo-ta');
+        // var valueMoTaAddMoTa = '';
+        // textAreaMoTaAddMoTa.addEventListener("input",function(event){
+        //     valueMoTaAddMoTa = event.target.value;
+        // })
 
         function showMoDalThemMoTa(idTrachNhiem){
             $.ajax({
@@ -315,9 +316,9 @@
                         optionEditTrachNhiem.value = res[0].id;
                         chiTietText.value = res[1].chi_tiet;
                         ketQuaText.value = res[1].ket_qua;
-                        moTaText.value = res[1].mo_ta;
 
                         routeUpdate = "{{url('front-mo-ta-nhiem-vu')}}/"+res[1].id+"/update";
+                        console.log(routeUpdate);
                         formUpdateMoTa.action = routeUpdate;
 
                     }
@@ -349,7 +350,6 @@
                     "id_nhiem_vu":optionTrachNhiem.value,
                     "chi_tiet": valueChiTietAddMoTa,
                     "ket_qua": valueKetQuaAddMoTa,
-                    "mo_ta": valueMoTaAddMoTa,
                 },
                 success:function(res){
                     if(res.status == 'success'){

@@ -3,13 +3,12 @@
 namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
-use App\Models\MoTaNhiemVu;
-use App\Models\NhiemVu;
+use App\Models\ASK;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as RoutingController;
 use Illuminate\Support\Facades\Validator;
 
-class FrontMoTaNhiemVuController extends RoutingController
+class ASKController extends RoutingController
 {
     /**
      * Display a listing of the resource.
@@ -40,12 +39,8 @@ class FrontMoTaNhiemVuController extends RoutingController
     public function store(Request $request)
     {
         $validate = $this->__validate($request->all());
-        MoTaNhiemVu::create($validate);
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Thêm thành công',
-        ]);
-        
+        ASK::create($validate);
+        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Thêm thành công');
     }
 
     /**
@@ -79,11 +74,10 @@ class FrontMoTaNhiemVuController extends RoutingController
      */
     public function update(Request $request, $id)
     {
-        $moTaNhiemVu = MoTaNhiemVu::find($id);
-        $validate=$this->__validate($request->all());
-        $moTaNhiemVu->update($validate);
+        $ASK = ASK::find($id);
+        $validate = $this->__validate($request->all());
+        $ASK->update($validate);
         return redirect()->back()->with('success','Cập nhật thành công');
-
     }
 
     /**
@@ -94,30 +88,26 @@ class FrontMoTaNhiemVuController extends RoutingController
      */
     public function destroy($id)
     {
-        $mota = MoTaNhiemVu::find($id);
-        $mota->delete();
+        $ASK = ASK::find($id);
+        $ASK->delete();
         return response()->json([
-            'status' => 'success',
-            'message' => 'Xóa thành công',
+            'status' =>'success',
+            'message' =>'Xóa thành công',
         ]);
     }
 
-    function __getTrachNhiem(Request $request){
-        $trachNhiem = NhiemVu::find($request->idTrachNhiem);
-        $moTa = MoTaNhiemVu::find($request->idMoTa);
-        return [$trachNhiem,$moTa];
-    }
     public function __validate($data){
         $validate = Validator::make($data, [
-            'id_nhiem_vu' =>'required',
-            'chi_tiet' => 'required',
-            'ket_qua' => 'required',
-            'mo_ta' => 'nullable'
-        ],[
-            'chi_tiet.required' => 'Vui lòng nhập chi tiết nhiệm vụ',
-            'ket_qua.required' => 'Vui lòng nhập kết quả',
+            'id_vi_tri'=>'required',
+            'loai' =>'nullable',
+            'noi_dung' =>'nullable',
         ]);
 
         return $validate->validate();
+    }
+
+    public function __getASK(Request $request){
+        $ASK = ASK::find($request->idASK);
+        return [$ASK,$ASK->viTri];
     }
 }

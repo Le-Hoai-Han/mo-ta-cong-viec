@@ -274,6 +274,10 @@
             @include('front.vitri.show._tieu_chi',[
                 'viTri'=>$viTri
             ])
+
+            @include('front.vitri.show._ask',[
+                'viTri'=>$viTri
+            ])
                 
         </div>
         
