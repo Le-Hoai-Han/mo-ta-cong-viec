@@ -154,7 +154,7 @@
             </div>
             <x-xac-nhan id="xac-nhan-xoa-ask" class="alert-danger">
                 <x-slot name="title">Xác nhận</x-slot>
-                <x-slot name="body">ASK này sẽ bị xóa. Bạn có chắc chắn</x-slot>
+                <x-slot name="body">Thông tin này sẽ bị xóa. Bạn có chắc chắn</x-slot>
                 <x-slot name="buttonClose">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
                         id="btn-close-xac-nhan-xoa-ask">Đóng</button>
