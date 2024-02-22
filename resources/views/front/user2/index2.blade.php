@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width">
-    <title> Basic example </title>
+    <title> Sơ đồ tổ chức </title>
     <link rel="stylesheet" href="{{asset('treant-js-master/Treant.css')}}">
     {{-- <link rel="stylesheet" href="{{asset('treant-js-master/examples/connectors/connectors.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('treant-js-master/examples/connectors/connectors.css')}}">
