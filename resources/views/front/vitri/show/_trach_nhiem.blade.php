@@ -1,5 +1,5 @@
 <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>4. Các trách nhiệm và nhiệm vụ chính</b>
-    @if (auth()->user()->hasRole('admin') ||
+    @if (auth()->user()->hasRole('Admin') ||
             (auth()->user()->hasRole('mo_ta_cong_viec') &&
                 auth()->user()->isCapTren($viTri)))
         <a id="add-trach-nhiem" style="cursor: pointer;<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
@@ -23,14 +23,14 @@
                 <tr id="trach-nhiem-{{ $i }}">
                     <td class="border-top-bottom-none">
                         <b style="font-size: 18px;">{{ $i++ }}. {{ $nhiemVu->ten_nhiem_vu }}</b>
-                        @if (auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                        @if (auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
                             <a id="add-mo-ta-trach-nhiem" id-nhiem-vu="{{ $nhiemVu->id }}" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
                                 <span class="material-icons" style="font-size: 20px;cursor: pointer;">
                                     add_circle_outline
                                 </span>
                             </a>
                         @endif
-                        @if (auth()->user()->hasRole('admin') ||
+                        @if (auth()->user()->hasRole('Admin') ||
                                 (auth()->user()->hasRole('mo_ta_cong_viec') &&
                                     auth()->user()->isCapTren($viTri)))
                             <a id="edit-trach-nhiem" id-trach-nhiem="{{ $nhiemVu->id }}" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
@@ -55,7 +55,7 @@
                         <ul class="list-nhiem-vu">
                             <li>
                                 {{ $moTa->chi_tiet }}
-                                @if (auth()->user()->hasRole('admin') ||
+                                @if (auth()->user()->hasRole('Admin') ||
                                         (auth()->user()->hasRole('mo_ta_cong_viec') &&
                                             auth()->user()->isCapTren($viTri)))
                                     <a id="edit-mo-ta-trach-nhiem" id-nhiem-vu="{{ $nhiemVu->id }}"
@@ -73,7 +73,7 @@
                                 @endif
                             </li>
 
-                            {{-- @if (auth()->user()->hasRole('admin') ||
+                            {{-- @if (auth()->user()->hasRole('Admin') ||
                                     (auth()->user()->hasRole('mo_ta_cong_viec') &&
                                         auth()->user()->isCapTren($viTri)))
                                 <a id="add-mo-ta-trach-nhiem" id-nhiem-vu="{{ $nhiemVu->id }}"

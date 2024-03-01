@@ -37,7 +37,7 @@
                         @forelse ($roles as $role)
                             {{-- <form action ="/roles/{{$role->id}}" method="POST" > --}}
                             <?php //dd($role->permissions());?>
-                            @if($role->name != 'admin')
+                            @if($role->name != 'Admin')
                                 {{-- @include('shared._permissions1', [
                                             'title' => $role->name .' Permissions',
                                             'options' => ['disabled'] ])
