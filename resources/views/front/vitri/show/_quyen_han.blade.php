@@ -1,6 +1,6 @@
 <div class="tham-quyen">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>5. Thẩm quyền/Quyền hạn</b>
-        @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
         <a style="cursor: pointer;<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>" id="btn-add-tham-quyen" id-vi-tri="{{$viTri->id}}">
             <span class="material-icons">
                 add_circle_outline
@@ -22,7 +22,7 @@
                             @foreach($viTri->thamQuyen->where('loai',1) as $thamQuyen)
                                 <li>
                                     {{$thamQuyen->noi_dung}} 
-                                    @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                                    @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
                                         <a id="btn-edit-tham-quyen" id-vi-tri="{{$viTri->id}}" id-tham-quyen="{{$thamQuyen->id}}" style="cursor: pointer;<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
                                             <span class="material-icons" style="font-size: 18px">
                                                 edit
@@ -43,7 +43,7 @@
                             @foreach($viTri->thamQuyen->where('loai',2) as $thamQuyen)
                             <li>
                                 {{$thamQuyen->noi_dung}} 
-                                @if(auth()->user()->hasRole('admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                                @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
                                     <a id="btn-edit-tham-quyen" id-vi-tri="{{$viTri->id}}" id-tham-quyen="{{$thamQuyen->id}}" style="cursor: pointer;<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
                                         <span class="material-icons" style="font-size: 18px">
                                             edit

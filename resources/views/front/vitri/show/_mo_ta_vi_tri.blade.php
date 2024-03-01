@@ -3,14 +3,14 @@
         <td colspan="2"><b>1. Mô tả chung về chức danh/vị trí công việc</b>
             @if(auth()->user()->hasRole('mo_ta_cong_viec') 
             // Trường hợp vừa có quyền và vừa là cấp trên
-            &&  auth()->user()->isViTri($viTri) || auth()->user()->hasRole('admin'))
+            &&  auth()->user()->isViTri($viTri) || auth()->user()->hasRole('Admin'))
             <a id="add-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                 <span class="material-icons" style="color: green">
                     add_circle_outline
                 </span>
             </a>
             @endif
-            @if (auth()->user()->hasRole('admin') ||
+            @if (auth()->user()->hasRole('Admin') ||
                     (auth()->user()->hasRole('mo_ta_cong_viec') &&
                         auth()->user()->isCapTren($viTri)))
                 

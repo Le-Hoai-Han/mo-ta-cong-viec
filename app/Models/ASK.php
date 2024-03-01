@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class ASK extends Model
 {
     use HasFactory;
-    protected $table ='ask';
+    protected $table ='tochuc___ask';
     protected $fillable = [
         'id_vi_tri',
         'noi_dung',
