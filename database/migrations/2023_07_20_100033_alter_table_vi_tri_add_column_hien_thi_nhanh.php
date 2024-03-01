@@ -13,7 +13,7 @@ class AlterTableViTriAddColumnHienThiNhanh extends Migration
      */
     public function up()
     {
-        Schema::table('vi_tri',function(Blueprint $table){
+        Schema::table('tochuc___vi_tri',function(Blueprint $table){
             $table->boolean('hien_thi_nhanh')->default(true);
         });
     }
@@ -25,7 +25,7 @@ class AlterTableViTriAddColumnHienThiNhanh extends Migration
      */
     public function down()
     {
-        Schema::table('vi_tri',function(Blueprint $table){
+        Schema::table('tochuc___vi_tri',function(Blueprint $table){
             $table->dropColumn('hien_thi_nhanh');
         });
     }
