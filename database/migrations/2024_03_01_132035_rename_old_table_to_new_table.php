@@ -17,7 +17,7 @@ class RenameOldTableToNewTable extends Migration
         Schema::rename('nhiem_vu', 'tochuc___nhiem_vu');
         Schema::rename('mo_ta_nhiem_vu', 'tochuc___mo_ta_nhiem_vu');
         Schema::rename('tham_quyen', 'tochuc___tham_quyen');
-        Schema::rename('quan_he', 'tochuc___quan_he');
+        Schema::rename('quan_he_trong_cong_viec', 'tochuc___quan_he');
         Schema::rename('tieu_chuan', 'tochuc___tieu_chuan');
         Schema::rename('ask', 'tochuc___ask');
     }
