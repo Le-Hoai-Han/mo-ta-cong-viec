@@ -13,7 +13,7 @@ class AlterTableViTriAddViTriCapBac extends Migration
      */
     public function up()
     {
-        Schema::table('vi_tri',function(Blueprint $table){
+        Schema::table('tochuc___vi_tri',function(Blueprint $table){
             $table->integer('stt_cap_bac')->default(100);
         });
     }

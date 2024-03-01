@@ -13,7 +13,7 @@ class CreateThamQuyenTable extends Migration
      */
     public function up()
     {
-        Schema::create('tham_quyen', function (Blueprint $table) {
+        Schema::create('tochuc___tham_quyen', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
             $table->text('noi_dung')->default(null);
             $table->unsignedInteger('id_vi_tri');
@@ -21,7 +21,7 @@ class CreateThamQuyenTable extends Migration
             $table->timestamps();
 
             $table->foreign('id_vi_tri')
-            ->on('vi_tri')
+            ->on('tochuc___vi_tri')
             ->references('id')
             ->onDeleteCascade();
         });
@@ -34,6 +34,6 @@ class CreateThamQuyenTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tham_quyen');
+        Schema::dropIfExists('tochuc___tham_quyen');
     }
 }

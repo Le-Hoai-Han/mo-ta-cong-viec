@@ -11,7 +11,7 @@
                 @endif
             </p>
             <p class="text-thong-tin"> Email: {{$nhanVien != null ? $nhanVien->email :'Đang cập nhật'}}</p>
-            <p class="text-thong-tin"> Số điện thoại: {{$nhanVien != null ? $nhanVien->sdt :'Đang cập nhật'}}</p>
+            <p class="text-thong-tin"> Số điện thoại: {{$nhanVien->profile != null ? $nhanVien->profile->sdt :'Đang cập nhật'}}</p>
             
         </td>
     </tr>

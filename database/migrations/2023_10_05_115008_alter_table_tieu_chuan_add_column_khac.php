@@ -13,7 +13,7 @@ class AlterTableTieuChuanAddColumnKhac extends Migration
      */
     public function up()
     {
-        Schema::table('tieu_chuan_tuyen_chon',function(Blueprint $table){
+        Schema::table('tochuc___tieu_chuan',function(Blueprint $table){
             $table->text('khac')->nullable();
         });
     }
@@ -25,7 +25,7 @@ class AlterTableTieuChuanAddColumnKhac extends Migration
      */
     public function down()
     {
-        Schema::table('tieu_chuan_tuyen_chon',function(Blueprint $table){
+        Schema::table('tochuc___tieu_chuan',function(Blueprint $table){
             $table->dropColumn('khac');
         });
     }

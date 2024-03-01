@@ -13,14 +13,14 @@ class CreateTableAsk extends Migration
      */
     public function up()
     {
-        Schema::create('ask', function (Blueprint $table) {
+        Schema::create('tochuc___ask', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
             $table->unsignedInteger('id_vi_tri');
             $table->text('noi_dung');
             $table->integer('loai');
 
             $table->foreign('id_vi_tri')
-            ->on('vi_tri')
+            ->on('tochuc___vi_tri')
             ->references('id')
             ->onDelete('cascade')
             ->onUpdate('cascade');
@@ -36,6 +36,6 @@ class CreateTableAsk extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('ask');
+        Schema::dropIfExists('tochuc___ask');
     }
 }

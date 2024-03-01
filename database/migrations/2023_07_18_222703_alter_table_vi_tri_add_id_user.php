@@ -13,7 +13,7 @@ class AlterTableViTriAddIdUser extends Migration
      */
     public function up()
     {
-        Schema::table('vi_tri',function(Blueprint $table){
+        Schema::table('tochuc___vi_tri',function(Blueprint $table){
             $table->unsignedBigInteger('id_user')->nullable();
 
             $table->foreign('id_user')
@@ -31,7 +31,7 @@ class AlterTableViTriAddIdUser extends Migration
      */
     public function down()
     {
-        Schema::table('vi_tri',function(Blueprint $table){
+        Schema::table('tochuc___vi_tri',function(Blueprint $table){
             $table->dropColumn('id_user');
         });
     }

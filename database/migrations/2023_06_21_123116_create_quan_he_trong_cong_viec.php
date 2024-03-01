@@ -13,15 +13,15 @@ class CreateQuanHeTrongCongViec extends Migration
      */
     public function up()
     {
-        Schema::create('quan_he_trong_cong_viec', function (Blueprint $table) {
+        Schema::create('tochuc___quan_he', function (Blueprint $table) {
             $table->unsignedInteger('id')->autoIncrement();
-            $table->text('noi_dung')->default(null);
+            $table->text('noi_dung')->nullable();
             $table->unsignedInteger('id_vi_tri');
             $table->boolean('loai')->default(1);
             $table->timestamps();
 
             $table->foreign('id_vi_tri')
-            ->on('vi_tri')
+            ->on('tochuc___vi_tri')
             ->references('id')
             ->onDeleteCascade()
             ->onUpdateCascade();
@@ -35,6 +35,6 @@ class CreateQuanHeTrongCongViec extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quan_he_trong_cong_viec');
+        Schema::dropIfExists('tochuc___quan_he');
     }
 }

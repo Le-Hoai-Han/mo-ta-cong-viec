@@ -13,11 +13,11 @@ class AlterTableViTriAddHienThi extends Migration
      */
     public function up()
     {
-        Schema::table('vi_tri',function(Blueprint $table){
+        Schema::table('tochuc___vi_tri',function(Blueprint $table){
             $table->string('stroke')->default('#000');
-            $table->string('arrow_start')->default(null);
-            $table->string('arrow_end')->default(null);
-            $table->string('stroke_dasharray')->default(null);
+            $table->string('arrow_start')->nullable();
+            $table->string('arrow_end')->nullable();
+            $table->string('stroke_dasharray')->nullable();
             $table->string('type')->default('step');
             $table->string('stackIndent')->default(30);
         });
@@ -30,7 +30,7 @@ class AlterTableViTriAddHienThi extends Migration
      */
     public function down()
     {
-        Schema::table('vi_tri',function(Blueprint $table){
+        Schema::table('tochuc___vi_tri',function(Blueprint $table){
             $table->dropColumn('stroke');
             $table->dropColumn('arrow_start');
             $table->dropColumn('arrow_end');
