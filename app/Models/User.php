@@ -76,6 +76,8 @@ class User extends Authenticatable
         'profile_photo_url',
     ];
 
+    const TT_Hoat_Dong = 1;
+    const TT_Khong_Hoat_Dong = 0;
     const EMPLOYEE = 1;
     const PUBLIC_USER = 2;
     protected static function booted()
@@ -97,6 +99,13 @@ class User extends Authenticatable
             // $profile->gender = 1;
             // $profile->save();
         });
+    }
+
+    public function scopeActiveEmployees($query)
+    {
+        return $query->where('status', self::TT_Hoat_Dong)
+                     ->where('type', self::EMPLOYEE)
+                     ->whereNotIn('id', [94, 138, 197]);
     }
 
     public function profile()
