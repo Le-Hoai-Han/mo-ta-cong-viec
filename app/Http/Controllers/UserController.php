@@ -67,7 +67,6 @@ class UserController extends Controller
             'name' => 'bail|required|min:2',
             'email' => 'required|email|unique:users',
             'password' => 'required|min:8',
-            'sdt' => 'required|min:10',
             'profile_photo_url' => 'files|max:2048'
         ]);
         // dd($validate);
@@ -75,7 +74,6 @@ class UserController extends Controller
         $user = new User();
         $user->name = $validate['name'];
         $user->email = $validate['email'];
-        $user->sdt = $validate['sdt'];
         $user->password = bcrypt($request->get('password'));
         $user->status = 1;
         $file = $request->file();

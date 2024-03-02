@@ -66,16 +66,7 @@
                                       <span class="help text-red-500"> {{ $message }}</span>
                                   @enderror
                               </div>
-                              <div class="mb-4">
-                                  <label class="label" for="sdt">
-                                      Số điện thoại
-                                  </label>
-                                  <input class="form-control" id="sdt" name="sdt" type="text"
-                                      placeholder="Số điện thoại" value="{!! old('sdt',$viTri->user->sdt) !!}">
-                                  @error('sdt')
-                                      <span class="help text-red-500"> {{ $message }}</span>
-                                  @enderror
-                              </div>
+                             
 
                               <div class="mb-4">
                                   <label class="label">
