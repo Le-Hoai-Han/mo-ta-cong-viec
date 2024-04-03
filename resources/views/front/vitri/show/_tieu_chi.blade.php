@@ -1,7 +1,7 @@
 <div class="tieu-chuan-tuyen-chon">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
         <b>7. Tiêu chuẩn tuyển chọn</b>
-        @if( (auth()->user()->hasRole('Admin') && $viTri->tieuChuan->isEmpty()) || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isEmpty() || auth()->user()->hasPermissionTo('edit_mtcv'))
+        @if( (auth()->user()->hasRole('Admin') && $viTri->tieuChuan->isEmpty()) || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isEmpty() || auth()->user()->hasPermissionTo('edit_mtcv') && $viTri->tieuChuan->isNotEmpty())
             <a id="btn_add_tieu_chuan" id-vi-tri="{{$viTri->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                 <span class="material-icons">
                     add_circle_outline
@@ -16,7 +16,7 @@
                 <th>Tiêu chí</th>
                 <th>
                     Yêu cầu
-                @if((auth()->user()->hasRole('Admin') || auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isNotEmpty() || auth()->user()->hasPermissionTo('edit_mtcv'))
+                @if((auth()->user()->hasRole('Admin') || auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isNotEmpty() || auth()->user()->hasPermissionTo('edit_mtcv') && $viTri->tieuChuan->isNotEmpty())
                     <a id="btn_edit_tieu_chuan" id-tieu-chuan="{{$viTri->tieuChuan[0]->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                         <span class="material-icons">
                             edit
