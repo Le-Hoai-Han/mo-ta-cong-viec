@@ -1,6 +1,6 @@
 <div class="tham-quyen">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>5. Thẩm quyền/Quyền hạn</b>
-        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
         <a style="cursor: pointer;<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>" id="btn-add-tham-quyen" id-vi-tri="{{$viTri->id}}">
             <span class="material-icons">
                 add_circle_outline
