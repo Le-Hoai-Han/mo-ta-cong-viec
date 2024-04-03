@@ -24,7 +24,7 @@
                     <ul class="list-quan-he">
                         @foreach($viTri->ASK->where('loai',0) as $item)
                             <li>{{$item->noi_dung}}
-                                @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                                @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                                     <a id="btn_edit_ask" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-ask="{{$item->id}}">
                                         <span class="material-icons" style="font-size: 20px">
                                             edit

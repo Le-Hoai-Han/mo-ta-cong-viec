@@ -43,7 +43,7 @@
                             @foreach($viTri->thamQuyen->where('loai',2) as $thamQuyen)
                             <li>
                                 {{$thamQuyen->noi_dung}} 
-                                @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                                @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                                     <a id="btn-edit-tham-quyen" id-vi-tri="{{$viTri->id}}" id-tham-quyen="{{$thamQuyen->id}}" style="cursor: pointer;<?php echo  ($viTri->trang_thai != 0 ? 'display:none':'') ?>">
                                         <span class="material-icons" style="font-size: 18px">
                                             edit

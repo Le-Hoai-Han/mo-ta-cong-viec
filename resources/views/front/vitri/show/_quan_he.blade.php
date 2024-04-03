@@ -22,7 +22,7 @@
                         <ul class="list-quan-he">
                             @foreach($viTri->quanHe->where('loai',0) as $quanHe)
                                 <li>{{$quanHe->noi_dung}}
-                                    @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                                    @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                                         <a id="btn_edit_quan_he" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-quan-he="{{$quanHe->id}}">
                                             <span class="material-icons" style="font-size: 20px">
                                                 edit

@@ -16,7 +16,7 @@
                 <th>Tiêu chí</th>
                 <th>
                     Yêu cầu
-                @if((auth()->user()->hasRole('Admin') || auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isNotEmpty())
+                @if((auth()->user()->hasRole('Admin') || auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isNotEmpty() || auth()->user()->hasPermissionTo('edit_mtcv'))
                     <a id="btn_edit_tieu_chuan" id-tieu-chuan="{{$viTri->tieuChuan[0]->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                         <span class="material-icons">
                             edit
