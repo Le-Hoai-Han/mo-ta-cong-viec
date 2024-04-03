@@ -1,7 +1,7 @@
 <div class="quan-he">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
         <b>6. Quan hệ công việc</b>
-        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
             <a id="btn_add_quan_he" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{$viTri->id}}">
                 <span class="material-icons">
                     add_circle_outline

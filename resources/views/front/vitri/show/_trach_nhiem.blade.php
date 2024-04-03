@@ -1,7 +1,7 @@
 <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>4. Các trách nhiệm và nhiệm vụ chính</b>
     @if (auth()->user()->hasRole('Admin') ||
             (auth()->user()->hasRole('mo_ta_cong_viec') &&
-                auth()->user()->isCapTren($viTri)))
+                auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
         <a id="add-trach-nhiem" style="cursor: pointer;<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
             <span class="material-icons">
                 add_circle_outline
