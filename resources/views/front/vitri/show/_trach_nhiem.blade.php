@@ -32,7 +32,7 @@
                         @endif
                         @if (auth()->user()->hasRole('Admin') ||
                                 (auth()->user()->hasRole('mo_ta_cong_viec') &&
-                                    auth()->user()->isCapTren($viTri)))
+                                    auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                             <a id="edit-trach-nhiem" id-trach-nhiem="{{ $nhiemVu->id }}" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
                                 <span class="material-icons" style="font-size: 20px;cursor: pointer;">
                                     edit
@@ -57,7 +57,7 @@
                                 {{ $moTa->chi_tiet }}
                                 @if (auth()->user()->hasRole('Admin') ||
                                         (auth()->user()->hasRole('mo_ta_cong_viec') &&
-                                            auth()->user()->isCapTren($viTri)))
+                                            auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                                     <a id="edit-mo-ta-trach-nhiem" id-nhiem-vu="{{ $nhiemVu->id }}"
                                         id-mo-ta="{{ $moTa->id }}" style="cursor: pointer;<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
                                         <span class="material-icons" style="font-size: 20px">
