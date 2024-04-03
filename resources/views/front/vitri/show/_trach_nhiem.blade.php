@@ -23,7 +23,7 @@
                 <tr id="trach-nhiem-{{ $i }}">
                     <td class="border-top-bottom-none">
                         <b style="font-size: 18px;">{{ $i++ }}. {{ $nhiemVu->ten_nhiem_vu }}</b>
-                        @if (auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)))
+                        @if (auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                             <a id="add-mo-ta-trach-nhiem" id-nhiem-vu="{{ $nhiemVu->id }}" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
                                 <span class="material-icons" style="font-size: 20px;cursor: pointer;">
                                     add_circle_outline
