@@ -31,7 +31,7 @@ class ThamQuyenController extends Controller
      */
     public function create()
     {
-        $listViTri = ViTri::select(['id','ten_vi_tri'])->get();
+        $listViTri = ViTri::select(['id','ten_vi_tri','id_user'])->get();
         return view('back-end.tham-quyen.create',[
             'listViTri'=>$listViTri
         ]);
@@ -68,7 +68,7 @@ class ThamQuyenController extends Controller
      */
     public function show($id)
     {
-        
+
     }
 
     /**

@@ -1,4 +1,4 @@
-<?php 
+<?php
 $current = "Nhiệm vụ";
 
 ?>
@@ -6,12 +6,12 @@ $current = "Nhiệm vụ";
 <x-dashboard-layout :current="$current">
     <x-slot name="title">Thêm nhiệm vụ</x-slot>
 
-    <?php 
+    <?php
     $list = [
         '/'=>'Trang chủ',
         route('nhiem-vu.index')=>'Danh sách nhiệm vụ'
     ]
-    ?> 
+    ?>
     <div class="main-div">
         <div class="row">
             <div class="col-12">
@@ -21,15 +21,15 @@ $current = "Nhiệm vụ";
                     </div>
                     <div class="card-body">
                         <form action="{{route('nhiem-vu.store')}}" method="POST">
-                        @csrf                  
+                        @csrf
                             <div class="mb-4">
                                 <label class="label" for="ten_nhiem_vu">
                                     Tên nhiệm vụ
                                 </label>
-                                <input class="form-control" 
-                                    name="ten_nhiem_vu" 
-                                    type="text" 
-                                    placeholder="Tên nhiệm vụ"                        
+                                <input class="form-control"
+                                    name="ten_nhiem_vu"
+                                    type="text"
+                                    placeholder="Tên nhiệm vụ"
                                     value="{!! old('ten_nhiem_vu', '') !!}"
                                 >
                                 @error('ten_nhiem_vu')
@@ -37,7 +37,7 @@ $current = "Nhiệm vụ";
                                 @enderror
                             </div>
 
-                            
+
 
                             <div class="mb-4">
                                 <label class="label" for="id_vi_tri">
@@ -45,7 +45,7 @@ $current = "Nhiệm vụ";
                                 </label>
                                 <select  name="id_vi_tri" class="form-control">
                                     @foreach($listViTri as $viTri)
-                                    <option {{$viTriHT->id == $viTri->id ? 'selected' :''}}  value="{{$viTri->id}}">{{$viTri->ten_vi_tri}}</option>
+                                    <option {{$viTriHT && $viTriHT->id == $viTri->id ? 'selected' :''}}  value="{{$viTri->id}}">{{$viTri->ten_vi_tri}} - {{ $viTri->user ? $viTri->user->name :'Chưa cập nhật' }}</option>
                                     @endforeach
                                 </select>
                                 @error('id_vi_tri')
@@ -53,7 +53,7 @@ $current = "Nhiệm vụ";
                                 @enderror
                             </div>
 
-                           
+
                             <div class="mb-4">
                                 <button class="btn btn-primary">Lưu</button>
                                 <a href="{{url()->previous()}}" class="btn btn-secondary">Hủy</a>
@@ -64,5 +64,5 @@ $current = "Nhiệm vụ";
             </div>
         </div>
     </div>
-    
+
 </x-dashboard-layout>

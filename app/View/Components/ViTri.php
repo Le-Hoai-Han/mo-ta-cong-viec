@@ -15,11 +15,13 @@ class ViTri extends Component
     public $viTri;
     public $listViTri;
     public $listUser;
-    public function __construct($viTri,$listViTri,$listUser)
+    public $listPhongBan;
+    public function __construct($viTri,$listViTri,$listUser,$listPhongBan)
     {
         $this->viTri = $viTri;
         $this->listViTri = $listViTri;
         $this->listUser = $listUser;
+        $this->listPhongBan = $listPhongBan;
     }
 
     /**
@@ -33,6 +35,7 @@ class ViTri extends Component
             'viTri' => $this->viTri,
             'listViTri' => $this->listViTri,
             'listUser' => $this->listUser,
+            'listPhongBan' => $this->listPhongBan,
         ]);
     }
 }

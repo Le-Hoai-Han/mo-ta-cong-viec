@@ -1,4 +1,4 @@
-<?php 
+<?php
 $current = "Nhiệm vụ";
 
 ?>
@@ -6,12 +6,12 @@ $current = "Nhiệm vụ";
 <x-dashboard-layout :current="$current">
     <x-slot name="title">Mô tả nhiệm vụ</x-slot>
 
-    <?php 
+    <?php
     $list = [
         '/'=>'Trang chủ',
         route('nhiem-vu.index')=>'Danh sách nhiệm vụ'
     ]
-    ?> 
+    ?>
     <div class="main-div">
         <div class="row">
             <div class="col-12">
@@ -21,14 +21,14 @@ $current = "Nhiệm vụ";
                     </div>
                     <div class="card-body">
                         <form action="{{route('mo-ta-nhiem-vu.store')}}" method="POST">
-                        @csrf                  
+                        @csrf
                             <div class="mb-4">
                                 <label class="label" for="ten_nhiem_vu">
                                     Tên nhiệm vụ
                                 </label>
                                 <select name="id_nhiem_vu" class="form-control">
                                     @foreach($listNhiemVu as $nhiemVu)
-                                    <option {{$nhiemVuHT->id == $nhiemVu->id ? 'selected':''}} value="{{$nhiemVu->id}}">{{$nhiemVu->ten_nhiem_vu}}</option>
+                                    <option {{$nhiemVuHT && $nhiemVuHT->id == $nhiemVu->id ? 'selected':''}} value="{{$nhiemVu->id}}">{{$nhiemVu->ten_nhiem_vu}}</option>
                                     @endforeach
                                 </select>
                                 @error('ten_nhiem_vu')
@@ -38,13 +38,13 @@ $current = "Nhiệm vụ";
 
                             <div class="mb-4">
                                 <label class="label" for="chi_tiet">
-                                    Chi tiết 
+                                    Chi tiết
                                 </label>
-                                <textarea rows="5" class="form-control" 
-                                id="" 
-                                name="chi_tiet" 
-                                type="text" 
-                                placeholder="Chi tiết"                        
+                                <textarea rows="5" class="form-control"
+                                id=""
+                                name="chi_tiet"
+                                type="text"
+                                placeholder="Chi tiết"
                                 value=""></textarea>
                                 @error('chi_tiet')
                                     <span class="help text-red-500" style="color: red"> {{ $message}}</span>
@@ -53,13 +53,13 @@ $current = "Nhiệm vụ";
 
                             <div class="mb-4">
                                 <label class="label" for="ket_qua">
-                                    Kết quả 
+                                    Kết quả
                                 </label>
-                                <textarea rows="3" class="form-control" 
-                                id="ket_qua" 
-                                name="ket_qua" 
-                                type="text" 
-                                placeholder="Kết quả"                        
+                                <textarea rows="3" class="form-control"
+                                id="ket_qua"
+                                name="ket_qua"
+                                type="text"
+                                placeholder="Kết quả"
                                 value=""></textarea>
                                 @error('ket_qua')
                                     <span class="help text-red-500" style="color: red"> {{ $message}}</span>
@@ -68,12 +68,12 @@ $current = "Nhiệm vụ";
 
                             <div class="mb-4">
                                 <label class="label" for="mo_ta">
-                                    Mô tả 
+                                    Mô tả
                                 </label>
-                                <textarea rows="5" class="form-control"  
-                                name="mo_ta" 
-                                type="text" 
-                                placeholder="Mô tả"                        
+                                <textarea rows="5" class="form-control"
+                                name="mo_ta"
+                                type="text"
+                                placeholder="Mô tả"
                                 value=""
                             ></textarea>
                                 @error('mo_ta')
@@ -90,5 +90,5 @@ $current = "Nhiệm vụ";
             </div>
         </div>
     </div>
-    
+
 </x-dashboard-layout>

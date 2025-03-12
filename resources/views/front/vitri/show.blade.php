@@ -26,7 +26,7 @@
     table,tr, td,th{
         border: 1px solid black;
         border-collapse: collapse;
-       
+
     }
     table{
         max-width: 1000px;
@@ -51,20 +51,20 @@
         margin: 5px 0px;
         font-size: 18px;
     }
-   
+
     .so-do-to-chuc{
         text-align: center;
         /* display: flex;
         flex-direction: column;
        gap: 20px; */
-       
+
     }
     .so-do-to-chuc_tieu_de{
      margin-top: 50px;
      display: flex;
     }
 
-    
+
     .cap_tren_truc_tiep{
         border: solid 2px #000;
         width: 400px;
@@ -72,10 +72,10 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin: 0px 20px 0px; 
+        margin: 0px 20px 0px;
         position: relative;
         z-index: 2;
-      
+
     }
     .so_do{
         position: relative;
@@ -97,8 +97,8 @@
         border: solid 2px #000;
         display:inline-flex;
         align-items: center;
-        justify-content: center; 
-        margin: 20px 0px; 
+        justify-content: center;
+        margin: 20px 0px;
         border-radius: 50%;
         position: relative;
         z-index: 2;
@@ -107,9 +107,9 @@
     .vi_tri_can_mo_ta_text{
         color: #000;
         text-decoration: none;
-        
+
     }
-   
+
 
     .trach-nhiem{
         width: 800px;
@@ -117,21 +117,21 @@
         border: solid 2px #000;
         display:inline-flex;
         align-items:baseline;
-       text-align:left; 
+       text-align:left;
         flex-direction: column;
         justify-content: left;
-        margin: 20px 0px; 
+        margin: 20px 0px;
         padding:10px 10px;
         position: relative;
         z-index: 2;
         background-color: #fff;
-       
+
     }
     .trach-nhiem-text{
         text-decoration: none;
         color: #000;
     }
-    
+
     #xem-them{
         text-align: center;
         margin: 20px 0px;
@@ -145,7 +145,7 @@
     .list-nhiem-vu{
         margin-bottom: 0px;
     }
-    
+
     .list-nhiem-vu,.list-quan-he, .list-tham-quyen{
         padding-left: 35px;
     }
@@ -159,9 +159,9 @@
         font-size: 16px;
     }
     /*  */
-    
+
     body {font-family: Arial, Helvetica, sans-serif;}
-    
+
     /* The Modal (background) */
     .modal {
       display: none; /* Hidden by default */
@@ -176,7 +176,7 @@
       background-color: rgb(0,0,0); /* Fallback color */
       background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     }
-    
+
     /* Modal Content */
     .modal-content {
       background-color: #fefefe;
@@ -185,7 +185,7 @@
       border: 1px solid #888;
       width: 80%;
     }
-    
+
     /* The Close Button */
     .close {
       color: #aaaaaa;
@@ -193,7 +193,7 @@
       font-size: 28px;
       font-weight: bold;
     }
-    
+
     .close:hover,
     .close:focus {
       color: #000;
@@ -230,7 +230,7 @@
     .tbody_mo_ta:last-child >tr  >.border-bottom-none{
         border-bottom:  #000 solid 1px;
     }
-   
+
 
     </style>
 @endpush
@@ -250,14 +250,15 @@
             ])
 
         @include('front.vitri.show._mo_ta_vi_tri',[
-            'viTri'=>$viTri
+            'viTri'=>$viTri,
+            'listPhongBan' => $listPhongBan
             ])
 
         @include('front.vitri.show._so_do_vi_tri',[
             'viTri'=>$viTri
         ])
 
-    
+
         <div id="">
             @include('front.vitri.show._trach_nhiem',[
                 'viTri'=>$viTri,
@@ -270,7 +271,7 @@
             @include('front.vitri.show._quan_he',[
                 'viTri'=>$viTri
             ])
-                
+
             @include('front.vitri.show._tieu_chi',[
                 'viTri'=>$viTri
             ])
@@ -278,8 +279,8 @@
             @include('front.vitri.show._ask',[
                 'viTri'=>$viTri
             ])
-                
+
         </div>
-        
+
     </div>
 </x-front-layout>

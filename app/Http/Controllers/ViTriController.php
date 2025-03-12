@@ -112,14 +112,14 @@ class ViTriController extends Controller
     public function __validate($data){
         $validate = Validator::make($data,[
             'ten_vi_tri' => 'required',
-            'phong_ban' => 'required',
+            'id_phong_ban' => 'required',
             'noi_lam_viec' => 'required',
             'muc_dich' => 'required',
             'id_vi_tri_quan_ly' => 'required',
             'id_user' =>'required'
         ],[
             'ten_vi_tri.required' => 'Tên vị trí không được bỏ trống',
-            'phong_ban.required' => 'Tên phòng ban không được bỏ trống',
+            'id_phong_ban.required' => 'Phòng ban không được bỏ trống',
             'noi_lam_viec.required' => 'Nơi làm việc không được bỏ trống',
             'muc_dich.required' => 'Mục đích không được bỏ trống',
         ]);
