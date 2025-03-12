@@ -20,7 +20,7 @@ use App\Models\Trainings\LearningSection;
 use App\Models\Trainings\TrainerCertification;
 use Spatie\Permission\Traits\HasPermissions;
 
-class User extends Authenticatable 
+class User extends Authenticatable
 {
     use HasApiTokens;
     use HasFactory;
@@ -36,7 +36,7 @@ class User extends Authenticatable
      *
      * @var array
      */
-    
+
 
     protected $fillable = [
         'name',
@@ -118,12 +118,12 @@ class User extends Authenticatable
      */
     public function roleNames()
     {
-       
+
         $roles = $this->roles->pluck('label')->toArray();
         return implode(', ', $roles);
     }
 
-   
+
     /**
      * return collection
      */
@@ -158,7 +158,7 @@ class User extends Authenticatable
      */
     public function nhanVienID() : int
     {
-        if($this->nhanVien == null) 
+        if($this->nhanVien == null)
             return 0;
         return $this->nhanVien->id;
     }
@@ -171,9 +171,9 @@ class User extends Authenticatable
     {
         $viTriUser = $this->viTri;
         $listIDCapDuoi = $this->listIdCapDuoi($viTriUser);
-        
+
         return in_array($viTriKiemTra->id, $listIDCapDuoi);
-        
+
     }
 
     public function isCapTren($viTriKiemTra)
@@ -182,7 +182,7 @@ class User extends Authenticatable
         $listIDCapDuoi = $this->listIdCapDuoi($viTriUser);
         unset($listIDCapDuoi[0]);
         return in_array($viTriKiemTra->id, $listIDCapDuoi);
-        
+
     }
 
     public function listIdCapDuoi($viTri)
@@ -197,6 +197,11 @@ class User extends Authenticatable
 
        return $listID;
     }
- 
+
+    public function userThuocPhongBan()
+    {
+        return $this->belongsToMany(PhongBan::class,'tochuc___user_thuoc_phong_bans','id_user','id_phong_ban');
+    }
+
 
 }

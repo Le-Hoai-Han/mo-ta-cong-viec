@@ -21,6 +21,7 @@ use App\Http\Controllers\Front\FrontQuanHeController;
 use App\Http\Controllers\Front\FrontThamQuyenController;
 use App\Http\Controllers\Front\FrontTieuChuanController;
 use App\Http\Controllers\Front\ASKController;
+use App\Http\Controllers\PhongBanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -43,7 +44,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::resource('users', 'App\Http\Controllers\UserController');
         Route::get('/users-data', [App\Http\Controllers\UserController::class, 'anyData'])->name('getUsersData');
         Route::resource('roles', 'App\Http\Controllers\RoleController');
-       
+
         //Role
         Route::resource('roles', 'App\Http\Controllers\RoleController');
 
@@ -62,7 +63,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         ]);
 
 
-        
+
         // Nhiệm vụ
 
        //  Back-end
@@ -77,7 +78,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::resource('front-nhiem-vu','App\Http\Controllers\Front\FrontNhiemVuController')->parameters([
             'front-nhiem-vu' =>'nhiem-vu:id'
         ])->except(['update','destroy']);
-        
+
         // Mô tả nhiệm vụ
 
         // Back-end
@@ -92,7 +93,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::resource('front-mo-ta-nhiem-vu','App\Http\Controllers\Front\FrontMoTaNhiemVuController')->parameters([
             'front-mo-ta-nhiem-vu' =>'mo-ta-nhiem-vu:id'
         ])->except(['update','destroy']);
-        
+
         // Tiêu chuẩn tuyển chọn
     //    Back-end
         Route::resource('dashboard/tieu-chuan','App\Http\Controllers\TieuChuanTuyenChonController')->parameters([
@@ -105,7 +106,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::resource('front-tieu-chuan','App\Http\Controllers\Front\FrontTieuChuanController')->parameters([
             'front-tieu-chuan' => 'tieu-chuan:id'
         ])->except(['update']);
-        
+
         // Thẩm quyền
         // Back-end
         Route::resource('dashboard/tham-quyen','App\Http\Controllers\ThamQuyenController')->parameters([
@@ -120,7 +121,7 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::resource('front-tham-quyen','App\Http\Controllers\Front\FrontThamQuyenController')->parameters([
             'front-tham-quyen' =>'tham-quyen:id'
         ])->except(['update','destroy']);
-        
+
         // Quan hệ trong công việc
         // Back-end
         Route::resource('dashboard/quan-he','App\Http\Controllers\QuanHeController')->parameters([
@@ -134,27 +135,32 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::resource('front-quan-he','App\Http\Controllers\Front\FrontQuanHeController')->parameters([
             'front-quan-he' =>'quan-he:id'
         ])->except(['update','destroy']);
-        
-        
+
+
         // Front-end
         // User
         Route::resource('front-user','App\Http\Controllers\Front\UserController')->parameters([
             'front-user' =>'user:id'
         ]);
 
-        // ASK 
+        // ASK
         Route::put('front-ask/{id}/update',[ASKController::class,'update']);
         Route::delete('front-ask-delete/{id}',[ASKController::class,'destroy']);
         Route::get('/get-data-ask',[ASKController::class,'__getASK']);
         Route::resource('/front-ask','App\Http\Controllers\Front\ASKController')->except(['update','destroy']);;
-        
+
         Route::get('getData-vi-tri',[FrontUserController::class,'getData'])->name('vi-tri.getData');
         Route::get('getData2-vi-tri',[FrontUserController::class,'getData2'])->name('vi-tri.getData2');
         Route::get('getData3-vi-tri',[FrontUserController::class,'getData3'])->name('vi-tri.getData3');
 
     Route::prefix('/vi-tri')->as('front.vi-tri.')->group(function(){
         Route::get('/{viTri}',[FrontViTriController::class,'show'])->name('show');
-    });    
+    });
     Route::get('/',[FrontUserController::class,'index']);
     Route::get('/giao-dien-2',[FrontUserController::class,'index2']);
+
+    // Xử  lý phòng ban
+    Route::resource('phong-ban','App\Http\Controllers\PhongBanController')->parameters([
+        'phong-ban' => 'phong-ban:id'
+    ]);
 });

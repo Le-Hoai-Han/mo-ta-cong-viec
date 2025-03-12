@@ -13,6 +13,7 @@ class Vitri extends Model
         'ten_vi_tri',
         'id_vi_tri_quan_ly',
         'phong_ban',
+        'id_phong_ban',
         'noi_lam_viec',
         'muc_dich',
         'id_user',
@@ -27,18 +28,18 @@ class Vitri extends Model
     protected static function booted()
     {
         static::creating(function ($viTri) {
-            if ($viTri->id_user == 0) 
+            if ($viTri->id_user == 0)
                 $viTri->id_user = null;
                 // $viTri->save();
             } );
 
         static::updating(function ($viTri) {
-            if ($viTri->id_user == 0) 
+            if ($viTri->id_user == 0)
                 $viTri->id_user = null;
                 // $viTri->save();
             } );
     }
-    
+
     public function capQuanLy(){
         return $this->belongsTo(Vitri::class,'id_vi_tri_quan_ly','id');
     }
@@ -47,7 +48,7 @@ class Vitri extends Model
         return $this->hasMany(Vitri::class,'id_vi_tri_quan_ly','id')->orderBy('stt_cap_bac');
     }
 
-    
+
 
     public function user(){
         return $this->hasOne(User::class,'id','id_user');
@@ -73,7 +74,7 @@ class Vitri extends Model
         return $this->hasMany(ASK::class,'id_vi_tri','id');
     }
 
-    
+
 
 
     /**
@@ -82,10 +83,10 @@ class Vitri extends Model
     public function soDoToChucCapDuoi($viTri){
         $nodeStructure=[];
         $mang1 = [];
-     
+
           foreach($viTri->capDuoi as $item){
             if($viTri->capDuoi->isEmpty()){
-            
+
                     $mang1 = [
                         'text' => [
                             'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
@@ -97,7 +98,7 @@ class Vitri extends Model
                         'HTMLid'=>'nhan-vien-'.$item->id,
                         'target' => 123,
                         'children' =>[]
-    
+
                     ];
 
                 }else{
@@ -112,7 +113,7 @@ class Vitri extends Model
                         'HTMLid'=>'nhan-vien-'.$item->id,
                         'target' => 123,
                         'children' =>$item->soDoToChucCapDuoi($item)
-    
+
                     ];
                 }
             }
@@ -123,10 +124,10 @@ class Vitri extends Model
 
     public function soDoToChucCapDuoi2($viTri) {
         $nodeStructure = [];
-    
+
         foreach ($viTri->capDuoi as $item) {
             $userName = $item->user != null ? $item->user->name : 'Đang cập nhật';
-    
+
             $node = [
                 'text' => [
                     'name' => $userName,
@@ -143,12 +144,12 @@ class Vitri extends Model
                     // 'stackIndent' => $item->stackIndent
                 ],
             ];
-    
+
             $node['HTMLid'] = 'nhan-vien-' . $item->id;
             if (!$item->capDuoi->isEmpty()) {
                 $node['children'] = $this->soDoToChucCapDuoi2($item);
             }
-    
+
             $nodeStructure[] = $node;
         }
         return $nodeStructure;
@@ -156,10 +157,10 @@ class Vitri extends Model
 
     public function soDoToChucCapDuoi3($viTri) {
         $nodeStructure = [];
-    
+
         foreach ($viTri->capDuoi as $item) {
             $userName = $item->user != null ? $item->user->name : 'Đang cập nhật';
-    
+
             $node = [
                 'text' => [
                     'name' => $userName,
@@ -176,15 +177,20 @@ class Vitri extends Model
                     // 'stackIndent' => $item->stackIndent
                 ],
             ];
-    
+
             $node['HTMLid'] = 'nhan-vien-' . $item->id;
             if (!$item->capDuoi->isEmpty()) {
                 $node['children'] = $this->soDoToChucCapDuoi3($item);
             }
-    
+
             $nodeStructure[] = $node;
         }
         return $nodeStructure;
     }
-    
+
+    public function phongBan()
+    {
+        return $this->belongsTo(PhongBan::class,'id_phong_ban','id');
+    }
+
 }

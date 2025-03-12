@@ -1,7 +1,7 @@
 <table>
     <tr>
         <td colspan="2"><b>1. Mô tả chung về chức danh/vị trí công việc</b>
-            @if(auth()->user()->hasRole('mo_ta_cong_viec') 
+            @if(auth()->user()->hasRole('mo_ta_cong_viec')
             // Trường hợp vừa có quyền và vừa là cấp trên
             &&  auth()->user()->isViTri($viTri) || auth()->user()->hasRole('Admin') || auth()->user()->hasPermissionTo('add_mtcv'))
             <a id="add-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
@@ -13,7 +13,7 @@
             @if (auth()->user()->hasRole('Admin') ||
                     (auth()->user()->hasRole('mo_ta_cong_viec') &&
                         auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
-                
+
                     <a id="edit-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                         <span class="material-icons">
                             edit
@@ -23,7 +23,7 @@
                         <span class="material-icons">
                             delete
                         </span>
-                    </a>       
+                    </a>
                     <a id="lock-vi-tri" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{ $viTri->id }}">
                         <span class="material-icons" style="color: green">
                             lock_open
@@ -34,9 +34,9 @@
                             lock
                         </span>
                     </a>
-              
+
             @endif
-               
+
         </td>
     </tr>
     <tr>
@@ -107,7 +107,7 @@
 
 
 
-<x-vi-tri :viTri="$viTri" :listViTri="$listViTri" :listUser="$listUser" />
+<x-vi-tri :viTri="$viTri" :listViTri="$listViTri" :listUser="$listUser" :listPhongBan="$listPhongBan" />
 @push('scripts')
     <script>
         var btnUnlockVitri = document.getElementById('unlock-vi-tri');
@@ -116,7 +116,7 @@
         var modalXacNhanUnLock = document.getElementById('xac-nhan-unlock');
         var btnCloseXacNhanLock = document.getElementById('btn-close-xac-nhan-lock');
         var btnCloseXacNhanUnLock = document.getElementById('btn-close-xac-nhan-unlock');
-        
+
 
 
         if(btnLockVitri != null){
@@ -158,7 +158,7 @@
                 }
 
                 closeSetTimeOut(500);
-                    
+
                 },
             })
         }

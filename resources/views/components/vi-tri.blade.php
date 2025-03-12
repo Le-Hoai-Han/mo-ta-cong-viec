@@ -32,8 +32,14 @@
                                         <label class="label" for="phong_ban">
                                             Phòng ban
                                         </label>
-                                        <input class="form-control" name="phong_ban" type="text"
-                                            placeholder="Tên phòng ban" value="{!! old('phong_ban', $viTri->phong_ban) !!}" id="input-phong-ban-edit-vi-tri">
+                                        <select name="id_phong_ban" class="form-control" id="input-phong-ban-edit-vi-tri">
+                                            <option value="">Chưa cập nhật</option>
+                                            @foreach ($listPhongBan as  $phongBan)
+                                                <option {{ $viTri->id_phong_ban == $phongBan->id ? 'selected' :'' }} value="{{ $phongBan->id }}">{!! old('phong_ban', $phongBan->name) !!}</option>
+                                            @endforeach
+                                        </select>
+                                        {{-- <input class="form-control" name="phong_ban" type="text"
+                                            placeholder="Tên phòng ban" value="{!! old('phong_ban', $viTri->phong_ban) !!}" id="input-phong-ban-edit-vi-tri"> --}}
                                         @error('phong_ban')
                                             <span class="help text-red-500"> {{ $message }}</span>
                                         @enderror
@@ -154,8 +160,14 @@
                                         <label class="label" for="phong_ban">
                                             Phòng ban
                                         </label>
-                                        <input class="form-control" name="phong_ban" type="text"
-                                            placeholder="Tên phòng ban" value="{!! old('phong_ban') !!}" id="input-phong-ban-add-vi-tri">
+                                        <select name="id_phong_ban" class="form-control" id="input-phong-ban-add-vi-tri">
+                                            <option value="">Chưa cập nhật</option>
+                                            @foreach ($listPhongBan as  $phongBan)
+                                                <option  value="{{ $phongBan->id }}">{!! old('phong_ban', $phongBan->name) !!}</option>
+                                            @endforeach
+                                        </select>
+                                        {{-- <input class="form-control" name="phong_ban" type="text"
+                                            placeholder="Tên phòng ban" value="{!! old('phong_ban') !!}" id="input-phong-ban-add-vi-tri"> --}}
                                         @error('phong_ban')
                                             <span class="help text-red-500"> {{ $message }}</span>
                                         @enderror
@@ -167,7 +179,7 @@
                                             Vị trí cấp trên
                                         </label>
                                         <select name="id_vi_tri_quan_ly" class="form-control" >
-                                            <option  value="{{$viTri->id}}" id="input-vi-tri-cap-tren-add-vi-tri">{{$viTri->ten_vi_tri}} - {{$viTri->user != null ? $viTri->user->name:''}}</option> 
+                                            <option  value="{{$viTri->id}}" id="input-vi-tri-cap-tren-add-vi-tri">{{$viTri->ten_vi_tri}} - {{$viTri->user != null ? $viTri->user->name:''}}</option>
                                         </select>
                                         @error('id_vi_tri_quan_ly')
                                             <span class="help text-red-500"> {{ $message }}</span>
@@ -279,8 +291,8 @@
          var inputAddTenViTri = document.getElementById('input-add-ten-vi-tri');
         var valueInputAddTenViTri = inputAddTenViTri.value;
 
-       
-        
+
+
         inputAddTenViTri.addEventListener('input',function(element){
             var inputValueAdd = element.target.value;
             valueInputAddViTri = inputValueAdd
@@ -297,8 +309,8 @@
         //Thay đổi giá trị input phòng ban
         var inputPhongBanEditViTri = document.getElementById('input-phong-ban-edit-vi-tri');
         var valueInputPhongBanEditViTri = inputPhongBanEditViTri.value;
-        
-        inputPhongBanEditViTri.addEventListener('input',function(element){
+
+        inputPhongBanEditViTri.addEventListener('change',function(element){
             var inputValue = element.target.value;
             valueInputPhongBanEditViTri = inputValue
         })
@@ -306,7 +318,7 @@
         //Thay đổi giá trị input phòng ban khi add vị trí
         var inputPhongBanAddViTri = document.getElementById('input-phong-ban-add-vi-tri');
         var valueInputPhongBanAddViTri = inputPhongBanAddViTri.value;
-        inputPhongBanAddViTri.addEventListener('input',function(element){
+        inputPhongBanAddViTri.addEventListener('change',function(element){
             var inputValueAddViTri = element.target.value;
             valueInputPhongBanAddViTri = inputValueAddViTri
         })
@@ -385,15 +397,15 @@
             colorAdd = colorAddViTri;
         })
 
-        // When the user clicks the button, open the modal 
-       
+        // When the user clicks the button, open the modal
+
         if(btnEditViTri != null){
             btnEditViTri.addEventListener("click", function() {
                 if (jsonViTri.trang_thai == 1) {
                     $('#thong-bao-trang-thai').removeClass('alert-success').addClass('alert-danger').html(
                         'Vị trí đang bị khóa thông tin').show();
                         closeSetTimeOut(500);
-                        
+
                 } else {
                     // Mở modal
                     openModal(modalViTri);
@@ -401,7 +413,7 @@
             });
 
         }
-            
+
         if(btnAddViTri != null){
             btnAddViTri.addEventListener("click", function() {
                 openModal(modalAddViTri);
@@ -431,7 +443,7 @@
             closeModal(modalXacNhanXoaViTri);
         })
 
-        
+
 
         // When the user clicks anywhere outside of the modal, close it
         window.onclick = function(event) {
@@ -448,7 +460,7 @@
                 data: {
                     "_token": "{{ csrf_token() }}",
                     "ten_vi_tri": valueInputEditTenViTri,
-                    "phong_ban": valueInputPhongBanEditViTri,
+                    "id_phong_ban": valueInputPhongBanEditViTri,
                     "id_vi_tri_quan_ly": idViTriCapTren,
                     "id_user": idUser,
                     "noi_lam_viec": valueNoiLamViec,
@@ -501,7 +513,7 @@
                     _token:'{{csrf_token()}}',
                     id_vi_tri_quan_ly:"{{$viTri->id}}",
                     ten_vi_tri:valueInputAddViTri,
-                    phong_ban:valueInputPhongBanAddViTri,
+                    id_phong_ban:valueInputPhongBanAddViTri,
                     noi_lam_viec: valueAddNoiLamViec,
                     muc_dich:valueAddMucDich,
                     id_user:idAddUser,

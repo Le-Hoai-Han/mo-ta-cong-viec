@@ -4,15 +4,18 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use App\Models\NhiemVu;
+use App\Models\PhongBan;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Vitri;
+use App\Traits\PhongBanTraits;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as RoutingController;
 use Illuminate\Support\Facades\Validator;
 
 class FrontViTriController extends RoutingController
 {
+    use PhongBanTraits;
     /**
      * Display a listing of the resource.
      *
@@ -61,12 +64,14 @@ class FrontViTriController extends RoutingController
         $listUser = User::ActiveEmployees()->select(['id','name'])->get();
         $listNhiemVu = NhiemVu::select(['id','ten_nhiem_vu'])->get();
         $roles = Role::pluck('name', 'id');
+        $listPhongBan = PhongBan::select(['id','name'])->get();
         return view('front.vitri.show',[
             'viTri' => $viTri,
             'listViTri' => $listViTri,
             'listUser' => $listUser,
             'listNhiemVu' => $listNhiemVu,
-            'roles' => $roles
+            'roles' => $roles,
+            'listPhongBan' => $listPhongBan,
         ]);
     }
 
@@ -97,6 +102,15 @@ class FrontViTriController extends RoutingController
             ]);
         }
         $data = $this->__validate($request->all());
+
+        // Xử lý add vào phòng ban
+        if(isset($data['id_phong_ban']) && $viTri->user){
+            $viTri->id_phong_ban = $data['id_phong_ban'];
+            $viTri->save();
+
+            // Xử lý add vào phòng ban
+            $this->xuLyAddPhongBan($viTri);
+        }
         $viTri->update($data);
         return response()->json([
             'status'=>'success',
@@ -154,15 +168,15 @@ class FrontViTriController extends RoutingController
     public function __validate($data){
         $validate = Validator::make($data,[
             'ten_vi_tri' => 'required',
-            'phong_ban' => 'required',
+            'id_phong_ban' => 'required',
             'noi_lam_viec' => 'required',
-            'muc_dich' => 'required',   
+            'muc_dich' => 'required',
             'id_vi_tri_quan_ly' => 'required',
             'id_user' =>'required',
             'stroke' =>'required'
         ],[
             'ten_vi_tri.required' => 'Tên vị trí không được bỏ trống',
-            'phong_ban.required' => 'Tên phòng ban không được bỏ trống',
+            'id_phong_ban.required' => 'Tên phòng ban không được bỏ trống',
             'noi_lam_viec.required' => 'Nơi làm việc không được bỏ trống',
             'muc_dich.required' => 'Mục đích không được bỏ trống',
         ]);

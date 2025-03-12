@@ -32,7 +32,7 @@ class QuanHeController extends Controller
     public function create()
     {
         $viTriHT = Vitri::find(2);
-        $listViTri = Vitri::select(['id','ten_vi_tri'])->get();
+        $listViTri = Vitri::select(['id','ten_vi_tri','id_user'])->get();
         return view('back-end.quan-he.create',[
             'listViTri'=>$listViTri,
             'viTriHT' => $viTriHT,
