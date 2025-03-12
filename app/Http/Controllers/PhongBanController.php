@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PhongBan;
 use App\Models\User;
+use App\Models\Vitri;
 use App\Traits\PhongBanTraits;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
@@ -78,6 +79,8 @@ class PhongBanController extends Controller
             $user = $validate['users'];
         }
         $phongBan->userThuocPhongBan()->sync( $user);
+        // Cập nhật id_phong_ban cho user mới trong bảng ViTri
+        Vitri::whereIn('id_user', $user)->update(['id_phong_ban' => $phongBan->id]);
 
        return redirect()->route('phong-ban.index')->with('success','Tạo phòng ban thành công');
 
@@ -131,24 +134,29 @@ class PhongBanController extends Controller
         ]);
 
         $user = [];
-        if(!empty($validate['users'])){
+        if (!empty($validate['users'])) {
             $user = $validate['users'];
 
+            // Lấy danh sách ID của user hiện có trong phòng ban
             $idUserCoSan = $phongBan->userThuocPhongBan->pluck('id')->toArray();
-            $idUserBiXoa = array_diff($idUserCoSan,$user);
-            if(!empty($idUserBiXoa)){
-                foreach($idUserBiXoa as $id){
-                    $users = User::find($id);
-                    if($users && $users->viTri){
-                        $viTri = $users->viTri;
-                        $viTri->id_phong_ban = null;
-                        $viTri->save();
-                }
+
+            // Xác định danh sách user cần xóa
+            $idUserBiXoa = array_diff($idUserCoSan, $user);
+
+            if (!empty($idUserBiXoa)) {
+                // Cập nhật id_phong_ban thành null trong bảng ViTri
+                Vitri::whereIn('id_user', $idUserBiXoa)->update(['id_phong_ban' => null]);
             }
+
+            // Cập nhật lại danh sách user trong phòng ban
+            $phongBan->userThuocPhongBan()->sync($user);
+
+            // Cập nhật id_phong_ban cho user mới trong bảng ViTri
+            Vitri::whereIn('id_user', $user)->update(['id_phong_ban' => $phongBan->id]);
         }
-        $phongBan->userThuocPhongBan()->sync( $user);
-        return redirect()->route('phong-ban.index')->with('success','Cập nhật phòng ban thành công');
-    }
+
+
+    return redirect()->route('phong-ban.index')->with('success','Cập nhật phòng ban thành công');
 }
 
     /**
