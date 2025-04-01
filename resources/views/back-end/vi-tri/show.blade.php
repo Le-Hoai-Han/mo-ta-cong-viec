@@ -31,7 +31,7 @@
     table,tr, td,th{
         border: 1px solid black;
         border-collapse: collapse;
-       
+
     }
     table{
         max-width: 1000px;
@@ -55,13 +55,13 @@
         margin: 5px 0px;
         font-size: 18px;
     }
-   
+
     .so-do-to-chuc{
         text-align: center;
         /* display: flex;
         flex-direction: column;
        gap: 20px; */
-       
+
     }
     .so-do-to-chuc_tieu_de{
      margin-top: 50px;
@@ -73,10 +73,10 @@
         display: inline-flex;
         align-items: center;
         justify-content: center;
-        margin: 0px 20px 0px; 
+        margin: 0px 20px 0px;
         position: relative;
         z-index: 2;
-      
+
     }
     .so_do{
         position: relative;
@@ -98,8 +98,8 @@
         border: solid 2px #000;
         display:inline-flex;
         align-items: center;
-        justify-content: center; 
-        margin: 20px 0px; 
+        justify-content: center;
+        margin: 20px 0px;
         border-radius: 50%;
         position: relative;
         z-index: 2;
@@ -108,9 +108,9 @@
     .vi_tri_can_mo_ta_text{
         color: #000;
         text-decoration: none;
-        
+
     }
-   
+
 
     .trach-nhiem{
         width: 400px;
@@ -118,15 +118,15 @@
         border: solid 2px #000;
         display:inline-flex;
         align-items:baseline;
-       text-align:left; 
+       text-align:left;
         flex-direction: column;
         justify-content: left;
-        margin: 20px 0px; 
+        margin: 20px 0px;
         padding:10px 10px;
         position: relative;
         z-index: 2;
         background-color: #fff;
-       
+
     }
     .trach-nhiem-text{
         text-decoration: none;
@@ -150,18 +150,11 @@
         display: none;
         margin: 50px 0px;
     }
-    .list-nhiem-vu,.list-quan-he, .list-tham-quyen,.list-ask{
-        padding-left: 40px;
-        min-height: 100px;
-    }
-    .list-nhiem-vu li,.list-tham-quyen li,.list-quan-he li,.list-ask li{
-        margin: 5px 0px;
-        font-size: 16px;
-    }
+
     .tieu-chuan-tuyen-chon td {
         font-size: 16px;
     }
-    
+
 </style>
 <body>
     <div class="container">
@@ -195,7 +188,7 @@
                     <p class="text-thong-tin"> Số điện thoại: {{$viTri->user->sdt}}</p>
                 </td>
             </tr>
-           
+
         </table>
 
         <table>
@@ -211,7 +204,7 @@
                     <p>Phòng ban</p>
                 </td>
                 <td>{{$viTri->phong_ban}}</td>
-               
+
             </tr>
             <tr>
                 <td class="">
@@ -241,11 +234,11 @@
                 <div class="cap_tren_truc_tiep">
                     <h3>{{$viTri->capQuanly->user->name}}</h3>
                 </div>
-    
+
                 <div class="vi_tri_can_mo_ta">
                     <h4><a class="vi_tri_can_mo_ta_text">{{$viTri->ten_vi_tri}}</a></h4>
                 </div>
-    
+
                 <div class="trach-nhiem">
                     @foreach($viTri->nhiemVu as $nhiemVu)
                         <a class="trach-nhiem-text" href="{{route('nhiem-vu.show',$nhiemVu)}}">- {{$nhiemVu->ten_nhiem_vu}}</a>
@@ -254,7 +247,7 @@
 
             </div>
         </div>
-       
+
         <div id="">
             <div class="">
                 <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>4. Các trách nhiệm và nhiệm vụ chính</b></p>
@@ -284,10 +277,10 @@
                     </tbody>
                    </table>
                 </div>
-    
-             
+
+
             </div>
-    
+
             <div class="tham-quyen">
                 <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>5. Thẩm quyền/Quyền hạn</b></p>
                    <table>
@@ -317,7 +310,7 @@
                     </tbody>
                    </table>
             </div>
-    
+
             <div class="quan-he">
                 <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>6. Quan hệ công việc</b></p>
                    <table>
@@ -347,7 +340,7 @@
                     </tbody>
                    </table>
             </div>
-    
+
             <div class="tieu-chuan-tuyen-chon">
                 <p style="text-align: left" class="so-do-to-chuc_tieu_de"><b>7. Tiêu chuẩn tuyển chọn</b></p>
                    <table>
@@ -358,7 +351,7 @@
                         </tr>
                     </thead>
                     <tbody>
-    
+
                         @foreach($viTri->tieuChuan as $tieuChi)
                             <tr>
                                 <td>Giới tính</td>
@@ -423,7 +416,7 @@
         </div>
     </div>
     <script>
-        
+
     </script>
 </body>
 </html>

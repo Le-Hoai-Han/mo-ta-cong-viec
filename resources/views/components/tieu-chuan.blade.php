@@ -1,196 +1,4 @@
 
-    {{-- Model add --}}
-    <div id="modal_add_tieu_chuan" class="modal">
-        <div class="modal-content">
-            <span class="close" id="close-add-tieu-chuan">&times</span>
-            <div class="row">
-                <div class="col-12">
-                    <div class="card">
-                        <div class="card-header">
-                            <h5>Tiêu chuẩn</h5>
-                        </div>
-                        <div class="card-body">
-                            <form action="{{ route('front-tieu-chuan.store') }}" method="POST">
-                                @csrf
-                                <div class="mb-4">
-                                    <label class="label" for="ten_nhiem_vu">
-                                        Vị trí
-                                    </label>
-                                    <select name="id_vi_tri" class="form-control">
-                                        <option value="" id="option_vi_tri"></option>
-                                    </select>
-                                    @error('id_vi_tri')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="gioi_tinh">
-                                        Giới tính
-                                    </label>
-                                    <select class="form-control" name="gioi_tinh">
-                                        <option value="Nam">Nam</option>
-                                        <option value="Nữ">Nữ</option>
-                                    </select>
-                                    @error('gioi_tinh')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="tuoi">
-                                        Độ tuổi
-                                    </label>
-                                    <textarea rows="1" class="form-control" id="tuoi" name="tuoi" type="text" placeholder="Độ tuổi"
-                                        value="">{!! old('tuoi', '') !!}</textarea>
-                                    @error('tuoi')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="hoc_van">
-                                        Học vấn
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="hoc_van" name="hoc_van" type="text" placeholder="Học vấn"
-                                        value="">{!! old('hoc_van', '') !!}</textarea>
-                                    @error('hoc_van')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="chuyen_mon">
-                                        Chuyên môn
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="chuyen_mon" name="chuyen_mon" type="text" placeholder="Chuyên môn"
-                                        value="">{!! old('chuyen_mon', '') !!}</textarea>
-                                    @error('chuyen_mon')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="vi_tinh">
-                                        Tin học
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="vi_tinh" name="vi_tinh" type="text" placeholder="Tin học"
-                                        value="">{!! old('vi_tinh', '') !!}</textarea>
-                                    @error('vi_tinh')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="anh_ngu">
-                                        Anh ngữ
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="anh_ngu" name="anh_ngu" type="text" placeholder="Anh ngữ"
-                                        value="">{!! old('anh_ngu', '') !!}</textarea>
-                                    @error('anh_ngu')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="kinh_nghiem">
-                                        Kinh nghiệm
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="kinh_nghiem" name="kinh_nghiem" type="text"
-                                        placeholder="Kinh nghiệm" value="">{!! old('kinh_nghiem', '') !!}</textarea>
-                                    @error('kinh_nghiem')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="ky_nang">
-                                        Kỹ năng
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="ky_nang" name="ky_nang" type="text" placeholder="Kỹ năng"
-                                        value="">{!! old('ky_nang', '') !!}</textarea>
-                                    @error('ky_nang')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="to_chat">
-                                        Tố chất
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="to_chat" name="to_chat" type="text" placeholder="Tố chất"
-                                        value="">{!! old('to_chat', '') !!}</textarea>
-                                    @error('to_chat')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="ngoai_hinh">
-                                        Ngoại hình
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="ngoai_hinh" name="ngoai_hinh" type="text"
-                                        placeholder="Ngoại hình" value="">{!! old('ngoai_hinh', '') !!}</textarea>
-                                    @error('ngoai_hinh')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="suc_khoe">
-                                        Sức khỏe
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="suc_khoe" name="suc_khoe" type="text" placeholder="Sức khỏe"
-                                        value="">{!! old('suc_khoe', '') !!}</textarea>
-                                    @error('suc_khoe')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="ho_khau">
-                                        Nơi ở
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="ho_khau" name="ho_khau" type="text" placeholder="Nơi ở"
-                                        value="">{!! old('ho_khau', '') !!}</textarea>
-                                    @error('ho_khau')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <label class="label" for="uu_tien">
-                                        Ưu tiên
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="uu_tien" name="uu_tien" type="text" placeholder="Ưu tiên"
-                                        value="">{!! old('uu_tien', '') !!}</textarea>
-                                    @error('uu_tien')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-                                <div class="mb-4">
-                                    <label class="label" for="khac">
-                                        Khác
-                                    </label>
-                                    <textarea rows="2" class="form-control" id="khac" name="khac" type="text" placeholder="Khác"
-                                        value="">{!! old('khac', '') !!}</textarea>
-                                    @error('khac')
-                                        <span class="help text-red-500" style="color: red"> {{ $message }}</span>
-                                    @enderror
-                                </div>
-
-                                <div class="mb-4">
-                                    <button class="btn btn-primary">Lưu</button>
-                                    <a href="{{ url()->previous() }}" class="btn btn-secondary">Hủy</a>
-                                </div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     {{-- Modal edit --}}
     <div id="modal_edit_tieu_chuan" class="modal">
         <div class="modal-content">
@@ -417,8 +225,6 @@
     </div>
     @push('scripts')
     <script>
-        var modalAddTieuChuan = document.getElementById('modal_add_tieu_chuan');
-        var btnAddTieuChuan = document.getElementById('btn_add_tieu_chuan');
 
         var modalEditTieuChuan = document.getElementById('modal_edit_tieu_chuan');
         var btnEditTieuChuan = document.getElementById('btn_edit_tieu_chuan');
@@ -426,13 +232,6 @@
         var btnCloseModalAddTieuChuan = document.getElementById('close-add-tieu-chuan');
         var btnCloseModalEditTieuChuan = document.getElementById('close-edit-tieu-chuan');
 
-        if(btnAddTieuChuan != null){
-            btnAddTieuChuan.onclick = function() {
-                openModal(modalAddTieuChuan);
-                idViTri = this.getAttribute('id-vi-tri');
-                showModalThemTieuChuan(idViTri);
-            }
-        }
         btnCloseModalAddTieuChuan.addEventListener("click",function(){
             closeModal(modalAddTieuChuan);
         })
@@ -451,23 +250,6 @@
             closeModal(modalEditTieuChuan);
         })
 
-        function showModalThemTieuChuan(idViTri) {
-            $.ajax({
-                url: '/get-data-vi-tri',
-                type: 'get',
-                dataType: 'json',
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    idViTri: idViTri
-                },
-                success: function(res) {
-                    var optionViTri = document.getElementById('option_vi_tri');
-                    optionViTri.value = res.id;
-                    optionViTri.text = res.ten_vi_tri;
-                }
-            })
-        }
-
         function showModalSuaTieuChuan(idTieuChuan){
             $.ajax({
                 url:'/get-data-tieu-chuan',
@@ -478,7 +260,7 @@
                     idTieuChuan:idTieuChuan
                 },
                 success:function(res){
-                    
+
                     var optionViTriEdit = document.getElementById('option_vi_tri_edit');
                     var optionGioiTinhNuEdit = document.getElementById('option_gioi_tinh_nu_edit');
                     var optionGioiTinhNamEdit = document.getElementById('option_gioi_tinh_nam_edit');

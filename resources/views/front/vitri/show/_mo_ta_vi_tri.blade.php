@@ -14,23 +14,23 @@
                     (auth()->user()->hasRole('mo_ta_cong_viec') &&
                         auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
 
-                    <a id="edit-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
+                    <a title="Sửa vị trí" id="edit-vi-tri" vi-tri="{{$viTri}}" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                         <span class="material-icons">
                             edit
                         </span>
                     </a>
-                    <a id="delete-vi-tri" vi-tri="{{$viTri}}" style="cursor: pointer;color:red;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
-                        <span class="material-icons">
+                    <a title="Xóa vị trí" onclick="xacNhanYeuCauXoaViTri()" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
+                        <span class="material-icons delete">
                             delete
                         </span>
                     </a>
-                    <a id="lock-vi-tri" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{ $viTri->id }}">
+                    <a title="Khóa" onclick="xacNhanKhoaViTri(this,{{ $viTri->id }})" data-action="khoa" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{ $viTri->id }}">
                         <span class="material-icons" style="color: green">
                             lock_open
                         </span>
                     </a>
-                    <a id="unlock-vi-tri" style="cursor: pointer;">
-                        <span class="material-icons" style="color: red;<?php echo ($viTri->trang_thai == 0 ? 'display:none' :'') ?>">
+                    <a title="Mở khóa" onclick="xacNhanKhoaViTri(this,{{ $viTri->id }})" data-action="mo-khoa">
+                        <span class="material-icons delete" style="color: red;<?php echo ($viTri->trang_thai == 0 ? 'display:none' :'') ?>">
                             lock
                         </span>
                     </a>
@@ -44,7 +44,9 @@
             <p>Chức danh công việc</p>
         </td>
         <td>
-            <p>{{ $viTri->ten_vi_tri }}</p>
+            <div data-action="updateViTri" data-fillable="ten_vi_tri" ondblclick="editTask(this, {{$viTri->id}})">
+                <p id="ten_vi_tri">{{ $viTri->ten_vi_tri }}</p>
+            </div>
         </td>
     </tr>
     <tr>
@@ -52,7 +54,9 @@
             <p>Phòng ban</p>
         </td>
         <td>
-            <p>{{ $viTri->phong_ban }}</p>
+            <div data-action="updateViTri" data-id="{{ $viTri->phongBan->id }}"  data-fillable="phong_ban" ondblclick="editTask(this, {{$viTri->id}})">
+                <p>{{ $viTri->phongBan ? $viTri->phongBan->name :'Chưa cập nhật' }}</p>
+            </div>
         </td>
 
     </tr>
@@ -62,7 +66,9 @@
             <p>Cấp quản lý trực tiếp</p>
         </td>
         <td>
-            <p>{{ $viTri->capQuanly->ten_vi_tri }}</p>
+            <div data-action="updateViTri" data-id="{{ $viTri->capQuanly->id }}" data-fillable="id_vi_tri_quan_ly" ondblclick="editTask(this, {{$viTri->id}})">
+                <p id="id_vi_tri_quan_ly">{{ $viTri->capQuanly ?  $viTri->capQuanly->ten_vi_tri :'Chưa cập nhật' }}</p>
+            </div>
         </td>
     </tr>
     @endif
@@ -71,40 +77,20 @@
             <p>Nơi làm việc</p>
         </td>
         <td>
-            <p>{{ $viTri->noi_lam_viec }}</p>
+            <div data-action="updateViTri" data-fillable="noi_lam_viec" ondblclick="editTask(this, {{$viTri->id}})">
+                <p>{{ $viTri->noi_lam_viec }}</p>
+            </div>
         </td>
     </tr>
     <tr>
         <td colspan=""><b>2. Mục đích công việc vị trí</b></td>
         <td>
-            <p><?php echo nl2br($viTri->muc_dich) ?></p>
+            <div data-action="updateViTri" data-fillable="muc_dich" ondblclick="editTask(this, {{$viTri->id}})">
+                <p><?php echo nl2br($viTri->muc_dich ?? '...')  ?></p>
+            </div>
         </td>
     </tr>
 </table>
-<x-xac-nhan id="xac-nhan-lock" class="alert-danger">
-    <x-slot name="title">Xác nhận</x-slot>
-    <x-slot name="body">Vị trí sẽ khóa thông tin..</x-slot>
-    <x-slot name="buttonClose">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-            id="btn-close-xac-nhan-lock">Đóng</button>
-    </x-slot>
-    <x-slot name="button">
-        <button type="button" class="btn btn-danger" onclick="khoaViTri()">Khóa</button>
-    </x-slot>
-</x-xac-nhan>
-
-<x-xac-nhan id="xac-nhan-unlock" class="alert-danger">
-    <x-slot name="title">Xác nhận</x-slot>
-    <x-slot name="body">Vị trí sẽ được mở khóa</x-slot>
-    <x-slot name="buttonClose">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
-            id="btn-close-xac-nhan-unlock">Đóng</button>
-    </x-slot>
-    <x-slot name="button">
-        <button type="button" class="btn btn-danger" onclick="moViTri()">Mở khóa</button>
-    </x-slot>
-</x-xac-nhan>
-
 
 
 <x-vi-tri :viTri="$viTri" :listViTri="$listViTri" :listUser="$listUser" :listPhongBan="$listPhongBan" />
@@ -117,33 +103,9 @@
         var btnCloseXacNhanLock = document.getElementById('btn-close-xac-nhan-lock');
         var btnCloseXacNhanUnLock = document.getElementById('btn-close-xac-nhan-unlock');
 
-
-
-        if(btnLockVitri != null){
-            btnLockVitri.addEventListener("click", function() {
-                modalXacNhanLock.classList.add('show');
-            })
-            var idViTri = btnLockVitri.getAttribute('id-vi-tri');
-        }
-
-        if(btnUnlockVitri){
-            btnUnlockVitri.addEventListener("click", function() {
-                modalXacNhanUnLock.classList.add('show');
-            })
-        }
-
-
-        btnCloseXacNhanLock.addEventListener("click", function() {
-            modalXacNhanLock.classList.remove('show');
-        })
-
-        btnCloseXacNhanUnLock.addEventListener("click", function() {
-            modalXacNhanUnLock.classList.remove('show');
-        })
-
-        function khoaViTri() {
+        function khoaViTri(id) {
             $.ajax({
-                url: "{{url('front-vi-tri-lock')}}/"+idViTri,
+                url: "{{url('front-vi-tri-lock')}}/"+id,
                 type: 'GET',
                 dataType: 'json',
                 data: {
@@ -152,10 +114,16 @@
                 success: function(res) {
                     modalXacNhanLock.classList.remove('show');
                     if (res.status == 'success') {
-                    $('#thong-bao-trang-thai').removeClass('alert-danger').addClass('alert-success').html(res.message).show();
-                } else {
-                    $('#thong-bao-trang-thai').removeClass('alert-success').addClass('alert-danger').html(res.message).show();
-                }
+                        hienThongBao('Khóa vị trí thành công');
+                        setTimeout(function() {
+                                location.reload();
+                            }, 500);
+                    } else {
+                        hienLoi('Khóa vị trí thất bại');
+                            setTimeout(function() {
+                                    location.reload();
+                                }, 500);
+                    }
 
                 closeSetTimeOut(500);
 
@@ -163,9 +131,9 @@
             })
         }
 
-        function moViTri() {
+        function moViTri(id) {
             $.ajax({
-                url: "{{url('front-vi-tri-unlock')}}/"+idViTri,
+                url: "{{url('front-vi-tri-unlock')}}/"+id,
                 type: 'GET',
                 dataType: 'json',
                 data: {
@@ -174,13 +142,88 @@
                 success: function(res) {
                     modalXacNhanUnLock.classList.remove('show');
                     if (res.status == 'success') {
-                        $('#thong-bao-trang-thai').removeClass('alert-danger').addClass('alert-success').html(res.message).show();
+                        hienThongBao('Mở vị trí thành công');
+                        setTimeout(function() {
+                                location.reload();
+                            }, 500);
                     } else {
-                        $('#thong-bao-trang-thai').removeClass('alert-success').addClass('alert-danger').html(res.message).show();
+                        hienLoi('Mở vị trí thất bại');
+                            setTimeout(function() {
+                                    location.reload();
+                                }, 500);
                     }
 
                     closeSetTimeOut(500);
                 },
+            })
+        }
+
+        function xacNhanKhoaViTri(element,id)
+        {
+            let action = element.getAttribute('data-action');
+            let text = 'mở khóa';
+            if(action == 'khoa'){
+                text = 'khóa'
+            }
+            Swal.fire({
+                title: "Xác nhận",
+                text: `Bạn có chắc chắn ${text} vị trí này`,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: 'Xác nhận',
+                confirmButtonColor: "#B52227",
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    if(action == 'khoa'){
+                        khoaViTri(id)
+                    }else{
+                        moViTri(id);
+                    }
+                }
+            });
+        }
+
+        function xacNhanYeuCauXoaViTri()
+        {
+            Swal.fire({
+                title: "Xác nhận",
+                text: `Bạn có chắc chắn muốn xóa vị trí này?
+                Vị trí sẽ bị xóa.Các mô tả liên quan đến vị trí sẽ bị xóa và không được phục hồi...`,
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonText: 'Xác nhận',
+                confirmButtonColor: "#B52227",
+                cancelButtonText: 'Hủy'
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    xoaViTri()
+                }
+            });
+        }
+
+        function xoaViTri(){
+            $.ajax({
+                url:"{{route('front-vi-tri.destroy',$viTri)}}",
+                type:'delete',
+                dataType:'json',
+                data:{
+                    _token:'{{csrf_token()}}',
+                },
+                success:function(res){
+
+                    if(res.status == 'success'){
+                        hienThongBao('Xóa thành công');
+                        window.location.href = '/';
+                    }else{
+                        hienLoi('Xóa vị trí thất bại');
+                        setTimeout(function() {
+                                location.reload();
+                            }, 500);
+                    }
+
+                    window.location="/";
+                }
             })
         }
     </script>

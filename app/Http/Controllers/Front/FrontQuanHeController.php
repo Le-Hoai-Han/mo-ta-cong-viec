@@ -38,9 +38,22 @@ class FrontQuanHeController extends RoutingController
      */
     public function store(Request $request)
     {
-        $validate = $this->__validate($request->all());
-        QuanHe::create($validate);
-        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Thêm thành công');
+        if($request->ben_trong){
+                QuanHe::create([
+                    'id_vi_tri' => $request->id_vi_tri,
+                    'noi_dung' => $request->ben_trong,
+                    'loai' => QuanHe::BEN_TRONG,
+                ]);
+        }
+
+        if($request->ben_ngoai){
+                QuanHe::create([
+                    'id_vi_tri' => $request->id_vi_tri,
+                    'noi_dung' => $request->ben_ngoai,
+                    'loai' => QuanHe::BEN_NGOAI,
+                ]);
+            }
+            return response()->json(['success' => true, 'message' => 'Thêm thành công']);
     }
 
     /**
@@ -75,9 +88,10 @@ class FrontQuanHeController extends RoutingController
     public function update(Request $request, $id)
     {
         $quanHe = QuanHe::find($id);
-        $validate = $this->__validate($request->all());
-        $quanHe->update($validate);
-        return redirect()->back()->with('success','Cập nhật thành công');
+        $quanHe->update([
+            'noi_dung' => $request->value
+        ]);
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
 
     /**

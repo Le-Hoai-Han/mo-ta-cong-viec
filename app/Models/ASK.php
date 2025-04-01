@@ -15,6 +15,10 @@ class ASK extends Model
         'loai',
     ];
 
+    const THAI_DO = 0;
+    const KY_NANG = 1;
+    const KIEN_THUC = 2;
+
     public function viTri(){
         return $this->hasOne(Vitri::class,'id','id_vi_tri');
     }

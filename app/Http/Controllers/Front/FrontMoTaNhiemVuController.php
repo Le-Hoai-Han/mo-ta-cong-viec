@@ -39,13 +39,14 @@ class FrontMoTaNhiemVuController extends RoutingController
      */
     public function store(Request $request)
     {
-        $validate = $this->__validate($request->all());
-        MoTaNhiemVu::create($validate);
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Thêm thành công',
+
+        MoTaNhiemVu::create([
+            'id_nhiem_vu' => $request->id_nhiem_vu,
+            'chi_tiet' => $request->chi_tiet,
+            'ket_qua' => $request->ket_qua,
         ]);
-        
+        return response()->json(['success' => true, 'message' => 'Thêm thành công']);
+
     }
 
     /**
@@ -80,11 +81,20 @@ class FrontMoTaNhiemVuController extends RoutingController
     public function update(Request $request, $id)
     {
         $moTaNhiemVu = MoTaNhiemVu::find($id);
-        $validate=$this->__validate($request->all());
-        $moTaNhiemVu->update($validate);
-        return redirect()->back()->with('success','Cập nhật thành công');
 
+        if (!$moTaNhiemVu) {
+            return redirect()->back()->with('error', 'Không tìm thấy nhiệm vụ!');
+        }
+        if($request->field == 'chi_tiet'){
+            $moTaNhiemVu->update(['chi_tiet' => $request->value]);
+        }
+        if($request->field == 'ket_qua'){
+            $moTaNhiemVu->update(['ket_qua' => $request->value]);
+        }
+
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -94,8 +104,8 @@ class FrontMoTaNhiemVuController extends RoutingController
      */
     public function destroy($id)
     {
-        $mota = MoTaNhiemVu::find($id);
-        $mota->delete();
+        $moTa = MoTaNhiemVu::find($id);
+        $moTa->delete();
         return response()->json([
             'status' => 'success',
             'message' => 'Xóa thành công',
@@ -107,17 +117,5 @@ class FrontMoTaNhiemVuController extends RoutingController
         $moTa = MoTaNhiemVu::find($request->idMoTa);
         return [$trachNhiem,$moTa];
     }
-    public function __validate($data){
-        $validate = Validator::make($data, [
-            'id_nhiem_vu' =>'required',
-            'chi_tiet' => 'required',
-            'ket_qua' => 'required',
-            'mo_ta' => 'nullable'
-        ],[
-            'chi_tiet.required' => 'Vui lòng nhập chi tiết nhiệm vụ',
-            'ket_qua.required' => 'Vui lòng nhập kết quả',
-        ]);
 
-        return $validate->validate();
-    }
 }

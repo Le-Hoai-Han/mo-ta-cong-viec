@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 function thuGonSoLe($value,$soLe=2) {
     if((int)$value == (float)$value) {
@@ -31,21 +31,6 @@ function formatGiaTriDeLuu($giaTri) {
     return str_replace(",","",$giaTri);
 }
 
-function endDateFromDays($startDate="today",$days) {
-    $weekends = [0, 6]; // 0 = Sunday, 6 = Saturday
-    $start = strtotime($startDate);
-    $end = $start;
-
-    for ($i = 0; $i < $days;) {
-        $end = strtotime('+1 day', $end);
-        if (!in_array(date('w', $end), $weekends)) {
-            $i++;
-        }
-    }
-
-    return date("Y-m-d", $end);
-}
-
 function getEndDayOfMonth($month,$year) {
     $firstDayOfMonth = \Carbon\Carbon::create($year, $month, 1);
     $lastDayOfMonth = $firstDayOfMonth->addMonth()->subDay();
@@ -60,7 +45,7 @@ function createFirstDayOfMonthForSearch($month,$year) {
     $formattedDate = $date->format('Y-m-d');
 
     // Output the result
-    return $formattedDate; 
+    return $formattedDate;
 }
 
 function createLastDayOfMonthForSearch($month,$year) {
@@ -70,13 +55,13 @@ function createLastDayOfMonthForSearch($month,$year) {
     $formattedDate = $date->format('Y-m-d');
 
     // Output the result
-    return $formattedDate; 
+    return $formattedDate;
 }
 
 /**
  * tao raw query cho bieu thuc so sanh voi số
  */
-function createOperatorRawQuery($field,$requestString) : string 
+function createOperatorRawQuery($field,$requestString) : string
 {
     $operatorReg = '/<=|>=|>|<|=/';
     $preg = preg_match($operatorReg,$requestString,$bieuThuc);

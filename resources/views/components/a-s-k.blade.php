@@ -1,7 +1,7 @@
 
      <!-- The Modal -->
      <div id="modal_add_ask" class="modal">
-            
+
         <!-- Modal content -->
         <div class="modal-content">
         <span class="close" id="close-add-ask">&times;</span>
@@ -13,26 +13,26 @@
                     </div>
                     <div class="card-body">
                         <form action="{{route('front-ask.store')}}" method="POST">
-                        @csrf     
+                        @csrf
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="mb-3">
                                     <label class="label" for="id_vi_tri">
                                         Tên vị trí
                                     </label>
-                                    <select name="id_vi_tri"  class="form-control"> 
+                                    <select name="id_vi_tri"  class="form-control">
                                         <option value="" id="option_add_ask"></option>
                                     </select>
                                     @error('id_vi_tri')
                                         <span class="help text-red-500" style="color: red"> {{ $message}}</span>
                                     @enderror
                                 </div>
-                            </div>   
-                            
+                            </div>
+
                             <div class="col-md-4">
                                 <div class="mb-4">
                                     <label class="label" for="loại">
-                                        Loại 
+                                        Loại
                                     </label>
                                    <select name="loai" class="form-control">
                                         <option id="option_loai_thai_do" value="0">Attitude (Thái độ)</option>
@@ -47,27 +47,27 @@
                             <div class="col-md-7">
                                 <div class="mb-4">
                                     <label class="label" for="noi_dung">
-                                        Nội dung 
+                                        Nội dung
                                     </label>
-                                    <textarea rows="5" class="form-control" 
-                                    id="noi_dung_text_ask_add" 
-                                    name="noi_dung" 
-                                    type="text" 
-                                    placeholder="Nội dung"                        
+                                    <textarea rows="5" class="form-control"
+                                    id="noi_dung_text_ask_add"
+                                    name="noi_dung"
+                                    type="text"
+                                    placeholder="Nội dung"
                                     value="">{{old('noi_dung')}}</textarea>
                                     @error('noi_dung')
                                         <span class="help text-red-500" style="color: red"> {{ $message}}</span>
                                     @enderror
                                 </div>
                             </div>
-                            
-                            
+
+
                             <div class="mb-4">
                                 <button class="btn btn-primary">Lưu</button>
                                 <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                             </div>
-                        </div>             
-                           
+                        </div>
+
                         </form>
                     </div>
                 </div>
@@ -77,7 +77,7 @@
      </div>
 
      <div id="modal_edit_ask" class="modal">
-            
+
         <!-- Modal content -->
         <div class="modal-content">
         <span class="close" id="close-edit-ask">&times;</span>
@@ -89,16 +89,16 @@
                         </div>
                         <div class="card-body">
                             <form id="form_update_ask" method="POST">
-                            @csrf   
-                            @method('PUT')     
-                            
+                            @csrf
+                            @method('PUT')
+
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="mb-4">
                                         <label class="label" for="id_vi_tri">
                                             Vị Trí
                                         </label>
-                                        <select name="id_vi_tri" class="form-control">                             
+                                        <select name="id_vi_tri" class="form-control">
                                             <option  value="" id="option_edit_ask"></option>
                                         </select>
                                         @error('id_vi_tri')
@@ -109,7 +109,7 @@
                                 <div class="col-md-4">
                                     <div class="mb-4">
                                         <label class="label" for="loại">
-                                            Loại 
+                                            Loại
                                         </label>
                                        <select name="loai" class="form-control">
                                             <option id="option_loai_thai_do_edit" value="0">Attitude (Thái độ)</option>
@@ -124,28 +124,28 @@
                                 <div class="col-md-7">
                                     <div class="mb-4">
                                         <label class="label" for="noi_dung">
-                                            Nội dung 
+                                            Nội dung
                                         </label>
-                                        <textarea rows="5" class="form-control" 
-                                        id="noi_dung_ask_edit" 
-                                        name="noi_dung" 
-                                        type="text" 
-                                        placeholder="Nội dung"                        
+                                        <textarea rows="5" class="form-control"
+                                        id="noi_dung_ask_edit"
+                                        name="noi_dung"
+                                        type="text"
+                                        placeholder="Nội dung"
                                         value="">{{old('noi_dung')}}</textarea>
                                         @error('noi_dung')
                                             <span class="help text-red-500" style="color: red"> {{ $message}}</span>
                                         @enderror
                                     </div>
                                 </div>
-                                
+
                                 </div>
                                 <div class="mb-4">
                                     <button class="btn btn-primary">Cập nhật</button>
                                     <a onclick="refresh()" class="btn btn-secondary">Hủy</a>
                                 </div>
                             </div>
-                                
-                                
+
+
                             </form>
                         </div>
                     </div>
@@ -178,7 +178,7 @@
         var btnCloseModalAddASK = document.getElementById('close-add-ask');
         var btnCloseModalEditASK = document.getElementById('close-edit-ask');
         var btnCloseModalDeleteASK = document.getElementById('btn-close-xac-nhan-xoa-ask');
-        
+
         if(btnAddASK){
             btnAddASK.onclick = function(){
                 openModal(modelAddASK);
@@ -256,8 +256,8 @@
                     var optionLoaiThaiDo = document.getElementById('option_loai_thai_do_edit');
                     var optionLoaiKyNang = document.getElementById('option_loai_ky_nang_edit');
                     var optionLoaiKienThuc = document.getElementById('option_loai_kien_thuc_edit');
-                    
-                    console.log(res);
+
+                    // console.log(res);
                     noiDungAskEdit.value = res[0].noi_dung
                     optionEditASK.text = res[1].ten_vi_tri
                     optionEditASK.value = res[1].id

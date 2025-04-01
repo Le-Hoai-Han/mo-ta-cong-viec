@@ -1,286 +1,256 @@
 <x-front-layout>
     @push('styles')
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box
-    }
-    body{
-        font-family: Arial, Helvetica, sans-serif;
-        margin: 0 auto;
-        background-color: #ccc;
-    }
-    .container{
-        margin: 0px auto;
-        max-width: 1080px;
-        width: 1080px;
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        font-size: 20px;
-        background-color: #fff;
-        padding: 0px 40px;
-        border: solid 1px #ccc;
-    }
-    table,tr, td,th{
-        border: 1px solid black;
-        border-collapse: collapse;
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        a{
+            cursor: pointer;
+        }
+        body {
+            font-family: "Quicksand", Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #B52227;
+            margin-bottom: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+            table-layout: fixed;
+        }
+        th, td {
+            padding: 12px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background: #B52227;
+            color: white;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 10;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* display: flex; */
+            align-items: center;
+            justify-content: center;
+        }
+        .modal-content {
+            background: #fff;
+            padding: 20px;
+            width: 50%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .close {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+        }
 
-    }
-    table{
-        max-width: 1000px;
-        width: 1000px;
-        margin: 20px 0px;
-    }
-    td,th{
-        width: 200px;
-        min-width: 200px;
-        padding: 5px;
-    }
-    .table-childrent{
-        width: 100%;
-    }
-
-    .img-profile{
-        /* max-height: 185px; */
-        height: 185px;
-        width: 185px;
-    }
-    .text-thong-tin{
-        margin: 5px 0px;
-        font-size: 18px;
-    }
-
-    .so-do-to-chuc{
-        text-align: center;
-        /* display: flex;
-        flex-direction: column;
-       gap: 20px; */
-
-    }
-    .so-do-to-chuc_tieu_de{
-     margin-top: 50px;
-     display: flex;
-    }
-
-
-    .cap_tren_truc_tiep{
-        border: solid 2px #000;
-        width: 400px;
-        height: 100px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0px 20px 0px;
-        position: relative;
-        z-index: 2;
-
-    }
-    .so_do{
-        position: relative;
-    }
-    .so_do::before{
-        content: "";
-    position: absolute;
-    width: 3px;
-    background-color: #000;
-    /* opacity: 0.4; */
-    top: 100px;
-    bottom: 100px;
-    left: 50%;
-    z-index: 1;
-    }
-    .vi_tri_can_mo_ta{
-        width: 800px;
-        height: 60px;
-        border: solid 2px #000;
-        display:inline-flex;
-        align-items: center;
-        justify-content: center;
-        margin: 20px 0px;
-        border-radius: 50%;
-        position: relative;
-        z-index: 2;
-        background-color: #fff;
-    }
-    .vi_tri_can_mo_ta_text{
-        color: #000;
-        text-decoration: none;
-
-    }
-
-
-    .trach-nhiem{
-        width: 800px;
-        min-height: 100px;
-        border: solid 2px #000;
-        display:inline-flex;
-        align-items:baseline;
-       text-align:left;
-        flex-direction: column;
-        justify-content: left;
-        margin: 20px 0px;
-        padding:10px 10px;
-        position: relative;
-        z-index: 2;
-        background-color: #fff;
-
-    }
-    .trach-nhiem-text{
-        text-decoration: none;
-        color: #000;
-    }
-
-    #xem-them{
-        text-align: center;
-        margin: 20px 0px;
-    }
-    .xem-them-text{
-        cursor: pointer;
-    }
-    .xem-them-text:hover{
-        color: #b81717;
-    }
-    .list-nhiem-vu{
-        margin-bottom: 0px;
-    }
-
-    .list-nhiem-vu,.list-quan-he, .list-tham-quyen{
-        padding-left: 35px;
-    }
-    .list-nhiem-vu li,.list-tham-quyen li,.list-quan-he li{
-        margin: 5px 0px;
-        font-size: 16px;
-        text-align: justify;
-        padding-right: 5px;
-    }
-    .tieu-chuan-tuyen-chon td {
-        font-size: 16px;
-    }
-    /*  */
-
-    body {font-family: Arial, Helvetica, sans-serif;}
-
-    /* The Modal (background) */
-    .modal {
-      display: none; /* Hidden by default */
-      position: fixed; /* Stay in place */
-      z-index: 5; /* Sit on top */
-      padding-top: 100px; /* Location of the box */
-      left: 0;
-      top: 0;
-      width: 100%; /* Full width */
-      height: 100%; /* Full height */
-      overflow: auto; /* Enable scroll if needed */
-      background-color: rgb(0,0,0); /* Fallback color */
-      background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    }
-
-    /* Modal Content */
-    .modal-content {
-      background-color: #fefefe;
-      margin: auto;
-      padding: 20px;
-      border: 1px solid #888;
-      width: 80%;
-    }
-
-    /* The Close Button */
-    .close {
-      color: #aaaaaa;
-      float: right;
-      font-size: 28px;
-      font-weight: bold;
-    }
-
-    .close:hover,
-    .close:focus {
-      color: #000;
-      text-decoration: none;
-      cursor: pointer;
-    }
-
-    .show{
-        display: block !important;
-    }
-
-    #thong-bao-trang-thai{
-        position: fixed;
-        top: 15%;
-        left: 70%;
-        /* width: 100%; */
-        height: 70px;
-        color: white;
-        text-align: center;
-        background: rgba(40, 159, 4, 0.6);
-        overflow: hidden;
-        box-sizing: border-box;
-        transition: height .2s;
-        z-index: 9999;
-    }
-    .border-top-bottom-none{
-        border-top: #000 solid 1px;
-        border-bottom:  #ff000000 solid 1px;
-    }
-    .border-bottom-none{
-        border-bottom:  #ff000000 solid 1px;
-    }
-    .tbody_mo_ta > tr:nth-last-child(2) >.border-bottom-none,
-    .tbody_mo_ta:last-child >tr  >.border-bottom-none{
-        border-bottom:  #000 solid 1px;
-    }
-
+        .show{
+            display: flex !important;
+        }
 
     </style>
-@endpush
-<div class="container">
-    <div id='thong-bao-trang-thai' class="alert" style="display: none">
+    @endpush
 
+    <div class="container">
+        <h2>{{ $viTri->ten_vi_tri }}</h2>
+
+        @include('front.vitri.show._thong_tin_nhan_vien', [ 'nhanVien' => $viTri->user ])
+        @include('front.vitri.show._mo_ta_vi_tri', [ 'viTri' => $viTri, 'listPhongBan' => $listPhongBan ])
+        @include('front.vitri.show._so_do_vi_tri', [ 'viTri' => $viTri ])
+        @include('front.vitri.show._trach_nhiem', [ 'viTri' => $viTri ])
+        @include('front.vitri.show._quyen_han', [ 'viTri' => $viTri ])
+        @include('front.vitri.show._quan_he', [ 'viTri' => $viTri ])
+        @include('front.vitri.show._tieu_chi', [ 'viTri' => $viTri ])
+        @include('front.vitri.show._ask', [ 'viTri' => $viTri ])
     </div>
-        <table style="border: none">
-            <tr style="border: none">
-                <td style="width: 50%;border: none">
-                    <h2><center>{{$viTri->ten_vi_tri}}</center></h2>
-                </td>
-            </tr>
-        </table>
-        @include('front.vitri.show._thong_tin_nhan_vien',[
-            'nhanVien'=>$viTri->user
-            ])
 
-        @include('front.vitri.show._mo_ta_vi_tri',[
-            'viTri'=>$viTri,
-            'listPhongBan' => $listPhongBan
-            ])
+    @push('scripts')
+    <script>
+        // refresh
+        function refresh(id) {
+            location.reload();
+        }
 
-        @include('front.vitri.show._so_do_vi_tri',[
-            'viTri'=>$viTri
-        ])
+        // phương thức mở modal
+        function openModal(modal) {
+            modal.classList.add('show');
+        }
+
+        // phương thức đóng modal
+        function closeModal(modal) {
+            modal.classList.remove('show');
+        }
+        function editTask(element, id) {
+            if (element.querySelector("textarea") || element.querySelector("select")) return;
+
+            let sttElement = element.querySelector('.stt');
+            let sttText = sttElement ? sttElement.innerText.trim() : '';
+            let currentText = element.innerText.trim().replace(sttText, '').trim();
+
+            let action = element.getAttribute('data-action');
+            let routeUpdate = getUpdateRoute(action, id);
+
+            let fillable = element.getAttribute('data-fillable');
+            element.innerHTML = '';
+            if (sttElement) element.appendChild(sttElement);
+
+            if (fillable === 'phong_ban') {
+                createSelectField(element, id, sttText, routeUpdate, @json($listPhongBan), 'id', 'name');
+            } else if (fillable === 'gioi_tinh') {
+                createSelectField(element, id, sttText, routeUpdate, [{ id: 0, name: 'Nam' }, { id: 1, name: 'Nữ' }], 'id', 'name');
+            } else if (fillable === 'id_vi_tri_quan_ly') {
+                createSelectField(element, id, sttText, routeUpdate, @json($listViTri), 'id', 'ten_vi_tri');
+            } else {
+                createTextareaField(element, id, sttText, routeUpdate, currentText);
+            }
+        }
+
+        function getUpdateRoute(action, id) {
+            const routes = {
+                'updateTrachNhiem': `{{ url('front-nhiem-vu') }}/${id}/update`,
+                'updateMoTa': `{{ url('front-mo-ta-nhiem-vu') }}/${id}/update?field=chi_tiet`,
+                'updateMoTaKetQua': `{{ url('front-mo-ta-nhiem-vu') }}/${id}/update?field=ket_qua`,
+                'updateQuyenHan': `{{ url('front-tham-quyen') }}/${id}/update`,
+                'updateQuanHe': `{{ url('front-quan-he') }}/${id}/update`,
+                'updateASK': `{{ url('front-ask') }}/${id}/update`,
+                'updateViTri': `{{ url('front-vi-tri') }}/${id}/update`,
+                'updateTieuChuan': `{{ url('front-tieu-chuan') }}/${id}/update`
+            };
+            return routes[action] || '';
+        }
+
+        function createSelectField(element, id, sttText, routeUpdate, options, valueKey, textKey) {
+            let select = document.createElement('select');
+            let dataID = element.getAttribute('data-id'); // Lấy giá trị data-id từ element
+
+            options.forEach(option => {
+                let opt = new Option(option[textKey], option[valueKey]);
+                if (option[valueKey].toString() === dataID) { // So sánh value của option với dataID
+                    opt.selected = true; // Chọn mặc định
+                }
+                select.appendChild(opt);
+            });
+
+            select.addEventListener('change', () => select.blur());
+            select.addEventListener('blur', () => {
+                let selectedText = select.options[select.selectedIndex].textContent;
+                let selectedValue = select.value;
+
+                updateTask(id, selectedValue, element, routeUpdate, sttText, selectedText);
+                element.setAttribute('data-id', selectedValue); // Cập nhật data-id
+            });
+
+            element.appendChild(select);
+            select.focus();
+        }
 
 
-        <div id="">
-            @include('front.vitri.show._trach_nhiem',[
-                'viTri'=>$viTri,
-            ])
 
-            @include('front.vitri.show._quyen_han',[
-                'viTri'=>$viTri
-            ])
 
-            @include('front.vitri.show._quan_he',[
-                'viTri'=>$viTri
-            ])
+        function createTextareaField(element, id, sttText, routeUpdate, currentText) {
+            let textarea = document.createElement('textarea');
+            textarea.value = currentText;
+            textarea.classList.add('edit-textarea');
+            textarea.style.width = element?.getAttribute('data-action') === "updateTrachNhiem" ? '500px' : '100%'
+            textarea.style.minHeight = '50px';
+            textarea.style.height = textarea.scrollHeight + 'px';
 
-            @include('front.vitri.show._tieu_chi',[
-                'viTri'=>$viTri
-            ])
+            textarea.addEventListener('input', () => {
+                requestAnimationFrame(() => {
+                    textarea.style.height = 'auto';
+                    textarea.style.height = textarea.scrollHeight + 'px';
+                });
+            });
 
-            @include('front.vitri.show._ask',[
-                'viTri'=>$viTri
-            ])
+            textarea.onblur = () => {
+                let newValue = textarea.value.trim();
+                if (newValue !== currentText) {
+                    updateTask(id, newValue, element, routeUpdate, sttText);
+                } else {
+                    resetContent(element, sttText, currentText);
+                }
+            };
 
-        </div>
+            textarea.onkeydown = (event) => {
+                if (event.key === 'Enter' && !event.shiftKey) {
+                    event.preventDefault();
+                    textarea.blur();
+                }
+            };
+            element.appendChild(textarea);
+            textarea.focus();
+        }
 
-    </div>
+        function resetContent(element, sttText, text) {
+            element.innerHTML = '';
+            let sttElement = document.createElement('span');
+            sttElement.classList.add('stt');
+            sttElement.innerText = sttText;
+            element.appendChild(sttElement);
+            element.appendChild(document.createTextNode(' ' + text));
+        }
+
+        function updateTask(id, newValue, element, routeUpdate, sttText, nameOption = null) {
+            let fillable = element.getAttribute('data-fillable') || '';
+            fetch(routeUpdate, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').content
+                },
+                body: JSON.stringify({ value: newValue, fillable })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    element.innerHTML = '';
+                    let sttElement = document.createElement('span');
+                    sttElement.classList.add('stt');
+                    sttElement.innerText = sttText;
+                    element.appendChild(sttElement);
+                    let valueElement = document.createElement('span');
+                        valueElement.id = fillable; // Thêm ID vào phần tử này
+                        valueElement.innerText = ' ' + (nameOption ?? newValue);
+                        element.appendChild(valueElement);
+                    if (fillable === "ten_vi_tri" || fillable === "id_vi_tri_quan_ly" || fillable.includes("ten_nhiem_vu")) {
+                        document.querySelectorAll(`#${fillable}`).forEach(el => {
+                            el.innerText = nameOption ?? newValue;
+                        });
+                    }
+                } else {
+                    alert("Cập nhật thất bại!");
+                }
+            })
+            .catch(error => console.error("Lỗi cập nhật:", error));
+        }
+
+    </script>
+    @endpush
 </x-front-layout>

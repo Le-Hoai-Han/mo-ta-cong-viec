@@ -15,6 +15,9 @@ class QuanHe extends Model
         'loai',
     ];
 
+    const BEN_TRONG = 0;
+    const BEN_NGOAI = 1;
+
     public function viTri(){
         return $this->hasOne(Vitri::class,'id','id_vi_tri');
     }

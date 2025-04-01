@@ -42,7 +42,10 @@ class FrontTieuChuanController extends RoutingController
         $validate = $this->__validate($request->all());
 
         TieuChuanTuyenChon::create($validate);
-        return redirect()->back()->with('Thêm thành công');
+        return response()->json([
+            'status'=>'success',
+            'message' => 'Thêm thành công'
+        ]);
     }
 
     /**
@@ -77,9 +80,27 @@ class FrontTieuChuanController extends RoutingController
     public function update(Request $request, $id)
     {
         $tieuChuan = TieuChuanTuyenChon::find($id);
-        $validate = $this->__validate($request->all());
-        $tieuChuan->update($validate);
-        return redirect()->back()->with('success','Cập nhật thành công');
+        $fields = [
+            'gioi_tinh' => 'gioi_tinh',
+            'do_tuoi' => 'tuoi',
+            'hoc_van' => 'hoc_van',
+            'chuyen_mon' => 'chuyen_mon',
+            'vi_tinh' => 'vi_tinh',
+            'anh_ngu' => 'anh_ngu',
+            'kinh_nghiem' => 'kinh_nghiem',
+            'ky_nang' => 'ky_nang',
+            'to_chat' => 'to_chat',
+            'ngoai_hinh' => 'ngoai_hinh',
+            'suc_khoe' => 'suc_khoe',
+            'ho_khau' => 'ho_khau',
+            'uu_tien' => 'uu_tien',
+            'khac' => 'khac',
+        ];
+
+        if (isset($fields[$request->fillable])) {
+            $tieuChuan->update([$fields[$request->fillable] => $request->value]);
+        }
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
 
     /**
@@ -113,19 +134,19 @@ class FrontTieuChuanController extends RoutingController
         ],[
             'id_vi_tri.required' => 'Vui lòng chọn vị trí',
             'gioi_tinh.required' => 'Vui lòng nhập giới tính',
-            'tuoi.required' => 'Vui lòng nhập tuổi',
-            'hoc_van.required' => 'Vui lòng nhập học ván',
+            'tuoi.required' => 'Vui lòng nhập độ tuổi',
+            'hoc_van.required' => 'Vui lòng nhập học vấn',
             'chuyen_mon.required' => 'Vui lòng nhập chuyên môn',
-            'vi_tinh.required' => 'Vui lòng nhập vi tính',
+            'vi_tinh.required' => 'Vui lòng nhập tin học',
             'anh_ngu.required' => 'Vui lòng nhập anh ngữ',
             'kinh_nghiem.required' => 'Vui lòng nhập kinh nghiệm',
             'ky_nang.required' => 'Vui lòng nhập kỹ năng',
             'to_chat.required' => 'Vui lòng nhập tố chất ',
             'ngoai_hinh.required' => 'Vui lòng nhập ngoại hình',
             'suc_khoe.required' => 'Vui lòng nhập tình trạng sức khỏe',
-            'ho_khau.required' => 'Vui lòng nhập hộ khẩu',
+            'ho_khau.required' => 'Vui lòng nhập nơi ở',
             'uu_tien.required' => 'Vui lòng nhập ưu tiên',
-            
+
         ]);
 
 
