@@ -58,9 +58,10 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         // Front-end
         Route::get('front-vi-tri-lock/{id}',[FrontViTriController::class,'lockViTri'])->name('front-vi-tri.lock');
         Route::get('front-vi-tri-unlock/{id}',[FrontViTriController::class,'unlockViTri'])->name('front-vi-tri.unlock');
+        Route::put('front-vi-tri/{id?}/update',[FrontViTriController::class,'update'])->name('front-vi-tri.update');
         Route::resource('front-vi-tri','App\Http\Controllers\Front\FrontViTriController')->parameters([
             'front-vi-tri' =>'vi-tri:id'
-        ]);
+        ])->except(['update']);
 
 
 
@@ -102,10 +103,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::get('/get-data-tieu-chuan',[FrontTieuChuanController::class,'__getTieuChuan']);
 
         // Front-end
+        Route::post('front-tieu-chuan/store',[FrontTieuChuanController::class,'store']);
         Route::put('front-tieu-chuan/{id}/update',[FrontTieuChuanController::class,'update']);
         Route::resource('front-tieu-chuan','App\Http\Controllers\Front\FrontTieuChuanController')->parameters([
             'front-tieu-chuan' => 'tieu-chuan:id'
-        ])->except(['update']);
+        ])->except(['update','store']);
 
         // Thẩm quyền
         // Back-end

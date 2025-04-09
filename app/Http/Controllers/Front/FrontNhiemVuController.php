@@ -40,10 +40,7 @@ class FrontNhiemVuController extends RoutingController
     {
         $validate = $this->__validate($request->all());
          NhiemVu::create($validate);
-        return response()->json([
-            'status' =>'success',
-            'message' =>'Thêm thành công'
-        ]);
+         return response()->json(['success' => true, 'message' => 'Thêm thành công']);
     }
 
     /**
@@ -78,14 +75,30 @@ class FrontNhiemVuController extends RoutingController
     public function update(Request $request, $id)
     {
         $nhiemVu = NhiemVu::find($id);
-        $validate = $this->__validate($request->all());
-        $nhiemVu->update($validate);
-        return response()->json([
-            'status' => 'success',
-            'message' => 'Cập nhật thành công',
-        ]);
 
+        if (!$nhiemVu) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Không tìm thấy nhiệm vụ!',
+            ], 404);
+        }
+
+        // Validate dữ liệu đầu vào
+
+        try {
+            $nhiemVu->update([
+                'ten_nhiem_vu' => $request->value
+            ]);
+
+            return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
+        } catch (\Exception $e) {
+            return response()->json([
+                'status' => 'error',
+                'message' => 'Có lỗi xảy ra, vui lòng thử lại!',
+            ], 500);
+        }
     }
+
 
     /**
      * Remove the specified resource from storage.
@@ -108,7 +121,7 @@ class FrontNhiemVuController extends RoutingController
         $validate = Validator::make($data,[
             'ten_nhiem_vu' => 'required',
             'id_vi_tri' => 'required',
-            
+
         ],[
             'ten_nhiem_vu.required' => 'Tên nhiệm vụ không được bỏ trống',
             'ten_nhiem_vu.unique' => 'Nhiệm vụ bị trùng',
@@ -121,7 +134,7 @@ class FrontNhiemVuController extends RoutingController
         $nhiemVu = NhiemVu::find($request->idTrachNhiem);
         return $nhiemVu;
     }
-    
 
-    
+
+
 }

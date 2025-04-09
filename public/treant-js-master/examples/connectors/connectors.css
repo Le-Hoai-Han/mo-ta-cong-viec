@@ -52,7 +52,7 @@ body {
     padding: 0 2px;
     min-width: 200px;
     text-align: center;
-    height: 50px;
+    min-height: 50px;
     border: 2px solid #E8E8E3;
     border-radius: 2px;
     box-shadow: 1px 1px 1px rgba(0, 0, 0, .5);

@@ -2,7 +2,7 @@
 <x-dashboard-layout :current="$current">
     <x-slot name="title">Thẩm quyền</x-slot>
 
-    <?php 
+    <?php
     $list = [
             '/'=>'Trang chủ',
             '#'=>'Thẩm quyền'
@@ -30,7 +30,7 @@
                     @endforeach
 
                         </div><br>
-                    @endif          
+                    @endif
 
                     @if(Session::has('error'))
                         <div style="color:white" class="alert alert-danger">{{Session::get('error')}}</div>
@@ -83,7 +83,7 @@
     </div>
 
 
-    <x-modal-bootstrap id="deleteModal" class="alert-danger"> 
+    <x-modal-bootstrap id="deleteModal" class="alert-danger">
         <x-slot name="title">Xác nhận</x-slot>
         <x-slot name="body">Nội dung bị xóa sẽ không thể khôi phục. Xác nhận xóa?</x-slot>
         <x-slot name="button">
@@ -95,7 +95,7 @@
          let table;
         let deleteUrl = '';
         function setDeleteUrl(url) {
-            console.log(url);
+            // console.log(url);
             deleteUrl = url;
             $("#deleteModal").modal('show');
         }
@@ -114,7 +114,7 @@
                     // table.ajax.reload(null,false);
                     location.reload();
                     deleteUrl = '';
-                    
+
                 }
             });
         }

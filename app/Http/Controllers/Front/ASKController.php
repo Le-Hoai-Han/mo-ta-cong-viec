@@ -38,9 +38,30 @@ class ASKController extends RoutingController
      */
     public function store(Request $request)
     {
-        $validate = $this->__validate($request->all());
-        ASK::create($validate);
-        return redirect()->route('front.vi-tri.show',$validate['id_vi_tri'])->with('success','Thêm thành công');
+        if($request->thai_do){
+            ASK::create([
+                'id_vi_tri' => $request->id_vi_tri,
+                'noi_dung' => $request->thai_do,
+                'loai' => ASK::THAI_DO,
+            ]);
+        }
+
+        if($request->ky_nang){
+            ASK::create([
+                'id_vi_tri' => $request->id_vi_tri,
+                'noi_dung' => $request->ky_nang,
+                'loai' => ASK::KY_NANG,
+            ]);
+        }
+
+        if($request->kien_thuc){
+            ASK::create([
+                'id_vi_tri' => $request->id_vi_tri,
+                'noi_dung' => $request->kien_thuc,
+                'loai' => ASK::KIEN_THUC,
+            ]);
+        }
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
 
     /**
@@ -75,9 +96,10 @@ class ASKController extends RoutingController
     public function update(Request $request, $id)
     {
         $ASK = ASK::find($id);
-        $validate = $this->__validate($request->all());
-        $ASK->update($validate);
-        return redirect()->back()->with('success','Cập nhật thành công');
+        $ASK->update([
+            'noi_dung' => $request->value
+        ]);
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
 
     /**
@@ -88,6 +110,7 @@ class ASKController extends RoutingController
      */
     public function destroy($id)
     {
+        // dd($id);
         $ASK = ASK::find($id);
         $ASK->delete();
         return response()->json([

@@ -163,9 +163,9 @@ class User extends Authenticatable
         return $this->nhanVien->id;
     }
 
-    public function viTri(){
-        return $this->hasOne(Vitri::class,'id_user','id');
-    }
+        public function viTri(){
+            return $this->hasOne(Vitri::class,'id_user','id');
+        }
 
     public function isViTri($viTriKiemTra)
     {

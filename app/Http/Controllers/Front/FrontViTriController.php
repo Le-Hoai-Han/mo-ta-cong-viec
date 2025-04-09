@@ -93,29 +93,57 @@ class FrontViTriController extends RoutingController
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vitri $viTri)
+    public function update(Request $request,$id)
     {
+        $viTri = Vitri::find($id);
+
         if($viTri->trang_thai == Vitri::TT_KHOA){
             return response()->json([
                 'status'=>'error',
                 'message' => 'Vị trí đang bị khóa thông tin'
             ]);
         }
-        $data = $this->__validate($request->all());
+
+        if($request->fillable == 'id_vi_tri_quan_ly'){
+            $viTri->update(
+                ['id_vi_tri_quan_ly' => $request->value]
+            );
+        }
+
+        if($request->fillable == 'ten_vi_tri'){
+            $viTri->update(
+                ['ten_vi_tri' => $request->value]
+            );
+        }
+
+        if($request->fillable == 'phong_ban'){
+            $viTri->update(
+                ['id_phong_ban' => $request->value]
+            );
+        }
+
+        if($request->fillable == 'noi_lam_viec'){
+            $viTri->update(
+                ['noi_lam_viec' => $request->value]
+            );
+        }
+
+        if($request->fillable == 'muc_dich'){
+            $viTri->update(
+                ['muc_dich' => $request->value]
+            );
+        }
 
         // Xử lý add vào phòng ban
-        if(isset($data['id_phong_ban']) && $viTri->user){
-            $viTri->id_phong_ban = $data['id_phong_ban'];
-            $viTri->save();
+        // if(isset($data['id_phong_ban']) && $viTri->user){
+        //     $viTri->id_phong_ban = $data['id_phong_ban'];
+        //     $viTri->save();
 
-            // Xử lý add vào phòng ban
-            $this->xuLyAddPhongBan($viTri);
-        }
-        $viTri->update($data);
-        return response()->json([
-            'status'=>'success',
-            'message' => 'Cập nhật thành công'
-        ]);
+        //     // Xử lý add vào phòng ban
+        //     $this->xuLyAddPhongBan($viTri);
+        // }
+
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
 
     /**

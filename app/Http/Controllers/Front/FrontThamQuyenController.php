@@ -39,9 +39,23 @@ class FrontThamQuyenController extends RoutingController
      */
     public function store(Request $request)
     {
-        $validate = $this->__validate($request->all());
-        ThamQuyen::create($validate);
-        return redirect()->back()->with('success','Nhập thành công');
+
+        if($request->de_xuat){
+            ThamQuyen::create([
+                'id_vi_tri' => $request->id_vi_tri,
+                'noi_dung' => $request->de_xuat,
+                'loai' => ThamQuyen::DE_XUAT,
+            ]);
+        }
+
+        if($request->ra_quyet_dinh){
+            ThamQuyen::create([
+                'id_vi_tri' => $request->id_vi_tri,
+                'noi_dung' => $request->ra_quyet_dinh,
+                'loai' => ThamQuyen::RA_QUYET_DINH,
+            ]);
+        }
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
 
     /**
@@ -75,10 +89,14 @@ class FrontThamQuyenController extends RoutingController
      */
     public function update(Request $request, $id)
     {
+
         $thamQuyen = ThamQuyen::find($id);
-        $validate = $this->__validate($request->all());
-        $thamQuyen->update($validate);
-        return redirect()->back()->with('success','Cập nhật thành công');
+        if(!$thamQuyen){
+            return redirect()->back()->with('error', 'Không tìm thấy thẩm quyền!');
+        }
+
+        $thamQuyen->update(['noi_dung' => $request->value]);
+        return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
     }
 
     /**

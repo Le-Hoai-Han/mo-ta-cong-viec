@@ -92,7 +92,7 @@
          let table;
         let deleteUrl = '';
         function setDeleteUrl(url) {
-            console.log(url);
+            // console.log(url);
             deleteUrl = url;
             $("#deleteModal").modal('show');
         }
