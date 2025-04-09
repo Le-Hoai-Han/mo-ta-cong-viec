@@ -98,16 +98,24 @@
                     <td colspan="2">
                         <div class="trach-nhiem-title">
                             <div class="title">
+                                @if($kiemTra)
                                 <div class="action-delete">
                                     <a onclick="xacNhanYeuCauXoaTrachNhiem('{{ $nhiemVu->id }}')" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
                                         <span title="Xóa nhiệm vụ" class="material-icons delete">delete</span>
                                     </a>
                                 </div>
-                                <span class="editable" data-fillable="ten_nhiem_vu_{{ $nhiemVu->id }}" data-action="updateTrachNhiem" ondblclick="editTask(this, '{{ $nhiemVu->id }}')">
-                                    <span class="stt">{{ $i++ }}.</span> {{ $nhiemVu->ten_nhiem_vu }}
-                                </span>
+                                @endif
+                                @if($kiemTra)
+                                    <span class="editable" data-fillable="ten_nhiem_vu_{{ $nhiemVu->id }}" data-action="updateTrachNhiem" ondblclick="editTask(this, '{{ $nhiemVu->id }}')">
+                                        <span class="stt">{{ $i++ }}.</span> {{ $nhiemVu->ten_nhiem_vu }}
+                                    </span>
+                                @else
+                                    <span class="editable" data-fillable="ten_nhiem_vu_{{ $nhiemVu->id }}" data-action="updateTrachNhiem">
+                                        <span class="stt">{{ $i++ }}.</span> {{ $nhiemVu->ten_nhiem_vu }}
+                                    </span>
+                                @endif
                             </div>
-                            @if (auth()->user()->hasRole('Admin') || auth()->user()->hasPermissionTo('edit_mtcv'))
+                            @if ($kiemTra)
                                 <a class="edit-action" onclick="addMoTaInput(this, '{{ $nhiemVu->id }}')">
                                     <span class="material-icons">add_circle_outline</span>
                                 </a>
@@ -117,6 +125,7 @@
                 </tr>
                 @foreach ($nhiemVu->moTaNhiemVu as $moTa)
                     <tr>
+                        @if($kiemTra)
                         <td class="nhiem-vu-item editable" data-action="updateMoTa" ondblclick="editTask(this, '{{ $moTa->id }}')">
                             {{ $moTa->chi_tiet }}
                         </td>
@@ -131,10 +140,21 @@
                                 </a>
                             </div>
                         </td>
+                        @else
+                        <td class="nhiem-vu-item editable" data-action="updateMoTa">
+                            {{ $moTa->chi_tiet }}
+                        </td>
+                        <td>
+                            <div class="editable" data-action="updateMoTaKetQua">
+                                {{ $moTa->ket_qua }}
+
+                            </div>
+                        </td>
+                        @endif
                     </tr>
                 @endforeach
             @endforeach
-            @if (auth()->user()->hasRole('Admin') || auth()->user()->hasPermissionTo('edit_mtcv'))
+            @if ($kiemTra)
             <tr id="add-trach-nhiem-row">
                 <td colspan="2">
                     <input type="text" id="new-trach-nhiem" data-id-vi-tri="{{ $viTri->id }}" class="edit-textarea" placeholder="Nhập trách nhiệm mới..." onkeydown="handleAddTrachNhiem(this,event)">

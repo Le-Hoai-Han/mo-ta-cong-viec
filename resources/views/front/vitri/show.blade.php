@@ -78,6 +78,11 @@
     </style>
     @endpush
 
+    @php
+        $kiemTra = auth()->user()->hasRole('Admin') ||
+            (auth()->user()->hasRole('mo_ta_cong_viec') &&
+                auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv');
+    @endphp
     <div class="container">
         <h2>{{ $viTri->ten_vi_tri }}</h2>
 

@@ -95,7 +95,7 @@
 <div class="tieu-chuan-tuyen-chon">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
         <b>7. Tiêu chuẩn tuyển chọn</b>
-        @if( (auth()->user()->hasRole('Admin') && $viTri->tieuChuan->isEmpty()) || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isEmpty() || auth()->user()->hasPermissionTo('edit_mtcv') && $viTri->tieuChuan->isNotEmpty())
+        @if($kiemTra)
             <a id="btn_add_tieu_chuan" id-vi-tri="{{$viTri->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                 <span class="material-icons">
                     add_circle_outline
@@ -110,7 +110,7 @@
                 <th>Tiêu chí</th>
                 <th>
                     Yêu cầu
-                @if((auth()->user()->hasRole('Admin') || auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) && $viTri->tieuChuan->isNotEmpty() || auth()->user()->hasPermissionTo('edit_mtcv') && $viTri->tieuChuan->isNotEmpty())
+                @if(($kiemTra) && $viTri->tieuChuan->isNotEmpty() || auth()->user()->hasPermissionTo('edit_mtcv') && $viTri->tieuChuan->isNotEmpty())
                     <a id="btn_edit_tieu_chuan" id-tieu-chuan="{{$viTri->tieuChuan[0]->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                         <span class="material-icons">
                             edit
@@ -123,10 +123,13 @@
         <tbody>
 
             @foreach($viTri->tieuChuan as $tieuChi)
+            @php
+                $action = 'ondblclick="editTask(this, ' . $tieuChi->id . ')"';
+            @endphp
                 <tr>
                     <td>Giới tính</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-id="{{ $tieuChi->gioi_tinh == 0 ? 0:1 }}" data-fillable="gioi_tinh" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-id="{{ $tieuChi->gioi_tinh == 0 ? 0:1 }}" data-fillable="gioi_tinh" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->gioi_tinh == 0 ? 'Nam' :'Nữ'}}</p>
                         </div>
                     </td>
@@ -134,7 +137,7 @@
                 <tr>
                     <td>Độ tuổi</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="do_tuoi" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="do_tuoi" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->tuoi}}</p>
                         </div>
                     </td>
@@ -142,7 +145,7 @@
                 <tr>
                     <td>Học vấn</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="hoc_van" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="hoc_van" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->hoc_van}}</p>
                         </div>
                     </td>
@@ -150,7 +153,7 @@
                 <tr>
                     <td>Chuyên môn</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="chuyen_mon" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="chuyen_mon" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->chuyen_mon}}</p>
                         </div>
                     </td>
@@ -158,7 +161,7 @@
                 <tr>
                     <td>Vi tính</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="vi_tinh" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="vi_tinh" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->vi_tinh}}</p>
                         </div>
                     </td>
@@ -167,7 +170,7 @@
                 <tr>
                     <td>Anh ngữ</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="anh_ngu" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="anh_ngu" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->anh_ngu}}</p>
                         </div>
                     </td>
@@ -175,7 +178,7 @@
                 <tr>
                     <td>Kinh nghiệm</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="kinh_nghiem" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="kinh_nghiem" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->kinh_nghiem}}</p>
                         </div>
                     </td>
@@ -183,7 +186,7 @@
                 <tr>
                     <td>Kỹ năng cần có</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="ky_nang" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="ky_nang" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->ky_nang}}</p>
                         </div>
                     </td>
@@ -191,7 +194,7 @@
                 <tr>
                     <td>Thái độ/tố chất cần có</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="to_chat" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="to_chat" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->to_chat}}</p>
                         </div>
                     </td>
@@ -199,7 +202,7 @@
                 <tr>
                     <td>Ngoại hình</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="ngoai_hinh" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="ngoai_hinh" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->ngoai_hinh}}</p>
                         </div>
                     </td>
@@ -207,7 +210,7 @@
                 <tr>
                     <td>Sức khỏe</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="suc_khoe" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="suc_khoe" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->suc_khoe}}</p>
                         </div>
                     </td>
@@ -215,7 +218,7 @@
                 <tr>
                     <td>Nơi ở</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="ho_khau" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="ho_khau" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->ho_khau}}</p>
                         </div>
                     </td>
@@ -223,7 +226,7 @@
                 <tr>
                     <td>Ưu tiên</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="uu_tien" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="uu_tien" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->uu_tien}}</p>
                         </div>
                     </td>
@@ -231,7 +234,7 @@
                 <tr>
                     <td>Khác</td>
                     <td>
-                        <div data-action="updateTieuChuan" data-fillable="khac" ondblclick="editTask(this, {{$tieuChi->id}})">
+                        <div data-action="updateTieuChuan" data-fillable="khac" {!! ($kiemTra ? $action :"") !!}>
                             <p>{{$tieuChi->khac ?? '...'}}</p>
                         </div>
                     </td>

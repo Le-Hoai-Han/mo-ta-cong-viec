@@ -23,7 +23,7 @@
 <div class="ask">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
         <b>8. ASK (Attitude - Skill - Knowledge)</b>
-        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
+        @if($kiemTra)
             <a onclick="addASKInput({{ $viTri->id }})" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{$viTri->id}}">
                 <span class="material-icons">
                     add_circle_outline
@@ -40,18 +40,20 @@
             </tr>
         </thead>
         <tbody>
-
             <tr>
                 @foreach([0 => 'Thái độ', 1 => 'Kỹ năng',2 => 'Kiến thức'] as $loai => $title)
                 <td>
                     <table class="ask-table" data-loai="{{ $loai }}">
                         @foreach($viTri->ASK->where('loai',$loai) as $item)
+                            @php
+                                $action = 'ondblclick="editTask(this, ' . $item->id . ')"';
+                            @endphp
                             <tr>
                                 <td>
-                                    <div data-action="updateASK" ondblclick="editTask(this, {{$item->id}})">
+                                    <div data-action="updateASK" {!! $kiemTra ? $action :'' !!}>
                                         {{$item->noi_dung}}
                                     </div>
-                                    @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
+                                    @if($kiemTra)
                                     <div class="action-delete">
                                         <a onclick="xacNhanYeuCauXoaASK(this,{{ $item->id }})" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" data-name="{{ $title }}">
                                             <span class="material-icons delete">

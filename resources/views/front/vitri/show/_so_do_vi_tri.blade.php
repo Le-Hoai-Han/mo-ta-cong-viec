@@ -91,9 +91,15 @@
         @if($viTri->id != 2)
             <div class="vi_tri_can_mo_ta">
                 <h4>
+                @if ($kiemTra)
                     <div data-action="updateViTri" data-fillable="ten_vi_tri" ondblclick="editTask(this, {{$viTri->id}})">
                         <a class="vi_tri_can_mo_ta_text" id="ten_vi_tri" >{{ $viTri->ten_vi_tri }}</a>
                     </div>
+                @else
+                    <div data-action="updateViTri" data-fillable="ten_vi_tri">
+                        <a class="vi_tri_can_mo_ta_text" id="ten_vi_tri" >{{ $viTri->ten_vi_tri }}</a>
+                    </div>
+                @endif
                 </h4>
             </div>
         @endif

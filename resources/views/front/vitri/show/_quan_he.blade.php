@@ -21,7 +21,7 @@
 <div class="quan-he">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
         <b>6. Quan hệ công việc</b>
-        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
+        @if($kiemTra)
             <a onclick="addQuanHeInput({{ $viTri->id }})" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                 <span class="material-icons">
                     add_circle_outline
@@ -44,16 +44,20 @@
                             @foreach($viTri->quanHe->where('loai',$loai) as $quanHe)
                                 <tr>
                                     <td>
+                                         @if($kiemTra)
                                         <div data-action="updateQuanHe" ondblclick="editTask(this, {{$quanHe->id}})">
                                             <span class="quan-he-text">  {{$quanHe->noi_dung}}</span>
                                         </div>
-                                        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                                         <div class="action-delete">
                                             <a onclick="xacNhanYeuCauXoaQuanHe('{{ $quanHe->id }}')" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                                                 <span class="material-icons delete">
                                                     delete
                                                 </span>
                                             </a>
+                                        </div>
+                                        @else
+                                        <div data-action="updateQuanHe">
+                                            <span class="quan-he-text">  {{$quanHe->noi_dung}}</span>
                                         </div>
                                         @endif
                                     </td>

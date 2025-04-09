@@ -10,9 +10,7 @@
                 </span>
             </a>
             @endif
-            @if (auth()->user()->hasRole('Admin') ||
-                    (auth()->user()->hasRole('mo_ta_cong_viec') &&
-                        auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
+            @if ($kiemTra)
 
                     <a title="Sửa vị trí" id="edit-vi-tri" vi-tri="{{$viTri}}" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
                         <span class="material-icons">
@@ -44,9 +42,15 @@
             <p>Chức danh công việc</p>
         </td>
         <td>
-            <div data-action="updateViTri" data-fillable="ten_vi_tri" ondblclick="editTask(this, {{$viTri->id}})">
-                <p id="ten_vi_tri">{{ $viTri->ten_vi_tri }}</p>
-            </div>
+            @if ($kiemTra)
+                <div data-action="updateViTri" data-fillable="ten_vi_tri" ondblclick="editTask(this, {{$viTri->id}})">
+                    <p id="ten_vi_tri">{{ $viTri->ten_vi_tri }}</p>
+                </div>
+            @else
+            <div data-action="updateViTri" data-fillable="ten_vi_tri">
+                    <p id="ten_vi_tri">{{ $viTri->ten_vi_tri }}</p>
+                </div>
+            @endif
         </td>
     </tr>
     <tr>
@@ -54,9 +58,15 @@
             <p>Phòng ban</p>
         </td>
         <td>
+        @if ($kiemTra)
             <div data-action="updateViTri" data-id="{{ $viTri->phongBan->id }}"  data-fillable="phong_ban" ondblclick="editTask(this, {{$viTri->id}})">
                 <p>{{ $viTri->phongBan ? $viTri->phongBan->name :'Chưa cập nhật' }}</p>
             </div>
+        @else
+        <div data-action="updateViTri" data-id="{{ $viTri->phongBan->id }}"  data-fillable="phong_ban">
+                <p>{{ $viTri->phongBan ? $viTri->phongBan->name :'Chưa cập nhật' }}</p>
+            </div>
+        @endif
         </td>
 
     </tr>
@@ -66,9 +76,15 @@
             <p>Cấp quản lý trực tiếp</p>
         </td>
         <td>
+        @if ($kiemTra)
             <div data-action="updateViTri" data-id="{{ $viTri->capQuanly->id }}" data-fillable="id_vi_tri_quan_ly" ondblclick="editTask(this, {{$viTri->id}})">
                 <p id="id_vi_tri_quan_ly">{{ $viTri->capQuanly ?  $viTri->capQuanly->ten_vi_tri :'Chưa cập nhật' }}</p>
             </div>
+        @else
+        <div data-action="updateViTri" data-id="{{ $viTri->capQuanly->id }}" data-fillable="id_vi_tri_quan_ly">
+                <p id="id_vi_tri_quan_ly">{{ $viTri->capQuanly ?  $viTri->capQuanly->ten_vi_tri :'Chưa cập nhật' }}</p>
+            </div>
+        @endif
         </td>
     </tr>
     @endif
@@ -77,17 +93,29 @@
             <p>Nơi làm việc</p>
         </td>
         <td>
+        @if ($kiemTra)
             <div data-action="updateViTri" data-fillable="noi_lam_viec" ondblclick="editTask(this, {{$viTri->id}})">
                 <p>{{ $viTri->noi_lam_viec }}</p>
             </div>
+        @else
+        <div data-action="updateViTri" data-fillable="noi_lam_viec">
+                <p>{{ $viTri->noi_lam_viec }}</p>
+            </div>
+        @endif
         </td>
     </tr>
     <tr>
         <td colspan=""><b>2. Mục đích công việc vị trí</b></td>
         <td>
+        @if ($kiemTra)
             <div data-action="updateViTri" data-fillable="muc_dich" ondblclick="editTask(this, {{$viTri->id}})">
                 <p><?php echo nl2br($viTri->muc_dich ?? '...')  ?></p>
             </div>
+        @else
+            <div data-action="updateViTri" data-fillable="muc_dich">
+                <p><?php echo nl2br($viTri->muc_dich ?? '...')  ?></p>
+            </div>
+        @endif
         </td>
     </tr>
 </table>

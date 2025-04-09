@@ -18,7 +18,7 @@
 
 <div class="tham-quyen">
     <p class="so-do-to-chuc_tieu_de"><b>5. Thẩm quyền/Quyền hạn</b>
-        @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
+        @if($kiemTra)
         <a style="display: {{ $viTri->trang_thai != 0 ? 'none' : 'inline' }}" onclick="addThamQuyenInput({{ $viTri->id }})">
             <span class="material-icons">add_circle_outline</span>
         </a>
@@ -39,16 +39,21 @@
                         @foreach($viTri->thamQuyen->where('loai', $loai) as $thamQuyen)
                         <tr>
                             <td>
+                            @if($kiemTra)
                                 <div data-action="updateQuyenHan" ondblclick="editTask(this, {{ $thamQuyen->id }})">
                                     <span class="tham-quyen-text">{{ $thamQuyen->noi_dung }}</span>
                                 </div>
-                                @if(auth()->user()->hasRole('Admin') || (auth()->user()->hasRole('mo_ta_cong_viec') && auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv'))
                                 <div class="action-delete">
                                     <a onclick="xacNhanYeuCauXoaThamQuyen(this,{{ $thamQuyen->id }})" class="btn-delete-tham-quyen" data-name="{{ $title }}" style="display: {{ $viTri->trang_thai != 0 ? 'none' : 'inline' }}">
                                         <span class="material-icons delete" style="font-size: 18px; color: red">delete</span>
                                     </a>
                                 </div>
-                                @endif
+                            @else
+                                <div data-action="updateQuyenHan">
+                                    <span class="tham-quyen-text">{{ $thamQuyen->noi_dung }}</span>
+                                </div>
+                            @endif
+                               
                             </td>
                         </tr>
                         @endforeach
