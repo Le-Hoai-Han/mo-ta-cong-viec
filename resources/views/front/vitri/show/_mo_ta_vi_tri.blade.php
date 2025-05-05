@@ -59,7 +59,7 @@
         </td>
         <td>
         @if ($kiemTra)
-            <div data-action="updateViTri" data-id="{{ $viTri->phongBan->id }}"  data-fillable="phong_ban" ondblclick="editTask(this, {{$viTri->id}})">
+            <div data-action="updateViTri" data-id="{{ $viTri->phongBan ? $viTri->phongBan->id : '' }}"  data-fillable="phong_ban" ondblclick="editTask(this, {{$viTri->id}})">
                 <p>{{ $viTri->phongBan ? $viTri->phongBan->name :'Chưa cập nhật' }}</p>
             </div>
         @else
