@@ -34,7 +34,7 @@
                 <h5>Chỉnh sửa vị trí</h5>
             </div>
             <div class="card-body">
-                <form method="POST">
+                <form method="POST" action="{{ route('front-vi-tri.update',$viTri) }}">
                     @csrf
                     @method('PUT')
 
