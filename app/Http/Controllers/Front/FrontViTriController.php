@@ -134,6 +134,20 @@ class FrontViTriController extends RoutingController
             );
         }
 
+        if(isset($request->_token)){
+            $viTri->update([
+                'ten_vi_tri' => $request->ten_vi_tri,
+                'id_phong_ban' => $request->id_phong_ban,
+                'id_vi_tri_quan_ly' => $request->id_vi_tri_quan_ly,
+                'id_user' => $request->id_user,
+                'noi_lam_viec' => $request->noi_lam_viec,
+                'muc_dich' => $request->muc_dich,
+                'stroke' => $request->stroke,
+            ]);
+
+            return redirect()->route('front-vi-tri.show',$viTri)->with('success','Cập nhật thành công');
+        }
+
         // Xử lý add vào phòng ban
         // if(isset($data['id_phong_ban']) && $viTri->user){
         //     $viTri->id_phong_ban = $data['id_phong_ban'];
