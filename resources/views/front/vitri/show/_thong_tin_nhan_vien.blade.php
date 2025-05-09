@@ -1,5 +1,38 @@
+@push('styles')
+<style>
+    .size-40 {
+        width: 10rem; /* Tương đương với tailwind's `size-8` */
+        height: 10rem; /* Tương đương với tailwind's `size-8` */
+    }
+
+.rounded-full {
+  border-radius: 9999px; /* Giá trị lớn để tạo hình tròn hoàn toàn */
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.w-full {
+    width: 100%;
+}
+
+.h-full {
+    height: 100%;
+}
+
+.object-cover {
+    object-fit: cover;
+}
+
+</style>
+@endpush
 <table>
-        <td style="width: 10%;height: 185px;text-align: center"><img src="{{asset('storage/'. ($viTri->user != null ? $viTri->user->profile_photo_path :''))}}" alt="" height="185px" class="img-profile"></td>
+        <td style="width: 20%;height: 185px;text-align: center">
+            <div class="w-full h-full overflow-hidden flex">
+                <img src="{{'https://drive.3d-smartsolutions.com/storage/'. ($viTri->user != null ? $viTri->user->profile_photo_path :'')}}" class="w-full h-full object-cover" />
+            </div>
+        </td>
         <td style="vertical-align: top;">
             <p class="text-thong-tin"> Họ và tên: {{$nhanVien != null ?$nhanVien->name :'Đang cập nhật'}}
                 {{-- @if(auth()->user()->hasRole('Admin'))
