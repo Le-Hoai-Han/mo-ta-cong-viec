@@ -30,7 +30,7 @@
 <table>
         <td style="width: 20%;height: 185px;text-align: center">
             <div class="w-full h-full overflow-hidden flex">
-                <img src="{{'https://drive.3d-smartsolutions.com/storage/'. ($viTri->user != null ? $viTri->user->profile_photo_path :'')}}" class="w-full h-full object-cover" />
+                <img src="{{'https://drive.3d-smartsolutions.com/storage/'. ($viTri->user != null ? $viTri->user->profile_photo_path :'')}}" class="w-full object-cover" style="height: 200px" />
             </div>
         </td>
         <td style="vertical-align: top;">
