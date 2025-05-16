@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 
-class GuiMailAdminKhiSaleChuaXNVATMail extends Mailable
+class GuiEmailChucMungSinhNhatNhanVienMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -16,11 +16,11 @@ class GuiMailAdminKhiSaleChuaXNVATMail extends Mailable
      *
      * @return void
      */
-    public $donHang;
-    public function __construct($donHang)
+    public $user;
+    public function __construct($user)
     {
-        $this->donHang= $donHang;
-    }   
+        $this->user = $user;
+    }
 
     /**
      * Build the message.
@@ -29,10 +29,10 @@ class GuiMailAdminKhiSaleChuaXNVATMail extends Mailable
      */
     public function build()
     {
-        return $this->view('template-email.template-sale-chua-xac-nhan-vat')
-        ->subject('Sale chưa xác nhận VAT đơn hàng '.$this->donHang->ma_don_hang)
+        return $this->view('template-email.email-chuc-mung')
+        ->subject("[3DS] Happy Birthday " .$this->user->name)
         ->with([
-            'donHang'=>$this->donHang
+            'user' => $this->user
         ]);
     }
 }
