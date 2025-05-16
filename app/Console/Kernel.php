@@ -16,8 +16,7 @@ class Kernel extends ConsoleKernel
      */
     protected function schedule(Schedule $schedule)
     {
-        $schedule->command('donhang:tinhthuong')->hourly();
-        $schedule->job(new CapNhatThuongQuyJob)->monthlyOn(1, '00:00');
+        $schedule->command('gui-chuc-mung-sinh-nhat')->dailyAt('00:00');
     }
 
     /**
