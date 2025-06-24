@@ -40,15 +40,13 @@ class GuiEmailTongHopTemplateEmailChoNV extends Command
      */
     public function handle()
     {
-        $users = User::ActiveEmployees()->where('id', '103')->pluck('name', 'email')->toArray();
+        $users = User::ActiveEmployees()->pluck('name', 'email')->toArray();
         foreach ($users as $email => $name) {
             // Assuming you have a method to send the email
             // You can replace this with your actual email sending logic
             Mail::to($email)
                     ->send(new GuiTongHopTemplateEmail($name));
         }
-
-        $this->info('Template emails sent successfully to all active employees.');
 
         return 0;
     }
