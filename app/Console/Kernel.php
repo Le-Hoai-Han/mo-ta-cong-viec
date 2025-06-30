@@ -15,6 +15,9 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule)
     {
         $schedule->command('gui-chuc-mung-sinh-nhat')->dailyAt('00:00');
+        $schedule->command('gui-tong-hop-an-pham-mkt-noi-bo')->cron('0 9 5 * *');
+        $schedule->command('gui-email-pr-cho-toan-nhan-vien')->cron('0 9 10 * *');
+        $schedule->command('pr-bo-phan-kinh-doanh')->cron('0 9 15 * *');
         $schedule->command('gui-tong-hop-template-email-cho-nv')->cron('0 9 25 * *');
     }
 
