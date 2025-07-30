@@ -1,16 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-<<<<<<< HEAD
 use App\Http\Controllers\Front\UserController as FrontUserController;
-use App\Http\Controllers\MoTaNhiemVuController;
-use App\Http\Controllers\NhiemVuController;
-use App\Http\Controllers\QuanHeController;
-use App\Http\Controllers\ThamQuyenController;
-use App\Http\Controllers\TieuChuanTuyenChonController;
-=======
-use App\Http\Controllers\front\UserController as FrontUserController;
->>>>>>> a4425333790c88c6fb317f49298348c913f444ef
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\FrontViTriController;
 use App\Http\Controllers\Front\FrontNhiemVuController;
