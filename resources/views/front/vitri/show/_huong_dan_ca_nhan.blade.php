@@ -80,7 +80,7 @@
 </style>
 @endpush
 <p class="so-do-to-chuc_tieu_de">
-    <b>5. Hướng dẫn công việc <em>(Cá nhân tự điền)</em></b>
+    <b>5. Hướng dẫn công việc <em style="color: red">(Cá nhân tự điền)</em></b>
 </p>
 <div class="trach-nhiem-nhiem-vu">
     <table class="trach-nhiem-table">
