@@ -115,7 +115,7 @@
                                 @endif
                             </div>
                             @if ($kiemTraCaNhan)
-                                <a class="edit-action" onclick="addMoTaHuongDanInput(this, '{{ $huongDanCaNhan->id }}')" title="Thêm mô tả hướng dẫn">
+                                <a class="edit-action" onclick="addMoTaHuongDanInput(this, '{{ $huongDanCaNhan->id }}')" title="Thêm mô tả">
                                     <span class="material-icons">add_circle_outline</span>
                                 </a>
                             @endif
@@ -156,7 +156,7 @@
             @if ($kiemTraCaNhan)
             <tr id="add-trach-nhiem-row">
                 <td colspan="2">
-                    <input type="text" id="new-huong-dan" data-id-vi-tri="{{ $viTri->id }}" class="edit-textarea" placeholder="Nhập hướng dẫn và ấn Enter..." onkeydown="handleAddHuongDan(this,event)">
+                    <input type="text" id="new-huong-dan" data-id-vi-tri="{{ $viTri->id }}" class="edit-textarea" placeholder="Nhập trách nhiệm và ấn Enter..." onkeydown="handleAddHuongDan(this,event)">
                 </td>
             </tr>
             @endif
