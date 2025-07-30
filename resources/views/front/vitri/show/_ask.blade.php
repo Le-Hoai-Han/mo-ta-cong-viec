@@ -22,9 +22,9 @@
 @endpush
 <div class="ask">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
-        <b>8. ASK (Attitude - Skill - Knowledge)</b>
+        <b>9. ASK (Attitude - Skill - Knowledge)</b>
         @if($kiemTra)
-            <a onclick="addASKInput({{ $viTri->id }})" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{$viTri->id}}">
+            <a onclick="addASKInput({{ $viTri->id }})" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{$viTri->id}}" Title="Thêm thái độ, kỹ năng, kiến thức">
                 <span class="material-icons">
                     add_circle_outline
                 </span>
@@ -83,7 +83,7 @@
             let loai = table.dataset.loai;
             let tr = document.createElement("tr");
             tr.innerHTML = `<td>
-                <input type="text" id="${loai == 0 ? 'input-thai-do-' : (loai == 1 ? 'input-ky-nang-' : 'input-kien-thuc-')}${idViTri}" class="edit-textarea" placeholder="Nhập ${loai == 0 ? 'thái độ' : (loai == 1 ? 'kỹ năng' : 'kiến thức')}..." data-vi-tri="${idViTri}" data-loai="${loai}">
+                <input type="text" id="${loai == 0 ? 'input-thai-do-' : (loai == 1 ? 'input-ky-nang-' : 'input-kien-thuc-')}${idViTri}" class="edit-textarea" placeholder="Nhập ${loai == 0 ? 'thái độ' : (loai == 1 ? 'kỹ năng' : 'kiến thức')} và ấn Enter..." data-vi-tri="${idViTri}" data-loai="${loai}">
             </td>`;
 
             table.appendChild(tr);
@@ -140,7 +140,7 @@
     {
         Swal.fire({
             title: "Xác nhận",
-            text: `Bạn có chắc chắn muốn xóa ${element.getAttribute('data-name')} này`,
+            text: `Bạn có chắc chắn muốn xóa thông tin ${element.getAttribute('data-name')} này`,
             icon: "warning",
             showCancelButton: true,
             confirmButtonText: 'Xác nhận',

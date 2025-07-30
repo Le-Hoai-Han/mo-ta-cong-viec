@@ -79,9 +79,8 @@
 
 </style>
 @endpush
-
 <p class="so-do-to-chuc_tieu_de">
-    <b>4. Các trách nhiệm và nhiệm vụ chính</b>
+    <b>5. Hướng dẫn công việc <em>(Cá nhân tự điền)</em></b>
 </p>
 <div class="trach-nhiem-nhiem-vu">
     <table class="trach-nhiem-table">
@@ -93,49 +92,49 @@
         </thead>
         <tbody>
             <?php $i = 1; ?>
-            @foreach ($viTri->nhiemVu as $nhiemVu)
+            @foreach ($viTri->huongDanCaNhan as $huongDanCaNhan)
                 <tr id="trach-nhiem-{{ $i }}">
                     <td colspan="2">
                         <div class="trach-nhiem-title">
                             <div class="title">
-                                @if($kiemTra)
+                                @if($kiemTraCaNhan)
                                 <div class="action-delete">
-                                    <a onclick="xacNhanYeuCauXoaTrachNhiem('{{ $nhiemVu->id }}')" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
-                                        <span title="Xóa nhiệm vụ" class="material-icons delete">delete</span>
+                                    <a onclick="xacNhanYeuCauXoaHuongDan('{{ $huongDanCaNhan->id }}')" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
+                                        <span title="Xóa hướng dẫn" class="material-icons delete">delete</span>
                                     </a>
                                 </div>
                                 @endif
-                                @if($kiemTra)
-                                    <span class="editable" data-fillable="ten_nhiem_vu_{{ $nhiemVu->id }}" data-action="updateTrachNhiem" ondblclick="editTask(this, '{{ $nhiemVu->id }}')" title="Nhấp đúp để chỉnh sửa">
-                                        <span class="stt">{{ $i++ }}.</span> {{ $nhiemVu->ten_nhiem_vu }}
+                                @if($kiemTraCaNhan)
+                                    <span title="Nhấn đúp vào để chỉnh sửa nội dung" class="editable" data-fillable="ten_huong_dan_{{ $huongDanCaNhan->id }}" data-action="updateHuongDan" ondblclick="editTask(this, '{{ $huongDanCaNhan->id }}')">
+                                        <span class="stt">{{ $i++ }}.</span> {{ $huongDanCaNhan->ten_huong_dan }}
                                     </span>
                                 @else
-                                    <span class="editable" data-fillable="ten_nhiem_vu_{{ $nhiemVu->id }}" data-action="updateTrachNhiem">
-                                        <span class="stt">{{ $i++ }}.</span> {{ $nhiemVu->ten_nhiem_vu }}
+                                    <span class="editable" data-fillable="ten_huong_dan_{{ $huongDanCaNhan->id }}" data-action="updateHuongDan">
+                                        <span class="stt">{{ $i++ }}.</span> {{ $huongDanCaNhan->ten_huong_dan }}
                                     </span>
                                 @endif
                             </div>
-                            @if ($kiemTra)
-                                <a class="edit-action" onclick="addMoTaInput(this, '{{ $nhiemVu->id }}')" title="Thêm mô tả nhiệm vụ">
+                            @if ($kiemTraCaNhan)
+                                <a class="edit-action" onclick="addMoTaHuongDanInput(this, '{{ $huongDanCaNhan->id }}')" title="Thêm mô tả hướng dẫn">
                                     <span class="material-icons">add_circle_outline</span>
                                 </a>
                             @endif
                         </div>
                     </td>
                 </tr>
-                @foreach ($nhiemVu->moTaNhiemVu as $moTa)
+                @foreach ($huongDanCaNhan->moTaHuongDan as $moTa)
                     <tr>
-                        @if($kiemTra)
-                        <td class="nhiem-vu-item editable" data-action="updateMoTa" ondblclick="editTask(this, '{{ $moTa->id }}')" title="Nhấp đúp để chỉnh sửa">
+                        @if($kiemTraCaNhan)
+                        <td class="nhiem-vu-item editable" title="Nhấn đúp vào để chỉnh sửa nội dung" data-action="updateMoTaHuongDanChiTiet" ondblclick="editTask(this, '{{ $moTa->id }}')">
                             {{ $moTa->chi_tiet }}
                         </td>
                         <td>
-                            <div class="editable" data-action="updateMoTaKetQua" ondblclick="editTask(this, '{{ $moTa->id }}')" title="Nhấp đúp để chỉnh sửa">
+                            <div class="editable" title="Nhấn đúp vào để chỉnh sửa nội dung" data-action="updateMoTaHuongDanKetQua" ondblclick="editTask(this, '{{ $moTa->id }}')">
                                 {{ $moTa->ket_qua }}
 
                             </div>
                             <div class="action-delete">
-                                <a onclick="xacNhanYeuCauXoaNhiemVu('{{ $moTa->id }}')" id="delete-trach-nhiem" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
+                                <a onclick="xacNhanYeuCauXoaMoTaHuongDan('{{ $moTa->id }}')" id="delete-trach-nhiem" style="<?php echo $viTri->trang_thai != 0 ? 'display:none' : ''; ?>">
                                     <span title="Xóa nhiệm vụ" class="material-icons delete">delete</span>
                                 </a>
                             </div>
@@ -154,10 +153,10 @@
                     </tr>
                 @endforeach
             @endforeach
-            @if ($kiemTra)
+            @if ($kiemTraCaNhan)
             <tr id="add-trach-nhiem-row">
                 <td colspan="2">
-                    <input type="text" id="new-trach-nhiem" data-id-vi-tri="{{ $viTri->id }}" class="edit-textarea" placeholder="Nhập trách nhiệm mới và ấn Enter..." onkeydown="handleAddTrachNhiem(this,event)">
+                    <input type="text" id="new-huong-dan" data-id-vi-tri="{{ $viTri->id }}" class="edit-textarea" placeholder="Nhập hướng dẫn và ấn Enter..." onkeydown="handleAddHuongDan(this,event)">
                 </td>
             </tr>
             @endif
@@ -168,23 +167,23 @@
 @push('scripts')
 <script>
 
-function handleAddTrachNhiem(element,event) {
+function handleAddHuongDan(element,event) {
     if (event.key === "Enter" && !event.shiftKey) {
         event.preventDefault();
-        let input = document.getElementById("new-trach-nhiem");
+        let input = document.getElementById("new-huong-dan");
         let newValue = input.value.trim();
         let idViTri = element.getAttribute('data-id-vi-tri')
 
         if (newValue === "") return;
 
-        routeUpdate = "{{route('front-nhiem-vu.store')}}";
+        routeUpdate = "{{route('front-huong-dan.store')}}";
         fetch(routeUpdate, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
                 "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").content
             },
-            body: JSON.stringify({ ten_nhiem_vu: newValue,id_vi_tri:idViTri })
+            body: JSON.stringify({ ten_huong_dan: newValue,id_vi_tri:idViTri })
         })
         .then(response => response.json())
         .then(data => {
@@ -200,23 +199,23 @@ function handleAddTrachNhiem(element,event) {
     }
 }
 
-function addMoTaInput(element, idNhiemVu) {
+function addMoTaHuongDanInput(element, idHuongDan) {
     let tr = document.createElement("tr");
 
     tr.innerHTML = `
         <td>
-            <input type="text" class="edit-textarea" placeholder="Nhập chi tiết..." id="input-chi-tiet-${idNhiemVu}">
+            <input type="text" class="edit-textarea" placeholder="Nhập chi tiết..." id="input-chi-tiet-${idHuongDan}">
         </td>
         <td>
-            <input type="text" class="edit-textarea" placeholder="Nhập kết quả và ấn Enter..." id="input-ket-qua-${idNhiemVu}">
+            <input type="text" class="edit-textarea" placeholder="Nhập kết quả và ấn Enter..." id="input-ket-qua-${idHuongDan}">
         </td>
     `;
 
     let parentRow = element.closest("tr");
     parentRow.insertAdjacentElement("afterend", tr);
 
-    let inputChiTiet = document.getElementById(`input-chi-tiet-${idNhiemVu}`);
-    let inputKetQua = document.getElementById(`input-ket-qua-${idNhiemVu}`);
+    let inputChiTiet = document.getElementById(`input-chi-tiet-${idHuongDan}`);
+    let inputKetQua = document.getElementById(`input-ket-qua-${idHuongDan}`);
 
     inputChiTiet.focus();
 
@@ -224,25 +223,25 @@ function addMoTaInput(element, idNhiemVu) {
         input.addEventListener("keydown", function (event) {
             if (event.key === "Enter" && !event.shiftKey) {
                 event.preventDefault();
-                saveMoTa(idNhiemVu, inputChiTiet.value.trim(), inputKetQua.value.trim(), tr);
+                saveMoTaHuongDan(idHuongDan, inputChiTiet.value.trim(), inputKetQua.value.trim(), tr);
             }
         });
     })
 }
 
-function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
+function saveMoTaHuongDan(idHuongDan, chiTiet, ketQua, rowElement) {
     if (chiTiet === "" || ketQua === "") {
         alert("Vui lòng nhập đủ thông tin cho chi tiết và kết quả!");
         return;
     }
 
-    fetch("{{ route('front-mo-ta-nhiem-vu.store') }}", {
+    fetch("{{ route('front-mo-ta-huong-dan.store') }}", {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
             "X-CSRF-TOKEN": document.querySelector("meta[name='csrf-token']").content
         },
-        body: JSON.stringify({ id_nhiem_vu: idNhiemVu, chi_tiet: chiTiet, ket_qua: ketQua })
+        body: JSON.stringify({ id_huong_dan: idHuongDan, chi_tiet: chiTiet, ket_qua: ketQua })
     })
     .then(response => response.json())
     .then(data => {
@@ -258,9 +257,9 @@ function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
 }
 
 
-    function xoaTrachNhiem(id){
+    function xoaHuongDan(id){
             $.ajax({
-                url:"{{url('front-nhiem-vu-delete')}}/" +id ,
+                url:"{{url('front-huong-dan-delete')}}/" +id ,
                 type:"delete",
                 dataType:"json",
                 data: {
@@ -269,7 +268,7 @@ function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
                 },
                 success:function(res){
                     if(res.status == 'success'){
-                        hienThongBao('Xóa trách nhiệm thành công');
+                        hienThongBao('Xóa hướng dẫn thành công');
                         setTimeout(function() {
                                 location.reload();
                             }, 500);
@@ -280,9 +279,9 @@ function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
             })
         }
 
-        function xoaMoTaNhiemVu(id){
+        function xoamoTaHuongDan(id){
             $.ajax({
-                url:"{{url('front-mo-ta-nhiem-vu-delete')}}/"+id,
+                url:"{{url('front-mo-ta-huong-dan-delete')}}/"+id,
                 type:'delete',
                 dataType:'json',
                 data:{
@@ -291,7 +290,7 @@ function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
                 },
                 success:function(res){
                     if(res.status == 'success'){
-                        hienThongBao('Xóa nhiệm vụ thành công');
+                        hienThongBao('Xóa mô tả thành công');
                         setTimeout(function() {
                                 location.reload();
                             }, 500);
@@ -302,11 +301,11 @@ function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
             })
         }
 
-        function xacNhanYeuCauXoaTrachNhiem(id)
+        function xacNhanYeuCauXoaHuongDan(id)
         {
             Swal.fire({
                 title: "Xác nhận",
-                text: `Bạn có chắc chắn muốn xóa trách nhiệm này`,
+                text: `Bạn có chắc chắn muốn xóa hướng dẫn này`,
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonText: 'Xác nhận',
@@ -314,16 +313,16 @@ function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
                 cancelButtonText: 'Hủy'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    xoaTrachNhiem(id)
+                    xoaHuongDan(id)
                 }
             });
         }
 
-        function xacNhanYeuCauXoaNhiemVu(id)
+        function xacNhanYeuCauXoaMoTaHuongDan(id)
         {
             Swal.fire({
                 title: "Xác nhận",
-                text: `Bạn có chắc chắn muốn xóa nhiệm vụ này`,
+                text: `Bạn có chắc chắn muốn xóa mô tả này`,
                 icon: "warning",
                 showCancelButton: true,
                 confirmButtonText: 'Xác nhận',
@@ -331,7 +330,7 @@ function saveMoTa(idNhiemVu, chiTiet, ketQua, rowElement) {
                 cancelButtonText: 'Hủy'
             }).then((result) => {
                 if (result.isConfirmed) {
-                    xoaMoTaNhiemVu(id)
+                    xoamoTaHuongDan(id)
                 }
             });
         }

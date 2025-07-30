@@ -2,13 +2,12 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
-use App\Models\NhiemVu;
+use App\Models\HuongDanCaNhan;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as RoutingController;
 use Illuminate\Support\Facades\Validator;
 
-class FrontNhiemVuController extends RoutingController
+class FrontHuongDanCaNhanController extends RoutingController
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,6 @@ class FrontNhiemVuController extends RoutingController
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -27,67 +25,66 @@ class FrontNhiemVuController extends RoutingController
      */
     public function create()
     {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $validate = $this->__validate($request->all());
-        NhiemVu::create($validate);
+        HuongDanCaNhan::create($validate);
+
         return response()->json(['success' => true, 'message' => 'Thêm thành công']);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
     {
-        $nhiemVu = NhiemVu::find($id);
+        $huongDan = HuongDanCaNhan::find($id);
 
-        if (!$nhiemVu) {
+        if (!$huongDan) {
             return response()->json([
                 'status' => 'error',
-                'message' => 'Không tìm thấy nhiệm vụ!',
+                'message' => 'Không tìm thấy hướng dẫn!',
             ], 404);
         }
 
         // Validate dữ liệu đầu vào
 
         try {
-            $nhiemVu->update([
-                'ten_nhiem_vu' => $request->value
+            $huongDan->update([
+                'ten_huong_dan' => $request->value,
             ]);
 
             return response()->json(['success' => true, 'message' => 'Cập nhật thành công']);
@@ -99,42 +96,43 @@ class FrontNhiemVuController extends RoutingController
         }
     }
 
-
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
     {
-        $trachNhiem = NhiemVu::find($id);
-        $trachNhiem->moTaNhiemVu()->delete();
-        $trachNhiem->delete();
+        $huongDan = HuongDanCaNhan::find($id);
+        $huongDan->moTaHuongDan()->delete();
+        $huongDan->delete();
+
         return response()->json([
             'status' => 'success',
             'message' => 'Xóa thành công',
         ]);
     }
 
-    public function __validate($data){
-        $validate = Validator::make($data,[
-            'ten_nhiem_vu' => 'required',
+    public function __validate($data)
+    {
+        $validate = Validator::make($data, [
+            'ten_huong_dan' => 'required',
             'id_vi_tri' => 'required',
-
-        ],[
-            'ten_nhiem_vu.required' => 'Tên nhiệm vụ không được bỏ trống',
-            'ten_nhiem_vu.unique' => 'Nhiệm vụ bị trùng',
+        ], [
+            'ten_huong_dan.required' => 'Tên nhiệm vụ không được bỏ trống',
+            'ten_huong_dan.unique' => 'Nhiệm vụ bị trùng',
             'id_vi_tri.required' => 'Vị trí không được bỏ trống',
         ])->validate();
+
         return $validate;
     }
 
-    public function __getTrachNhiem(Request $request){
-        $nhiemVu = NhiemVu::find($request->idTrachNhiem);
+    public function __getHuongDanCaNhan(Request $request)
+    {
+        $nhiemVu = HuongDanCaNhan::find($request->idHuongDan);
+
         return $nhiemVu;
     }
-
-
-
 }
