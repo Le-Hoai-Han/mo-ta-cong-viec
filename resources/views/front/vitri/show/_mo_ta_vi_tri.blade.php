@@ -32,6 +32,11 @@
                             lock
                         </span>
                     </a>
+                    <a href="{{ route('front-vi-tri.history', $viTri->id) }}" title="Lịch sử thay đổi">
+                        <span class="material-icons">
+                            history
+                        </span>
+                    </a>
 
             @endif
 

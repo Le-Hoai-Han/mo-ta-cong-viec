@@ -94,9 +94,9 @@
     @endpush
 <div class="tieu-chuan-tuyen-chon">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
-        <b>7. Tiêu chuẩn tuyển chọn</b>
+        <b>8. Tiêu chuẩn tuyển chọn</b>
         @if($kiemTra)
-            <a id="btn_add_tieu_chuan" id-vi-tri="{{$viTri->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
+            <a id="btn_add_tieu_chuan" id-vi-tri="{{$viTri->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" title="Thêm tiêu chuẩn tuyển chọn">
                 <span class="material-icons">
                     add_circle_outline
                 </span>
@@ -330,6 +330,16 @@
      var btnAddTieuChuan = document.getElementById('btn_add_tieu_chuan');
      var modalAddTieuChuan = document.getElementById('modal_add_tieu_chuan');
      var formAddTieuChuan = document.getElementById('form-add-tieu-chuan');
+     var btnCancelModal = document.getElementById('cancel-modal');
+     var btnCloseAddTieuChuan = document.getElementById('close-add-tieu-chuan');
+
+     btnCancelModal.onclick = function() {
+        closeModal(modalAddTieuChuan);
+     }
+
+     btnCloseAddTieuChuan.onclick = function() {
+        closeModal(modalAddTieuChuan);
+     }
 
      if(btnAddTieuChuan != null){
             btnAddTieuChuan.onclick = function() {

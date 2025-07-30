@@ -6,24 +6,25 @@ use App\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class NhiemVu extends Model
+class HuongDanCaNhan extends Model
 {
     use HasFactory;
     use LogsActivity;
-    protected $table = 'tochuc___nhiem_vu';
+
+    protected $table = 'tochuc___huong_dan_ca_nhans';
     protected $fillable = [
         'id_vi_tri',
-        'ten_nhiem_vu',
+        'ten_huong_dan',
     ];
 
     protected static function booted()
     {
-        static::creating(function ($nhiemVu) {
-            // $nhiemVu->save();
+        parent::boot();
+        static::creating(function ($viTri) {
         });
 
-        static::updating(function ($nhiemVu) {
-            $nhiemVu->ten_nhiem_vu;
+        static::updating(function ($viTri) {
+            ///
         });
     }
 
@@ -32,8 +33,8 @@ class NhiemVu extends Model
         return $this->belongsTo(Vitri::class, 'id_vi_tri', 'id');
     }
 
-    public function moTaNhiemVu()
+    public function moTaHuongDan()
     {
-        return $this->hasMany(MoTaNhiemVu::class, 'id_nhiem_vu', 'id');
+        return $this->hasMany(MoTaHuongDanCaNhan::class, 'id_huong_dan', 'id');
     }
 }

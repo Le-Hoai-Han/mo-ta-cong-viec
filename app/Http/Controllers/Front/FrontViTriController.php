@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Http\Controllers\Controller;
+use App\Models\HuongDanCaNhan;
 use App\Models\NhiemVu;
 use App\Models\PhongBan;
 use App\Models\Role;
@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Validator;
 class FrontViTriController extends RoutingController
 {
     use PhongBanTraits;
+
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +24,6 @@ class FrontViTriController extends RoutingController
      */
     public function index()
     {
-        //
     }
 
     /**
@@ -33,43 +33,46 @@ class FrontViTriController extends RoutingController
      */
     public function create()
     {
-        //
     }
 
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $data = $this->__validate($request->all());
         Vitri::create($data);
+
         return response()->json([
-            'status'=>'success',
-            'message' => 'Thêm thành công'
+            'status' => 'success',
+            'message' => 'Thêm thành công',
         ]);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Vitri $viTri)
     {
-        $listViTri = Vitri::select(['id','ten_vi_tri','id_user'])->get();
-        $listUser = User::ActiveEmployees()->select(['id','name'])->get();
-        $listNhiemVu = NhiemVu::select(['id','ten_nhiem_vu'])->get();
+        $listViTri = Vitri::select(['id', 'ten_vi_tri', 'id_user'])->get();
+        $listUser = User::ActiveEmployees()->select(['id', 'name'])->get();
+        $listNhiemVu = NhiemVu::select(['id', 'ten_nhiem_vu'])->get();
+        $listHuongDan = HuongDanCaNhan::select(['id', 'ten_huong_dan'])->get();
         $roles = Role::pluck('name', 'id');
-        $listPhongBan = PhongBan::select(['id','name'])->get();
-        return view('front.vitri.show',[
+        $listPhongBan = PhongBan::select(['id', 'name'])->get();
+
+        return view('front.vitri.show', [
             'viTri' => $viTri,
             'listViTri' => $listViTri,
             'listUser' => $listUser,
             'listNhiemVu' => $listNhiemVu,
+            'listHuongDan' => $listHuongDan,
             'roles' => $roles,
             'listPhongBan' => $listPhongBan,
         ]);
@@ -78,63 +81,63 @@ class FrontViTriController extends RoutingController
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
     {
-        //
     }
 
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request,$id)
+    public function update(Request $request, $id)
     {
         $viTri = Vitri::find($id);
 
-        if($viTri->trang_thai == Vitri::TT_KHOA){
+        if ($viTri->trang_thai == Vitri::TT_KHOA) {
             return response()->json([
-                'status'=>'error',
-                'message' => 'Vị trí đang bị khóa thông tin'
+                'status' => 'error',
+                'message' => 'Vị trí đang bị khóa thông tin',
             ]);
         }
 
-        if($request->fillable == 'id_vi_tri_quan_ly'){
+        if ($request->fillable == 'id_vi_tri_quan_ly') {
             $viTri->update(
                 ['id_vi_tri_quan_ly' => $request->value]
             );
         }
 
-        if($request->fillable == 'ten_vi_tri'){
+        if ($request->fillable == 'ten_vi_tri') {
             $viTri->update(
                 ['ten_vi_tri' => $request->value]
             );
         }
 
-        if($request->fillable == 'phong_ban'){
+        if ($request->fillable == 'phong_ban') {
             $viTri->update(
                 ['id_phong_ban' => $request->value]
             );
         }
 
-        if($request->fillable == 'noi_lam_viec'){
+        if ($request->fillable == 'noi_lam_viec') {
             $viTri->update(
                 ['noi_lam_viec' => $request->value]
             );
         }
 
-        if($request->fillable == 'muc_dich'){
+        if ($request->fillable == 'muc_dich') {
             $viTri->update(
                 ['muc_dich' => $request->value]
             );
         }
 
-        if(isset($request->_token)){
+        if (isset($request->_token)) {
             $viTri->update([
                 'ten_vi_tri' => $request->ten_vi_tri,
                 'id_phong_ban' => $request->id_phong_ban,
@@ -145,7 +148,7 @@ class FrontViTriController extends RoutingController
                 'stroke' => $request->stroke,
             ]);
 
-            return redirect()->route('front-vi-tri.show',$viTri)->with('success','Cập nhật thành công');
+            return redirect()->route('front-vi-tri.show', $viTri)->with('success', 'Cập nhật thành công');
         }
 
         // Xử lý add vào phòng ban
@@ -163,13 +166,14 @@ class FrontViTriController extends RoutingController
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $id
+     * @param int $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Vitri $viTri)
     {
-        if($viTri->nhiemVu->isNotEmpty()){
-            foreach($viTri->nhiemVu as $nhiemVu){
+        if ($viTri->nhiemVu->isNotEmpty()) {
+            foreach ($viTri->nhiemVu as $nhiemVu) {
                 $nhiemVu->moTaNhiemVu()->delete();
             }
             $viTri->nhiemVu()->delete();
@@ -178,15 +182,15 @@ class FrontViTriController extends RoutingController
         // xóa thẩm quyền thuộc vị trí
         $viTri->thamQuyen()->delete();
 
-         // xóa quanHe thuộc vị trí
-         $viTri->quanHe()->delete();
+        // xóa quanHe thuộc vị trí
+        $viTri->quanHe()->delete();
 
-          // xóa tiêu chuẩn thuộc vị trí
+        // xóa tiêu chuẩn thuộc vị trí
         $viTri->tieuChuan()->delete();
 
         // Chuyển vị trí cấp dưới
-        if($viTri->capDuoi->isNotEmpty() && $viTri->capQuanLy != null){
-            foreach($viTri->capDuoi as $viTriCapDuoi){
+        if ($viTri->capDuoi->isNotEmpty() && $viTri->capQuanLy != null) {
+            foreach ($viTri->capDuoi as $viTriCapDuoi) {
                 $viTriCapDuoi->update(
                     ['id_vi_tri_quan_ly' => $viTri->capQuanLy->id]
                 );
@@ -195,28 +199,30 @@ class FrontViTriController extends RoutingController
 
         $viTri->delete();
 
-
         return response()->json([
-            'status'=>'success',
-            'message' => 'Xóa thành công'
+            'status' => 'success',
+            'message' => 'Xóa thành công',
         ]);
     }
 
-    public function __getViTri(Request $request){
+    public function __getViTri(Request $request)
+    {
         $viTri = Vitri::find($request->idViTri);
+
         return $viTri;
     }
 
-    public function __validate($data){
-        $validate = Validator::make($data,[
+    public function __validate($data)
+    {
+        $validate = Validator::make($data, [
             'ten_vi_tri' => 'required',
             'id_phong_ban' => 'required',
             'noi_lam_viec' => 'required',
             'muc_dich' => 'required',
             'id_vi_tri_quan_ly' => 'required',
-            'id_user' =>'required',
-            'stroke' =>'required'
-        ],[
+            'id_user' => 'required',
+            'stroke' => 'required',
+        ], [
             'ten_vi_tri.required' => 'Tên vị trí không được bỏ trống',
             'id_phong_ban.required' => 'Tên phòng ban không được bỏ trống',
             'noi_lam_viec.required' => 'Nơi làm việc không được bỏ trống',
@@ -226,23 +232,69 @@ class FrontViTriController extends RoutingController
         return $validate->validate();
     }
 
-    public function lockViTri($id){
+    public function lockViTri($id)
+    {
         $viTri = Vitri::find($id);
         $viTri->trang_thai = Vitri::TT_KHOA;
         $viTri->save();
+
         return response()->json([
-            'status' =>'success',
-            'message' =>'Khóa thành công',
+            'status' => 'success',
+            'message' => 'Khóa thành công',
         ]);
     }
 
-    public function unlockViTri($id){
+    public function unlockViTri($id)
+    {
         $viTri = Vitri::find($id);
         $viTri->trang_thai = Vitri::TT_MO_KHOA;
         $viTri->save();
+
         return response()->json([
-            'status' =>'success',
-            'message' =>'Mở khóa thành công',
+            'status' => 'success',
+            'message' => 'Mở khóa thành công',
+        ]);
+    }
+
+    public function getHistoryApi($id)
+    {
+        // Tìm vị trí theo ID
+        $viTri = Vitri::find($id);
+
+        // Nếu không tìm thấy, trả về lỗi 404 dạng JSON
+        if (!$viTri) {
+            return response()->json(['message' => 'Không tìm thấy đối tượng!'], 404);
+        }
+
+        // Lấy lịch sử, đồng thời tải sẵn thông tin người dùng liên quan (eager loading)
+        // để tránh N+1 query problem và có sẵn dữ liệu user.name
+        $activities = $viTri->history()->with('user:id,name')->get();
+
+        // Chuẩn bị dữ liệu theo đúng cấu trúc mà JavaScript mong đợi
+        $data = [
+            'subject' => [
+                'id' => $viTri->id,
+                'class_name' => get_class($viTri),
+            ],
+            'activities' => $activities,
+        ];
+
+        // Trả về dữ liệu dưới dạng JSON
+        return response()->json($data);
+    }
+
+    public function history($id)
+    {
+        $viTri = Vitri::find($id);
+        if (!$viTri) {
+            return redirect()->back()->with('error', 'Không tìm thấy vị trí!');
+        }
+
+        $history = $viTri->history()->get();
+
+        return view('front.vitri.history', [
+            'viTri' => $viTri,
+            'history' => $history,
         ]);
     }
 }

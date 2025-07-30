@@ -20,9 +20,9 @@
 @endpush
 <div class="quan-he">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
-        <b>6. Quan hệ công việc</b>
+        <b>7. Quan hệ công việc</b>
         @if($kiemTra)
-            <a onclick="addQuanHeInput({{ $viTri->id }})" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
+            <a onclick="addQuanHeInput({{ $viTri->id }})" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" title="Thêm quan hệ công việc">
                 <span class="material-icons">
                     add_circle_outline
                 </span>
@@ -109,7 +109,7 @@
                 let loai = table.dataset.loai;
                 let tr = document.createElement("tr");
                 tr.innerHTML = `<td>
-                    <input type="text" id="${loai == 0 ? 'input-ben-trong-' : 'input-ben-ngoai-'}${idViTri}" class="edit-textarea" placeholder="Nhập ${loai == 0 ? 'Quan hệ bên trong' : 'Quan hệ bên ngoài'}..." data-vi-tri="${idViTri}" data-loai="${loai}">
+                    <input type="text" id="${loai == 0 ? 'input-ben-trong-' : 'input-ben-ngoai-'}${idViTri}" class="edit-textarea" placeholder="Nhập ${loai == 0 ? 'Quan hệ bên trong' : 'Quan hệ bên ngoài'} và ấn Enter..." data-vi-tri="${idViTri}" data-loai="${loai}">
                 </td>`;
 
                 table.appendChild(tr);

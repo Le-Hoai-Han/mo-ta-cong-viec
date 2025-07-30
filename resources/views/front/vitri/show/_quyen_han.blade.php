@@ -17,9 +17,9 @@
 @endpush
 
 <div class="tham-quyen">
-    <p class="so-do-to-chuc_tieu_de"><b>5. Thẩm quyền/Quyền hạn</b>
+    <p class="so-do-to-chuc_tieu_de"><b>6. Thẩm quyền/Quyền hạn</b>
         @if($kiemTra)
-        <a style="display: {{ $viTri->trang_thai != 0 ? 'none' : 'inline' }}" onclick="addThamQuyenInput({{ $viTri->id }})">
+        <a style="display: {{ $viTri->trang_thai != 0 ? 'none' : 'inline' }}" onclick="addThamQuyenInput({{ $viTri->id }})" title="Thêm đề xuất hoặc ra quyết định">
             <span class="material-icons">add_circle_outline</span>
         </a>
         @endif
@@ -53,7 +53,7 @@
                                     <span class="tham-quyen-text">{{ $thamQuyen->noi_dung }}</span>
                                 </div>
                             @endif
-                               
+
                             </td>
                         </tr>
                         @endforeach
@@ -73,7 +73,7 @@
             let loai = table.dataset.loai;
             let tr = document.createElement("tr");
             tr.innerHTML = `<td>
-                <input type="text" id="${loai == 1 ? 'input-de-xuat-' : 'input-ra-quyet-dinh-'}${idViTri}" class="edit-textarea" placeholder="Nhập ${loai == 1 ? 'đề xuất' : 'ra quyết định'}..." data-vi-tri="${idViTri}" data-loai="${loai}">
+                <input type="text" id="${loai == 1 ? 'input-de-xuat-' : 'input-ra-quyet-dinh-'}${idViTri}" class="edit-textarea" placeholder="Nhập ${loai == 1 ? 'đề xuất' : 'ra quyết định'} và ấn Enter..." data-vi-tri="${idViTri}" data-loai="${loai}">
             </td>`;
 
             table.appendChild(tr);

@@ -30,7 +30,20 @@
 <table>
         <td style="width: 20%;height: 185px;text-align: center">
             <div class="w-full h-full overflow-hidden flex">
-                <img src="{{'https://drive.3d-smartsolutions.com/storage/'. ($viTri->user != null ? $viTri->user->profile_photo_path :'')}}" class="w-full object-cover" style="max-height: 200px" />
+                @php
+                    $imageUrl = '';
+                    // Ưu tiên lấy tên từ người dùng, nếu không có thì lấy tên vị trí
+                    $nameForAvatar = $viTri->user->name ?? $viTri->ten_vi_tri ?? '??';
+
+                    // Kiểm tra nếu người dùng và ảnh đại diện tồn tại
+                    if ($viTri->user && $viTri->user->profile_photo_path) {
+                        $imageUrl = 'https://drive.3d-smartsolutions.com/storage/' . $viTri->user->profile_photo_path;
+                    } else {
+                        // Nếu không, tạo URL ảnh đại diện từ tên
+                        $imageUrl = 'https://ui-avatars.com/api/?name=' . urlencode($nameForAvatar) . '&size=200&background=random';
+                    }
+                @endphp
+                <img src="{{ $imageUrl }}" class="w-full object-cover" style="max-height: 200px" />
             </div>
         </td>
         <td style="vertical-align: top;">

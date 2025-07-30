@@ -2,12 +2,14 @@
 
 namespace App\Models;
 
+use App\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Vitri extends Model
 {
     use HasFactory;
+    use LogsActivity;
     protected $table = 'tochuc___vi_tri';
     protected $fillable = [
         'ten_vi_tri',
@@ -18,111 +20,118 @@ class Vitri extends Model
         'muc_dich',
         'id_user',
         'trang_thai',
-        'stroke'
+        'stroke',
     ];
 
-    const TT_KHOA = 1;
-    const TT_MO_KHOA = 0;
-
+    public const TT_KHOA = 1;
+    public const TT_MO_KHOA = 0;
 
     protected static function booted()
     {
         static::creating(function ($viTri) {
-            if ($viTri->id_user == 0)
+            if ($viTri->id_user == 0) {
                 $viTri->id_user = null;
-                // $viTri->save();
-            } );
+            }
+            // $viTri->save();
+        });
 
         static::updating(function ($viTri) {
-            if ($viTri->id_user == 0)
+            if ($viTri->id_user == 0) {
                 $viTri->id_user = null;
-                // $viTri->save();
-            } );
+            }
+            // $viTri->save();
+        });
     }
 
-    public function capQuanLy(){
-        return $this->belongsTo(Vitri::class,'id_vi_tri_quan_ly','id');
+    public function capQuanLy()
+    {
+        return $this->belongsTo(Vitri::class, 'id_vi_tri_quan_ly', 'id');
     }
 
-    public function capDuoi(){
-        return $this->hasMany(Vitri::class,'id_vi_tri_quan_ly','id')->orderBy('stt_cap_bac');
+    public function capDuoi()
+    {
+        return $this->hasMany(Vitri::class, 'id_vi_tri_quan_ly', 'id')->orderBy('stt_cap_bac');
     }
 
-
-
-    public function user(){
-        return $this->hasOne(User::class,'id','id_user');
+    public function user()
+    {
+        return $this->hasOne(User::class, 'id', 'id_user');
     }
 
-    public function nhiemVu(){
-        return $this->hasMany(NhiemVu::class,'id_vi_tri','id');
+    public function nhiemVu()
+    {
+        return $this->hasMany(NhiemVu::class, 'id_vi_tri', 'id');
     }
 
-    public function thamQuyen(){
-        return $this->hasMany(ThamQuyen::class,'id_vi_tri','id');
+    public function huongDanCaNhan()
+    {
+        return $this->hasMany(HuongDanCaNhan::class, 'id_vi_tri', 'id');
     }
 
-    public function quanHe(){
-        return $this->hasMany(QuanHe::class,'id_vi_tri','id');
+    public function thamQuyen()
+    {
+        return $this->hasMany(ThamQuyen::class, 'id_vi_tri', 'id');
     }
 
-    public function tieuChuan(){
-        return $this->hasMany(TieuChuanTuyenChon::class,'id_vi_tri','id');
+    public function quanHe()
+    {
+        return $this->hasMany(QuanHe::class, 'id_vi_tri', 'id');
     }
 
-    public function ASK(){
-        return $this->hasMany(ASK::class,'id_vi_tri','id');
+    public function tieuChuan()
+    {
+        return $this->hasMany(TieuChuanTuyenChon::class, 'id_vi_tri', 'id');
     }
 
-
-
+    public function ASK()
+    {
+        return $this->hasMany(ASK::class, 'id_vi_tri', 'id');
+    }
 
     /**
-     * dung hien thi so do
+     * dung hien thi so do.
      */
-    public function soDoToChucCapDuoi($viTri){
-        $nodeStructure=[];
+    public function soDoToChucCapDuoi($viTri)
+    {
+        $nodeStructure = [];
         $mang1 = [];
 
-          foreach($viTri->capDuoi as $item){
-            if($viTri->capDuoi->isEmpty()){
-
-                    $mang1 = [
+        foreach ($viTri->capDuoi as $item) {
+            if ($viTri->capDuoi->isEmpty()) {
+                $mang1 = [
                         'text' => [
-                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
+                            'name' => $item->user != null ? $item->user->name : 'Đang cập nhật',
                             'title' => $item->ten_vi_tri,
-                            'contact' => $item->user != null ? $item->user->sdt :'Đang cập nhật'
+                            'contact' => $item->user != null ? $item->user->sdt : 'Đang cập nhật',
                         ],
                         'stackChildren' => $item->hien_thi_nhanh,
-                        'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path:'')),
-                        'HTMLid'=>'nhan-vien-'.$item->id,
+                        'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path : '')),
+                        'HTMLid' => 'nhan-vien-'.$item->id,
                         'target' => 123,
-                        'children' =>[]
-
+                        'children' => [],
                     ];
-
-                }else{
-                    $mang1[] = [
+            } else {
+                $mang1[] = [
                         'text' => [
-                            'name' => $item->user != null ? $item->user->name :'Đang cập nhật',
+                            'name' => $item->user != null ? $item->user->name : 'Đang cập nhật',
                             'title' => $item->ten_vi_tri,
-                            'contact' => $item->user ? $item->user->sdt :'Đang cập nhật'
+                            'contact' => $item->user ? $item->user->sdt : 'Đang cập nhật',
                         ],
                         'stackChildren' => $item->hien_thi_nhanh,
-                        'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path:'')),
-                        'HTMLid'=>'nhan-vien-'.$item->id,
+                        'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path : '')),
+                        'HTMLid' => 'nhan-vien-'.$item->id,
                         'target' => 123,
-                        'children' =>$item->soDoToChucCapDuoi($item)
-
+                        'children' => $item->soDoToChucCapDuoi($item),
                     ];
-                }
             }
+        }
         $nodeStructure = $mang1;
+
         return $nodeStructure;
     }
 
-
-    public function soDoToChucCapDuoi2($viTri) {
+    public function soDoToChucCapDuoi2($viTri)
+    {
         $nodeStructure = [];
 
         foreach ($viTri->capDuoi as $item) {
@@ -139,23 +148,25 @@ class Vitri extends Model
                     'style' => [
                         'stroke' => $item->stroke,
                         'arrow-end' => $item->arrow_end,
-                        'stroke-dasharray' => $item->stroke_dasharray
+                        'stroke-dasharray' => $item->stroke_dasharray,
                     ],
                     // 'stackIndent' => $item->stackIndent
                 ],
             ];
 
-            $node['HTMLid'] = 'nhan-vien-' . $item->id;
+            $node['HTMLid'] = 'nhan-vien-'.$item->id;
             if (!$item->capDuoi->isEmpty()) {
                 $node['children'] = $this->soDoToChucCapDuoi2($item);
             }
 
             $nodeStructure[] = $node;
         }
+
         return $nodeStructure;
     }
 
-    public function soDoToChucCapDuoi3($viTri) {
+    public function soDoToChucCapDuoi3($viTri)
+    {
         $nodeStructure = [];
 
         foreach ($viTri->capDuoi as $item) {
@@ -172,25 +183,30 @@ class Vitri extends Model
                     'style' => [
                         'stroke' => $item->stroke,
                         'arrow-end' => $item->arrow_end,
-                        'stroke-dasharray' => $item->stroke_dasharray
+                        'stroke-dasharray' => $item->stroke_dasharray,
                     ],
                     // 'stackIndent' => $item->stackIndent
                 ],
             ];
 
-            $node['HTMLid'] = 'nhan-vien-' . $item->id;
+            $node['HTMLid'] = 'nhan-vien-'.$item->id;
             if (!$item->capDuoi->isEmpty()) {
                 $node['children'] = $this->soDoToChucCapDuoi3($item);
             }
 
             $nodeStructure[] = $node;
         }
+
         return $nodeStructure;
     }
 
     public function phongBan()
     {
-        return $this->belongsTo(PhongBan::class,'id_phong_ban','id');
+        return $this->belongsTo(PhongBan::class, 'id_phong_ban', 'id');
     }
 
+    public function history()
+    {
+        return $this->morphMany(LichSuThayDoi::class, 'loggable')->latest();
+    }
 }
