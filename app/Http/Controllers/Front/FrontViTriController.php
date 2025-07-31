@@ -80,6 +80,13 @@ class FrontViTriController extends RoutingController
     public function showHuongDan($id)
     {
         $viTri = Vitri::find($id);
+        $kiemTraCaNhan = auth()->user()->hasRole('Admin') ||
+            (auth()->user()->hasRole('mo_ta_cong_viec') ||
+                auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv') || auth()->user()->id === $viTri->id_user;
+       
+        if(!$kiemTraCaNhan) {
+            return redirect()->back()->with('error', 'Bạn không có quyền truy cập vào chức năng này');
+        }
         $action = 'show-huong-dan';
         $roles = Role::pluck('name', 'id');
 
