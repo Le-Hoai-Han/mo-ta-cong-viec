@@ -81,7 +81,7 @@
 @endpush
 
 <p class="so-do-to-chuc_tieu_de">
-    <b>4. Các trách nhiệm và nhiệm vụ chính</b>
+    <b>{{ $sectionNumber }}. Các trách nhiệm và nhiệm vụ chính</b>
 </p>
 <div class="trach-nhiem-nhiem-vu">
     <table class="trach-nhiem-table">

@@ -66,7 +66,7 @@
 </style>
 @endpush
 <div class="so-do-to-chuc">
-    <p class="so-do-to-chuc_tieu_de"><b>3. Sơ đồ tổ chức</b></p>
+    <p class="so-do-to-chuc_tieu_de"><b>{{ $sectionNumber }}. Sơ đồ tổ chức</b></p>
 
     <div class="so_do">
         <!-- Cấp trên -->

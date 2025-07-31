@@ -17,7 +17,7 @@
 @endpush
 
 <div class="tham-quyen">
-    <p class="so-do-to-chuc_tieu_de"><b>6. Thẩm quyền/Quyền hạn</b>
+    <p class="so-do-to-chuc_tieu_de"><b>{{ $sectionNumber }}. Thẩm quyền/Quyền hạn</b>
         @if($kiemTra)
         <a style="display: {{ $viTri->trang_thai != 0 ? 'none' : 'inline' }}" onclick="addThamQuyenInput({{ $viTri->id }})" title="Thêm đề xuất hoặc ra quyết định">
             <span class="material-icons">add_circle_outline</span>

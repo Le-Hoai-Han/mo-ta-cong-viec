@@ -94,7 +94,7 @@
     @endpush
 <div class="tieu-chuan-tuyen-chon">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
-        <b>8. Tiêu chuẩn tuyển chọn</b>
+        <b>{{ $sectionNumber }}. Tiêu chuẩn tuyển chọn</b>
         @if($kiemTra)
             <a id="btn_add_tieu_chuan" id-vi-tri="{{$viTri->id}}" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" title="Thêm tiêu chuẩn tuyển chọn">
                 <span class="material-icons">

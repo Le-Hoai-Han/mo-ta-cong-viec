@@ -87,17 +87,51 @@
             (auth()->user()->hasRole('mo_ta_cong_viec') ||
                 auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv') || auth()->user()->id === $viTri->id_user;
     @endphp
+
+    @php
+    // Khởi tạo biến đếm bắt đầu từ 1
+        $sectionCounter = 1;
+    @endphp
     <div class="container">
         <h2>{{ $viTri->ten_vi_tri }}</h2>
 
-        @include('front.vitri.show._thong_tin_nhan_vien', [ 'nhanVien' => $viTri->user ])
-        @include('front.vitri.show._mo_ta_vi_tri', [ 'viTri' => $viTri, 'listPhongBan' => $listPhongBan ])
-        @include('front.vitri.show._so_do_vi_tri', [ 'viTri' => $viTri ])
-        @include('front.vitri.show._trach_nhiem', [ 'viTri' => $viTri ])
-        @include('front.vitri.show._quyen_han', [ 'viTri' => $viTri ])
-        @include('front.vitri.show._quan_he', [ 'viTri' => $viTri ])
-        @include('front.vitri.show._tieu_chi', [ 'viTri' => $viTri ])
-        @include('front.vitri.show._ask', [ 'viTri' => $viTri ])
+       @include('front.vitri.show._thong_tin_nhan_vien', [
+            'nhanVien' => $viTri->user,
+        ])
+        @include('front.vitri.show._mo_ta_vi_tri', [
+            'viTri' => $viTri,
+            'listPhongBan' => $listPhongBan,
+            'sectionNumber' => $sectionCounter++
+        ])
+
+        @php
+            $sectionCounter ++; //Vi trong mo ta vi tri co 2 so
+        @endphp
+
+        @include('front.vitri.show._so_do_vi_tri', [
+            'viTri' => $viTri,
+            'sectionNumber' => $sectionCounter++
+        ])
+        @include('front.vitri.show._trach_nhiem', [
+            'viTri' => $viTri,
+            'sectionNumber' => $sectionCounter++
+        ])
+        @include('front.vitri.show._quyen_han', [
+            'viTri' => $viTri,
+            'sectionNumber' => $sectionCounter++
+        ])
+        @include('front.vitri.show._quan_he', [
+            'viTri' => $viTri,
+            'sectionNumber' => $sectionCounter++
+        ])
+        @include('front.vitri.show._tieu_chi', [
+            'viTri' => $viTri,
+            'sectionNumber' => $sectionCounter++
+        ])
+        @include('front.vitri.show._ask', [
+            'viTri' => $viTri,
+            'sectionNumber' => $sectionCounter++
+        ])
     </div>
 
     @push('scripts')

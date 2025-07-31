@@ -1,6 +1,6 @@
 <table>
     <tr>
-        <td colspan="2"><b>1. Mô tả chung về chức danh/vị trí công việc</b>
+        <td colspan="2"><b>{{ $sectionNumber }}. Mô tả chung về chức danh/vị trí công việc</b>
             @if(auth()->user()->hasRole('mo_ta_cong_viec')
             // Trường hợp vừa có quyền và vừa là cấp trên
             &&  auth()->user()->isViTri($viTri) || auth()->user()->hasRole('Admin') || auth()->user()->hasPermissionTo('add_mtcv'))
@@ -10,6 +10,9 @@
                 </span>
             </a>
             @endif
+            @php
+                $sectionNumber++;
+            @endphp
             @if ($kiemTra)
 
                     <a title="Sửa vị trí" id="edit-vi-tri" vi-tri="{{$viTri}}" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>">
@@ -111,7 +114,7 @@
     </tr>
     <tr>
         <td colspan="">
-            <b>2. Mục đích công việc vị trí</b>
+            <b>{{ $sectionNumber }}. Mục đích công việc vị trí</b>
         </td>
         <td>
         @if ($kiemTra)

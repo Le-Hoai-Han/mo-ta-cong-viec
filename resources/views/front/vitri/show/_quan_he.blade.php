@@ -20,7 +20,7 @@
 @endpush
 <div class="quan-he">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
-        <b>7. Quan hệ công việc</b>
+        <b>{{ $sectionNumber }}. Quan hệ công việc</b>
         @if($kiemTra)
             <a onclick="addQuanHeInput({{ $viTri->id }})" style="cursor: pointer;<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" title="Thêm quan hệ công việc">
                 <span class="material-icons">

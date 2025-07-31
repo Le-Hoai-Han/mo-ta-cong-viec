@@ -22,7 +22,7 @@
 @endpush
 <div class="ask">
     <p style="text-align: left" class="so-do-to-chuc_tieu_de">
-        <b>9. ASK (Attitude - Skill - Knowledge)</b>
+        <b>{{ $sectionNumber }}. ASK (Attitude - Skill - Knowledge)</b>
         @if($kiemTra)
             <a onclick="addASKInput({{ $viTri->id }})" style="<?php echo ($viTri->trang_thai != 0 ? 'display:none' :'') ?>" id-vi-tri="{{$viTri->id}}" Title="Thêm thái độ, kỹ năng, kiến thức">
                 <span class="material-icons">
