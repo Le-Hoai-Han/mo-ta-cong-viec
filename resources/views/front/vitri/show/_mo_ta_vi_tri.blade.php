@@ -111,14 +111,7 @@
     </tr>
     <tr>
         <td colspan="">
-            <b>2. Mục đích công việc vị trí</b><br><br>
-            <a href="#huong-dan-cong-viec" class="mt-2 inline-flex items-center px-4 py-2 border border-gray-600 text-gray-700 text-sm font-medium rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
-             <!-- Icon thông tin -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-            </svg>
-            Xem hướng dẫn công việc
-        </a>
+            <b>2. Mục đích công việc vị trí</b>
         </td>
         <td>
         @if ($kiemTra)

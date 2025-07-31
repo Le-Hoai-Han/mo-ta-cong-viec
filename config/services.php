@@ -1,7 +1,6 @@
 <?php
 
 return [
-
     /*
     |--------------------------------------------------------------------------
     | Third Party Services
@@ -30,14 +29,15 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'getfly-v6'=>[
-        'key_acount' =>env('GETFLY_KEY_V6'),
-        'url'=>env('GETFLY_URL_V6')
+    'getfly-v6' => [
+        'key_acount' => env('GETFLY_KEY_V6'),
+        'url' => env('GETFLY_URL_V6'),
     ],
 
-    'enail'=>[
-        'nhan-su'=> env('EMAIL_NHAN_SU')
-
-    ]
-
+    'enail' => [
+        'nhan-su' => env('EMAIL_NHAN_SU'),
+    ],
+    'tiny' => [
+        'key' => env('KEY_TINY'),
+    ],
 ];

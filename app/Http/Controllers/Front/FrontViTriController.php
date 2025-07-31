@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers\Front;
 
-use App\Models\HuongDanCaNhan;
 use App\Models\NhiemVu;
 use App\Models\PhongBan;
 use App\Models\Role;
@@ -63,18 +62,31 @@ class FrontViTriController extends RoutingController
         $listViTri = Vitri::select(['id', 'ten_vi_tri', 'id_user'])->get();
         $listUser = User::ActiveEmployees()->select(['id', 'name'])->get();
         $listNhiemVu = NhiemVu::select(['id', 'ten_nhiem_vu'])->get();
-        $listHuongDan = HuongDanCaNhan::select(['id', 'ten_huong_dan'])->get();
         $roles = Role::pluck('name', 'id');
         $listPhongBan = PhongBan::select(['id', 'name'])->get();
+        $action = 'show-mo-ta';
 
         return view('front.vitri.show', [
             'viTri' => $viTri,
             'listViTri' => $listViTri,
             'listUser' => $listUser,
             'listNhiemVu' => $listNhiemVu,
-            'listHuongDan' => $listHuongDan,
             'roles' => $roles,
             'listPhongBan' => $listPhongBan,
+            'action' => $action,
+        ]);
+    }
+
+    public function showHuongDan($id)
+    {
+        $viTri = Vitri::find($id);
+        $action = 'show-huong-dan';
+        $roles = Role::pluck('name', 'id');
+
+        return view('front.vitri.show-huong-dan', [
+            'viTri' => $viTri,
+            'action' => $action,
+             'roles' => $roles,
         ]);
     }
 
@@ -258,28 +270,49 @@ class FrontViTriController extends RoutingController
 
     public function getHistoryApi($id)
     {
-        // Tìm vị trí theo ID
-        $viTri = Vitri::find($id);
+        // Tải trước các quan hệ lồng nhau để tối ưu hóa truy vấn
+        $viTri = Vitri::with(['nhiemVu.moTaNhiemVu'])->find($id);
 
-        // Nếu không tìm thấy, trả về lỗi 404 dạng JSON
         if (!$viTri) {
             return response()->json(['message' => 'Không tìm thấy đối tượng!'], 404);
         }
 
-        // Lấy lịch sử, đồng thời tải sẵn thông tin người dùng liên quan (eager loading)
-        // để tránh N+1 query problem và có sẵn dữ liệu user.name
-        $activities = $viTri->history()->with('user:id,name')->get();
+        // 1. Lấy lịch sử của chính đối tượng Vị trí
+        $activities = $viTri->history;
 
-        // Chuẩn bị dữ liệu theo đúng cấu trúc mà JavaScript mong đợi
+        // 2. Lấy lịch sử của tất cả các Nhiệm vụ và Mô tả nhiệm vụ liên quan
+        foreach ($viTri->nhiemVu as $nhiemVu) {
+            // Trộn lịch sử của Nhiệm vụ
+            $activities = $activities->merge($nhiemVu->history);
+
+            // Trộn lịch sử của từng Mô tả nhiệm vụ bên trong
+            foreach ($nhiemVu->moTaNhiemVu as $moTa) {
+                $activities = $activities->merge($moTa->history);
+            }
+        }
+
+        foreach ($viTri->thamQuyen as $thamQuyen) {
+            // Trộn lịch sử của Nhiệm vụ
+            $activities = $activities->merge($thamQuyen->history);
+
+        }
+
+        // 3. Sắp xếp toàn bộ lịch sử theo ngày tạo mới nhất lên đầu
+        $sortedActivities = $activities->sortByDesc('created_at');
+
+        // 4. Tải thông tin người dùng cho tất cả các hoạt động đã được sắp xếp
+        $sortedActivities->load('user:id,name');
+
+        // Chuẩn bị dữ liệu để trả về
         $data = [
             'subject' => [
                 'id' => $viTri->id,
                 'class_name' => get_class($viTri),
             ],
-            'activities' => $activities,
+            // Chuyển collection về mảng và reset key để JSON trả ra là một mảng
+            'activities' => $sortedActivities->values()->all(),
         ];
 
-        // Trả về dữ liệu dưới dạng JSON
         return response()->json($data);
     }
 
@@ -296,5 +329,20 @@ class FrontViTriController extends RoutingController
             'viTri' => $viTri,
             'history' => $history,
         ]);
+    }
+
+    public function updateHuongDan(Request $request, ViTri $vi_tri)
+    {
+        $validated = $request->validate([
+            'huong_dan_cong_viec' => 'nullable|string',
+        ]);
+
+        // 3. Cập nhật dữ liệu
+        $vi_tri->update([
+            'huong_dan_cong_viec' => $validated['huong_dan_cong_viec'],
+        ]);
+
+        // 4. Quay về trang trước với thông báo thành công
+        return back()->with('success', 'Đã cập nhật hướng dẫn công việc thành công!');
     }
 }

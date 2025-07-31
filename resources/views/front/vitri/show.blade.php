@@ -84,7 +84,7 @@
                 auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv');
 
         $kiemTraCaNhan = auth()->user()->hasRole('Admin') ||
-            (auth()->user()->hasRole('mo_ta_cong_viec') &&
+            (auth()->user()->hasRole('mo_ta_cong_viec') ||
                 auth()->user()->isCapTren($viTri)) || auth()->user()->hasPermissionTo('edit_mtcv') || auth()->user()->id === $viTri->id_user;
     @endphp
     <div class="container">
@@ -94,7 +94,6 @@
         @include('front.vitri.show._mo_ta_vi_tri', [ 'viTri' => $viTri, 'listPhongBan' => $listPhongBan ])
         @include('front.vitri.show._so_do_vi_tri', [ 'viTri' => $viTri ])
         @include('front.vitri.show._trach_nhiem', [ 'viTri' => $viTri ])
-        @include('front.vitri.show._huong_dan_ca_nhan', [ 'viTri' => $viTri ])
         @include('front.vitri.show._quyen_han', [ 'viTri' => $viTri ])
         @include('front.vitri.show._quan_he', [ 'viTri' => $viTri ])
         @include('front.vitri.show._tieu_chi', [ 'viTri' => $viTri ])

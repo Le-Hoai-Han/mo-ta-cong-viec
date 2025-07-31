@@ -16,17 +16,6 @@ class NhiemVu extends Model
         'ten_nhiem_vu',
     ];
 
-    protected static function booted()
-    {
-        static::creating(function ($nhiemVu) {
-            // $nhiemVu->save();
-        });
-
-        static::updating(function ($nhiemVu) {
-            $nhiemVu->ten_nhiem_vu;
-        });
-    }
-
     public function viTri()
     {
         return $this->belongsTo(Vitri::class, 'id_vi_tri', 'id');
@@ -35,5 +24,10 @@ class NhiemVu extends Model
     public function moTaNhiemVu()
     {
         return $this->hasMany(MoTaNhiemVu::class, 'id_nhiem_vu', 'id');
+    }
+
+    public function history()
+    {
+        return $this->morphMany(LichSuThayDoi::class, 'loggable')->latest();
     }
 }

@@ -10,8 +10,6 @@ use App\Http\Controllers\Front\FrontQuanHeController;
 use App\Http\Controllers\Front\FrontThamQuyenController;
 use App\Http\Controllers\Front\FrontTieuChuanController;
 use App\Http\Controllers\Front\ASKController;
-use App\Http\Controllers\Front\FrontHuongDanCaNhanController;
-use App\Http\Controllers\Front\FrontMoTaHuongDanCaNhanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -51,6 +49,9 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
         Route::get('/front-vi-tri-get-history/{id}', [FrontViTriController::class, 'getHistoryApi'])->name('api.vitri.history');
         Route::get('front-vi-tri-history/{id}', [FrontViTriController::class, 'history'])->name('front-vi-tri.history');
         Route::put('front-vi-tri/{id?}/update', [FrontViTriController::class, 'update'])->name('front-vi-tri.update');
+        Route::get('front-vi-tri-huong-dan/{id}/show', [FrontViTriController::class, 'showHuongDan'])->name('front-vi-tri.show-huong-dan');
+        // routes/web.php
+        Route::put('/vi-tri/{vi_tri}/update-huong-dan', [FrontViTriController::class, 'updateHuongDan'])->name('vitri.update.huongdan');
         Route::resource('front-vi-tri', 'App\Http\Controllers\Front\FrontViTriController')->parameters([
             'front-vi-tri' => 'vi-tri:id',
         ])->except(['update']);
@@ -146,18 +147,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(
 
         // Hương dẫn cá nhân
         // Front-end
-        Route::put('/front-huong-dan/{id?}/update', [FrontHuongDanCaNhanController::class, 'update'])->name('front-huong-dan.update');
-        Route::delete('/front-huong-dan-delete/{id?}', [FrontHuongDanCaNhanController::class, 'destroy']);
-        Route::resource('front-huong-dan', 'App\Http\Controllers\Front\FrontHuongDanCaNhanController')->parameters([
-            'front-huong-dan' => 'huong-dan:id',
-        ])->except(['update', 'destroy']);
-
-        // Mô tả hướng dẫn cá nhân
-        Route::put('front-mo-ta-huong-dan/{id}/update', [FrontMoTaHuongDanCaNhanController::class, 'update']);
-        Route::delete('front-mo-ta-huong-dan-delete/{id}', [FrontMoTaHuongDanCaNhanController::class, 'destroy']);
-        Route::resource('front-mo-ta-huong-dan', 'App\Http\Controllers\Front\FrontMoTaHuongDanCaNhanController')->parameters([
-            'front-mo-ta-huong-dan' => 'mo-ta-huong-dan-ca-nhan:id',
-        ])->except(['update', 'destroy']);
 
         Route::prefix('/vi-tri')->as('front.vi-tri.')->group(function () {
             Route::get('/{viTri}', [FrontViTriController::class, 'show'])->name('show');

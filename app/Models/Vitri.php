@@ -21,6 +21,7 @@ class Vitri extends Model
         'id_user',
         'trang_thai',
         'stroke',
+        'huong_dan_cong_viec',
     ];
 
     public const TT_KHOA = 1;
@@ -61,11 +62,6 @@ class Vitri extends Model
     public function nhiemVu()
     {
         return $this->hasMany(NhiemVu::class, 'id_vi_tri', 'id');
-    }
-
-    public function huongDanCaNhan()
-    {
-        return $this->hasMany(HuongDanCaNhan::class, 'id_vi_tri', 'id');
     }
 
     public function thamQuyen()
