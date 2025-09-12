@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Mail\GuiTongHopTemplateEmail;
+use App\Jobs\GuiNoiBo\GuiEmailNoiBoJob;
 use App\Models\User;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Mail;
@@ -41,11 +41,9 @@ class GuiEmailTongHopTemplateEmailChoNV extends Command
     public function handle()
     {
         $users = User::ActiveEmployees()->pluck('name', 'email')->toArray();
+        $loaiEmail = 'tong-hop-template-email';
         foreach ($users as $email => $name) {
-            // Assuming you have a method to send the email
-            // You can replace this with your actual email sending logic
-            Mail::to($email)
-                    ->send(new GuiTongHopTemplateEmail($name));
+            GuiEmailNoiBoJob::dispatch($name, $email,$loaiEmail)->delay(now()->addMinutes(1));
         }
 
         return 0;

@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Jobs\GuiNoiBo\GuiEmailNoiBoJob;
 use App\Mail\GuiEmailPRChoToanNhanVienMail;
 use App\Models\User;
 use Illuminate\Console\Command;
@@ -40,15 +41,14 @@ class GuiEmailPRChoToanNhanVien extends Command
      */
     public function handle()
     {
+
+        $loaiEmail = 'PR-toan-nhan-vien';
         $users = User::ActiveEmployees()
         // ->where('id', 103)
         ->pluck('name', 'email')
         ->toArray();
         foreach ($users as $email => $name) {
-            // Assuming you have a method to send the email
-            // You can replace this with your actual email sending logic
-            Mail::to($email)
-                ->send(new GuiEmailPRChoToanNhanVienMail($name));
+            GuiEmailNoiBoJob::dispatch($name, $email,$loaiEmail)->delay(now()->addMinutes(1));
         }
 
         return 0;
