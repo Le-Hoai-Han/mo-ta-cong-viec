@@ -3,10 +3,8 @@
 namespace App\Console\Commands;
 
 use App\Jobs\GuiNoiBo\GuiEmailNoiBoJob;
-use App\Mail\GuiEmailPRBoPhanKinhDoanhMail;
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Mail;
 
 class GuiEmailPRBoPhanKinhDoanh extends Command
 {
@@ -16,6 +14,7 @@ class GuiEmailPRBoPhanKinhDoanh extends Command
      * @var string
      */
     protected $signature = 'pr-bo-phan-kinh-doanh';
+    // Gửi ngày 15
 
     /**
      * The console command description.
@@ -47,7 +46,7 @@ class GuiEmailPRBoPhanKinhDoanh extends Command
         ->toArray();
         $loaiEmail = 'PR-bo-phan-kinh-doanh';
         foreach ($users as $email => $name) {
-            GuiEmailNoiBoJob::dispatch($name, $email,$loaiEmail)->delay(now()->addMinutes(1));
+            GuiEmailNoiBoJob::dispatch($name, $email, $loaiEmail)->delay(now()->addMinutes(1));
         }
 
         return 0;

@@ -1,24 +1,24 @@
 <?php return array (
   'barryvdh/laravel-debugbar' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Barryvdh\\Debugbar\\ServiceProvider',
-    ),
     'aliases' => 
     array (
       'Debugbar' => 'Barryvdh\\Debugbar\\Facades\\Debugbar',
     ),
+    'providers' => 
+    array (
+      0 => 'Barryvdh\\Debugbar\\ServiceProvider',
+    ),
   ),
   'facade/ignition' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Facade\\Ignition\\IgnitionServiceProvider',
-    ),
     'aliases' => 
     array (
       'Flare' => 'Facade\\Ignition\\Facades\\Flare',
+    ),
+    'providers' => 
+    array (
+      0 => 'Facade\\Ignition\\IgnitionServiceProvider',
     ),
   ),
   'fruitcake/laravel-cors' => 
@@ -30,13 +30,13 @@
   ),
   'jenssegers/agent' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Jenssegers\\Agent\\AgentServiceProvider',
-    ),
     'aliases' => 
     array (
       'Agent' => 'Jenssegers\\Agent\\Facades\\Agent',
+    ),
+    'providers' => 
+    array (
+      0 => 'Jenssegers\\Agent\\AgentServiceProvider',
     ),
   ),
   'laravel/fortify' => 
@@ -76,13 +76,13 @@
   ),
   'livewire/livewire' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Livewire\\LivewireServiceProvider',
-    ),
     'aliases' => 
     array (
       'Livewire' => 'Livewire\\Livewire',
+    ),
+    'providers' => 
+    array (
+      0 => 'Livewire\\LivewireServiceProvider',
     ),
   ),
   'nesbot/carbon' => 
@@ -108,13 +108,13 @@
   ),
   'yajra/laravel-datatables-oracle' => 
   array (
-    'providers' => 
-    array (
-      0 => 'Yajra\\DataTables\\DataTablesServiceProvider',
-    ),
     'aliases' => 
     array (
       'DataTables' => 'Yajra\\DataTables\\Facades\\DataTables',
+    ),
+    'providers' => 
+    array (
+      0 => 'Yajra\\DataTables\\DataTablesServiceProvider',
     ),
   ),
 );

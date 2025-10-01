@@ -5,7 +5,6 @@ namespace App\Console\Commands;
 use App\Jobs\GuiNoiBo\GuiEmailNoiBoJob;
 use App\Models\User;
 use Illuminate\Console\Command;
-use Illuminate\Support\Facades\Mail;
 
 class GuiEmailTongHopTemplateEmailChoNV extends Command
 {
@@ -22,6 +21,7 @@ class GuiEmailTongHopTemplateEmailChoNV extends Command
      * @var string
      */
     protected $description = 'Command description';
+    // Gửi vào ngày 25
 
     /**
      * Create a new command instance.
@@ -43,7 +43,7 @@ class GuiEmailTongHopTemplateEmailChoNV extends Command
         $users = User::ActiveEmployees()->pluck('name', 'email')->toArray();
         $loaiEmail = 'tong-hop-template-email';
         foreach ($users as $email => $name) {
-            GuiEmailNoiBoJob::dispatch($name, $email,$loaiEmail)->delay(now()->addMinutes(1));
+            GuiEmailNoiBoJob::dispatch($name, $email, $loaiEmail)->delay(now()->addMinutes(1));
         }
 
         return 0;
