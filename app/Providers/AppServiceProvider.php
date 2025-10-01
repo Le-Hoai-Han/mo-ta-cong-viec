@@ -2,10 +2,6 @@
 
 namespace App\Providers;
 
-use App\Models\DonHang\DonHang;
-use App\Models\DonHang\DonHangGetFly;
-use App\Observers\DonHang\DonHangObserve;
-use App\Observers\DonHangGetflyObserver;
 use App\View\Components\BieuDo\BaseChart;
 use App\View\Components\Button\BaseLink;
 use App\View\Components\Button\LinkQuayVe;
@@ -30,7 +26,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
     }
 
     /**
@@ -40,19 +35,17 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        DonHang::observe(DonHangObserve::class);
-        DonHangGetFly::observe(DonHangGetflyObserver::class);
         Schema::defaultStringLength(191);
-        Blade::component('info-cong-thuc-modal', Modal::class);
-        Blade::component('simple-card',SimpleCard::class);
-        Blade::component('trang-thai-switch',TrangThaiKhoaSwitch::class);
-        Blade::component('link-them-moi',LinkThemMoi::class);
-        Blade::component('link-quay-ve',LinkQuayVe::class);
-        Blade::component('link-cap-nhat',LinkCapNhat::class);
-        Blade::component('link-xem',LinkXem::class);
-        Blade::component('base-link',BaseLink::class);
-        Blade::component('link-xoa',LinkXoa::class);
-        Blade::component('base-chart',BaseChart::class);
-        Blade::component('card-small',CardSmall::class);
+        // Blade::component('info-cong-thuc-modal', Modal::class);
+        // Blade::component('simple-card', SimpleCard::class);
+        // Blade::component('trang-thai-switch', TrangThaiKhoaSwitch::class);
+        // Blade::component('link-them-moi', LinkThemMoi::class);
+        // Blade::component('link-quay-ve', LinkQuayVe::class);
+        // Blade::component('link-cap-nhat', LinkCapNhat::class);
+        // Blade::component('link-xem', LinkXem::class);
+        // Blade::component('base-link', BaseLink::class);
+        // Blade::component('link-xoa', LinkXoa::class);
+        // Blade::component('base-chart', BaseChart::class);
+        // Blade::component('card-small', CardSmall::class);
     }
 }
