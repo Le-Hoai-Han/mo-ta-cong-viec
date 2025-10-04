@@ -47,42 +47,51 @@ class GuiEmailNoiBoJob implements ShouldQueue
         $email = $this->email;
         $name = $this->name;
         $loaiEmail = $this->loaiEmail;
+        $bccEmail = 'han.le@3ds.vn';
+
         $emailsToExclude = [
-            'Thonguoi01@3ds.vn',
-            'Thonguoi-02@3ds.vn',
-            'Taixe-01@3ds.vn',
-            'Taixe-02@3ds.vn',
-            'quochung.nguyen@3ds.vn',
-            'sales-02@3ds.vn',
-        ];
+        'Thonguoi01@3ds.vn',
+        'Thonguoi-02@3ds.vn',
+        'Taixe-01@3ds.vn',
+        'Taixe-02@3ds.vn',
+        'quochung.nguyen@3ds.vn',
+        'sales-02@3ds.vn',
+    ];
 
         if (in_array($email, $emailsToExclude)) {
-            // Ghi log để biết đã bỏ qua
             Log::warning("Đã bỏ qua (exclude) gửi email '$loaiEmail' tới '$email'");
 
-            return; // Thoát khỏi hàm, không chạy tiếp logic gửi email
+            return;
         }
-        Log::debug("Đã gửi $loaiEmail tới $email");
+
+        // Khởi tạo một biến để chứa Mailable
+        $mailable = null;
+
+        // Gán đúng Mailable dựa trên $loaiEmail
         switch ($loaiEmail) {
-            case 'PR-toan-nhan-vien':
-                Mail::to($email)->send(new GuiEmailPRChoToanNhanVienMail($name));
-                break;
+        case 'PR-toan-nhan-vien':
+            $mailable = new GuiEmailPRChoToanNhanVienMail($name);
+            break;
+        case 'tong-hop-template-email':
+            $mailable = new GuiTongHopTemplateEmail($name);
+            break;
+        case 'an-pham-mkt-noi-bo':
+            $mailable = new GuiEmailTongHopAnPhamMKTNoiBoMail($name);
+            break;
+        case 'PR-bo-phan-kinh-doanh':
+            $mailable = new GuiEmailPRBoPhanKinhDoanhMail($name);
+            break;
+        default:
+            Log::warning("Loại email không xác định: '$loaiEmail'");
+            break;
+    }
 
-            case 'tong-hop-template-email':
-                Mail::to($email)->send(new GuiTongHopTemplateEmail($name));
-                break;
-
-            case 'an-pham-mkt-noi-bo':
-                Mail::to($email)->send(new GuiEmailTongHopAnPhamMKTNoiBoMail($name));
-                break;
-
-            case 'PR-bo-phan-kinh-doanh':
-                Mail::to($email)->send(new GuiEmailPRBoPhanKinhDoanhMail($name));
-                break;
-
-            default:
-                // Handle unknown email type
-                break;
+        // Nếu $mailable đã được tạo, tiến hành gửi email
+        if ($mailable) {
+            Log::debug("Đã gửi $loaiEmail tới $email với BCC là $bccEmail");
+            Mail::to($email)
+            ->bcc($bccEmail)
+            ->send($mailable);
         }
     }
 }
