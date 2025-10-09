@@ -45,8 +45,12 @@ class GuiEmailPRChoToanNhanVien extends Command
         // ->where('id', 103)
         ->pluck('name', 'email')
         ->toArray();
+        $delayInSeconds = 30;
+        $intervalInSeconds = 30; // Khoảng cách 10 giây giữa mỗi job
         foreach ($users as $email => $name) {
-            GuiEmailNoiBoJob::dispatch($name, $email, $loaiEmail)->delay(now()->addMinutes(1));
+            GuiEmailNoiBoJob::dispatch($name, $email, $loaiEmail)->delay(now()->addSeconds($delayInSeconds));
+            // Tăng thời gian trễ cho job tiếp theo
+            $delayInSeconds += $intervalInSeconds;
         }
 
         return 0;
