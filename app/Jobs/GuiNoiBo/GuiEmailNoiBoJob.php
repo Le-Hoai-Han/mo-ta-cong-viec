@@ -47,7 +47,7 @@ class GuiEmailNoiBoJob implements ShouldQueue
         $email = $this->email;
         $name = $this->name;
         $loaiEmail = $this->loaiEmail;
-        $bccEmail = 'han.le@3ds.vn';
+        // $bccEmail = 'han.le@3ds.vn';
 
         $emailsToExclude = [
         'Thonguoi01@3ds.vn',
@@ -88,9 +88,8 @@ class GuiEmailNoiBoJob implements ShouldQueue
 
         // Nếu $mailable đã được tạo, tiến hành gửi email
         if ($mailable) {
-            Log::debug("Đã gửi $loaiEmail tới $email với BCC là $bccEmail");
             Mail::to($email)
-            ->bcc($bccEmail)
+            // ->bcc($bccEmail)
             ->send($mailable);
         }
     }
