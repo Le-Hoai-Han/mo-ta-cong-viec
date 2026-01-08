@@ -939,8 +939,7 @@
 <p style="color: #757575; margin: 5px 0px;">Profile (EN)</p>
 </td>
 <!-- [if !gte mso 9]><!---->
-<td style="text-align: right;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3DS+Profile+-+En.pdf&amp;obj=0E5627A1
-                                                                                            " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+<td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/tap-tin/xem-file-pdf/06cc7904845bc2a72d0104636aa285e7570cb0c126767522e6c4d0dc75503b93" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
 <!--[endif]--><!-- [if mso]>
                                                                                                                                                                                                                 <td style="text-align: right; ">
                                                                                                                                                                                                                         <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS+Profile+-+En.pdf&obj=0E5627A1
@@ -1276,7 +1275,7 @@
 <td style="padding: 15px 0px; text-align: center; width: 25%;"><a class="button_photo_mobile " href="https://drive.3d-smartsolutions.com/thu-muc/c9da446fd6a99b396bdb4b721246c19a06417a1f44aacd89c13a55e962f4650b
                                                                                             " style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Photo</a></td>
 <td style="padding: 15px 0px; text-align: center; width: 25%;"><a class="button_photo_mobile " href="http://drive.3d-smartsolutions.com/xem-thu-muc/RDfbav3BUeQq528 " style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Photo</a></td>
-<td style="padding: 15px 0px; text-align: center; width: 50%;"><a class="button_photo_mobile " href="http://drive.3d-smartsolutions.com/xem-thu-muc/TReogdfJNCWq373 " style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Folder tổng hợp</a></td>
+<td style="padding: 15px 0px; text-align: center; width: 50%;"><a class="button_photo_mobile " href="https://drive.3d-smartsolutions.com/thu-muc/54ea573035c1d4dbd1ba2c3e3b2cbb0d682d33f9dadbdadec9a28f6a958184eb" style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Folder tổng hợp</a></td>
 </tr>
 </tbody>
 </table>
@@ -1774,7 +1773,7 @@
 <p style="color: #757575; margin: 5px 0px;">Sổ tay nh&acirc;n vi&ecirc;n</p>
 </td>
 <!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=SO+TAY+NHAN+VIEN.pdf&amp;obj=A76E4B99 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/file_uploads/raw/786a53526d6163396a6b444a416c67494841364c3941425678442b2f523958767a616967426d524a486869495674726e312b676e4b644f663244387750616861346463424e70336e71537565423135496355346a2f5265316d6f4861437a2f68446f6463484a456c5a45513d.pdf" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
 <!--[endif]--><!-- [if mso]>
                                                                                                     <td style="text-align: right;width: 50%; ">
                                                                                                                                         <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=SO+TAY+NHAN+VIEN.pdf&obj=A76E4B99 " style="text-decoration:
@@ -1794,7 +1793,7 @@
 <p style="color: #757575; margin: 5px 0px;">Hướng dẫn tạo task xin nghỉ ph&eacute;p</p>
 </td>
 <!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://drive.3d-smartsolutions.com/shared/users/13/folders-521/k80R4vsL9UZm.pdf " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Link</a></td>
+<td style="text-align: right; width: 50%;"><a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-8741/VGpSulyX.html" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Link</a></td>
 <!--[endif]--><!-- [if mso]>
                                                                                                    <td style="text-align: right; width: 50%; ">
                                                                                                                                                                             <a href="https://drive.3d-smartsolutions.com/shared/users/13/folders-521/k80R4vsL9UZm.pdf
@@ -1835,17 +1834,46 @@
 <p style="color: #757575; margin: 5px 0px;">Sơ đồ tổ chức c&ocirc;ng ty</p>
 </td>
 <!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3DS-So-Do-To-Chuc-2023.pdf&amp;obj=A584515A " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Link</a></td>
+<td style="text-align: right; width: 50%;"><a href="https://to-chuc.3ds.vn/" target="_blank" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Link</a></td>
 <!--[endif]--><!-- [if mso]>
 
                                                                                                                                     <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                            <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS-So-Do-To-Chuc-2023.pdf&obj=A584515A
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Link</a>
+                                                                                                                                                                            <a href="https://to-chuc.3ds.vn/" target="_blank" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Link</a>
                                                                                                                                                                         </td>
                                                             <![endif]--></tr>
 </tbody>
 </table>
+
+
 </td>
+</tr>
+
+<tr>
+    <td style="padding-bottom: 15px;">
+        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #fffbfb; border-radius: 6px; border: 1px solid #e5e5e5; border-left: 4px solid #b81717; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+            <tr>
+                <td style="padding: 15px;">
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td width="40" valign="middle" style="font-size: 24px; line-height: 1;">🚀</td>
+
+                            <td valign="middle">
+                                <p style="margin: 0; font-weight: bold; color: #333; font-size: 15px;">
+                                    Tài liệu TruTech
+                                    <span style="display: inline-block; background-color: #b81717; color: #ffffff; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.5px;">MỚI</span>
+                                </p>
+                                <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">Cập nhật hệ thống TruTech Connect</p>
+                            </td>
+
+                            <td align="right" valign="middle" width="100">
+                                <a href="https://drive.3d-smartsolutions.com/thu-muc/d6f9d029dc68810e4597bc21e2fd63fcbd508f094592d79b20e6b804db12f8ff" target="_blank" style="background-color: #b81717; color: #ffffff; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: bold; white-space: nowrap; display: inline-block;">Truy cập</a>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </td>
 </tr>
 </tbody>
 </table>
