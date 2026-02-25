@@ -1870,6 +1870,24 @@
                             </td>
                         </tr>
                     </table>
+
+                    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                        <tr>
+                            <td width="40" valign="middle" style="font-size: 24px; line-height: 1;">🚀</td>
+
+                            <td valign="middle">
+                                <p style="margin: 0; font-weight: bold; color: #333; font-size: 15px;">
+                                    Tài liệu bán hàng 2026
+                                    <span style="display: inline-block; background-color: #b81717; color: #ffffff; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.5px;">MỚI</span>
+                                </p>
+                                <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">Cập nhật tài liệu bán hàng 2026</p>
+                            </td>
+
+                            <td align="right" valign="middle" width="100">
+                                <a href="https://drive.3d-smartsolutions.com/xem-thu-muc/mLYAiFMi9599" target="_blank" style="background-color: #b81717; color: #ffffff; padding: 8px 16px; text-decoration: none; border-radius: 4px; font-size: 13px; font-weight: bold; white-space: nowrap; display: inline-block;">Truy cập</a>
+                            </td>
+                        </tr>
+                    </table>
                 </td>
             </tr>
         </table>
