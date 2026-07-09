@@ -655,8 +655,23 @@
 <table style="width: 100%; border-spacing: 0px;">
 <tbody>
 <tr>
-<td style="padding: 0px; width: 20%; display: flex;"><img id="image-muc-lon" style="width: 100px; min-height: 50px;" src="https://drive.3d-smartsolutions.com/tai-ve/fb2984234092dfa7e6bde05ba5098eb94b0c0b91389415b0b4d5fe2d62626e91" alt="" width="150"></td>
-<td align="center" valign="middle" colspan="" style="padding: 0px; width: 80%; vertical-align: middle;"><span style="text-align: center; margin: 0; padding: 0; font-family: Helvetica; font-size: 1.1rem; line-height: 1.2rem;"><span><span style="color: #b81717;"><span style="color: #6b5d56;">NHẬN DIỆN THƯƠNG HIỆU</span></span> </span> </span></td>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      A
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+        BỘ NHẬN DIỆN THƯƠNG HIỆU
+      </span>
+    </td>
 </tr>
 </tbody>
 </table>
@@ -799,80 +814,6 @@
 </table>
 </td>
 </tr>
-<tr>
-<td colspan="2" align="center" valign="top" class="mcnTextBlockInner" style="padding-top: 9px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
-<table align="left" border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;" width="100%" class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td colspan="3" align="center" valign="top" class="" style="mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; padding: 0 0% 9px 0%;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 45%; font-weight: bold; vertical-align: top;" align="right">
-<table>
-<tbody>
-<tr>
-<td>
-<p style="text-align: right; margin-top: 0; min-height: 40px;">Form mẫu,soạn thảo</p>
-</td>
-</tr>
-<tr>
-<td>
-<p style="text-align: right; margin: 0; min-height: 35px;">Slides (ppt) Template</p>
-</td>
-</tr>
-<tr>
-<td>
-<p style="text-align: right; margin: 0; min-height: 35px;">A4 (word) Template</p>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-<td style="width: 0%; padding: 0px 10px;"><img src="https://drive.3d-smartsolutions.com/tai-ve/b4e8406ec98fb9b382b4d66ecfd7d0ab63c735387a85be3403ab299a65166098" alt=""></td>
-<td style="width: 45%; font-weight: bold; vertical-align: top;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td>
-<p style="text-align: right; margin-top: 0; padding-bottom: 25px;"></p>
-</td>
-</tr>
-<!-- [if !gte mso 9]><!---->
-<tr>
-<td style="padding-bottom: 30px;"><a href="http://drive.3d-smartsolutions.com/shared/users/13/folders-525/OkAcf4JvSK0p.pptx" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000; font-weight: normal;">Download PPTX</a></td>
-</tr>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                         <tr>
-                                                                                                                                                                        <td style="padding-bottom: 30px;">
-                                                                                                                                                                            <a href="http://drive.3d-smartsolutions.com/shared/users/13/folders-525/OkAcf4JvSK0p.pptx" style="text-decoration: none;padding: 1% 5%;
-                                                                                                                                                                                                                            border-radius: 15px;
-                                                                                                                                                                                                                            border: solid 2px #ccc;color: #000;font-weight: normal;">Download PPTX</a>
-                                                                                                                                                                        </td>
-                                                                                                                                                                    </tr>
-                                                                                                                                                                        <!--[endif]--><!-- [if !gte mso 9]><!---->
-<tr>
-<td><a href="http://drive.3d-smartsolutions.com/shared/users/13/folders-525/lChbQZwWheCY.docx " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000; font-weight: normal;">Download DOCX</a></td>
-</tr>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                        <tr>
-                                                                                                                                                                        <td>
-                                                                                                                                                                            <a href="http://drive.3d-smartsolutions.com/shared/users/13/folders-525/lChbQZwWheCY.docx "  style="text-decoration: none;padding: 1% 5%; border-radius:
-                                                                                                                                                                                                            15px; border: solid 2px #ccc;color: #000; font-weight: normal; ">Download DOCX</a>
-                                                                                                                                                                        </td>
-                                                                                                                                                                    </tr>
-                                                                                                                                                                        <!--[endif]--></tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
 </tbody>
 </table>
 <table border="0 " cellpadding="0 " cellspacing="0 " width="100% " class="mcnTextBlock" style="min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%;">
@@ -884,301 +825,618 @@
                                                                                                                                                 <![endif]--><!-- [if mso]>
                                                                                                                                                 <td valign="top " width="600 " style="width:750px; ">
                                                                                                                                                 <![endif]-->
-<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px;" width="100% " class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td valign="top " class=" " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; background-color: #e8e7e2;">
-<table style="width: 100%; border-spacing: 0px;">
-<tbody>
-<tr>
-<td style="padding: 0px; width: 20%; display: flex;"><img id="image-muc-lon " src="https://drive.3d-smartsolutions.com/tai-ve/659a3fb261af77eccc77fa85c547d064b976a43a0cff64f066815f626682b1ce " alt="" style="width: 100px; min-height: 50px;" width="150 "></td>
-<td align="center" valign="middle" colspan="" style="padding: 0px; width: 80%; vertical-align: middle;"><span style="text-align: center; margin: 0; padding: 0; font-family: Helvetica; font-size: 1.1rem;"><span><span style="color: #b81717;"><span style="color: #6b5d56;">T&Agrave;I LIỆU THIẾT KẾ</span></span> </span> </span></td>
-</tr>
-</tbody>
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      B
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+        FILE MẪU /TEMPLATE
+      </span>
+    </td>
+  </tr>
 </table>
-</td>
-</tr>
-</tbody>
+
+<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; color: #757575;" width="100% " class="mcnTextContentContainer">
+    <tbody>
+        <tr>
+            <td style="padding-top: 20px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Slides (ppt) Template</p>
+                            </td>
+                                <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="http://drive.3d-smartsolutions.com/shared/users/13/folders-525/OkAcf4JvSK0p.pptx" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PPTX</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                    <a href="http://drive.3d-smartsolutions.com/shared/users/13/folders-525/OkAcf4JvSK0p.pptx" style="text-decoration: none;padding: 1% 5%; border-radius:15px; border: solid 2px #ccc;color: #000; ">Download PPTX</a>
+                                </td>
+                                <![endif]-->
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">A4 (word) Template</p>
+                            </td>
+                            <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-118/clCmaEKF.docx" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download DOCX</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                        <a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-118/clCmaEKF.docx" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download DOCX</a>
+                                                                                                                                                            </td>
+                                                                                                                                                                        <![endif]-->
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        
+    </tbody>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      C
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+        THIẾT KẾ PHỤC VỤ MARKETING
+      </span>
+    </td>
+  </tr>
+</table>
+
+<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; color: #757575;" width="100% " class="mcnTextContentContainer">
+    <tbody>
+        <tr>
+            <td style="padding-top: 20px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Standee</p>
+                            </td>
+                                <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/9YA6bhAd.ai" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download AI</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                    <a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/9YA6bhAd.ai" style="text-decoration: none;padding: 1% 5%; border-radius:15px; border: solid 2px #ccc;color: #000; ">Download AI</a>
+                                </td>
+                                <![endif]-->
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Danh thiếp</p>
+                            </td>
+                            <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/wkVn7Jie.ai" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download AI</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                        <a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/wkVn7Jie.ai" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download AI</a>
+                                                                                                                                                            </td>
+                                                                                                                                                                        <![endif]-->
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Phong bì A5</p>
+                            </td>
+                                <!-- [if !gte mso 9]><!---->
+                                <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/zH27Gmqf.ai" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download AI</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                        <a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/zH27Gmqf.ai" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download AI</a>
+                                                                                                                                                            </td>
+                                                                                                                                                                        <![endif]-->
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Phong thư A4</p>
+                            </td>
+                            <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/kqzJ0qoT.ai" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download AI</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                        <a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/kqzJ0qoT.ai" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download AI</a>
+                                                                                                                                                            </td>
+                                                                                                                                                                        <![endif]-->
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Bao lì xì</p>
+                            </td>
+                            <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/WXyUoilr.zip" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download ZIP</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                        <a href="https://drive.3d-smartsolutions.com/shared/users/103/folders-1917/WXyUoilr.zip" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download ZIP</a>
+                                                                                                                                                            </td>
+                                                                                                                                                                        <![endif]-->
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        
+        
+    </tbody>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      D
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+        TÀI LIỆU PHỤC VỤ KINH DOANH
+      </span>
+    </td>
+  </tr>
+</table>
+
+<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; color: #757575;" width="100% " class="mcnTextContentContainer">
+    <tbody>
+        <tr>
+            <td valign="top " class="mcnTextContent " style="padding-top: 20px; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/587f7bdde1c979113cb96688e85cdb7bf286538f8f0b532c5a5ed205a55b3de5 " alt=" "></td>
+        </tr>
+        <tr>
+            <td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
+                <p>Giới thiệu 3DS</p>
+            </td>
+        </tr>
+        <tr>
+            <td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Profile (VI)</p>
+                            </td>
+                                <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9600/AjPFc258.pdf" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                    <a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9600/AjPFc258.pdf" style="text-decoration: none;padding: 1% 5%; border-radius:
+                                                                                15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                </td>
+                                <![endif]-->
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Profile (EN)</p>
+                            </td>
+                            <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9600/w0LuNi4x.pdf" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                        <a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9600/w0LuNi4x.pdf" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                            </td>
+                                                                                                                                                                        <![endif]-->
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Flyer (VI)</p>
+                            </td>
+                                <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9601/dU5nIbaB.pdf" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                    <a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9601/dU5nIbaB.pdf" style="text-decoration: none;padding: 1% 5%; border-radius:
+                                                                                15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                </td>
+                                <![endif]-->
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Flyer (EN)</p>
+                            </td>
+                            <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9601/znGR2xGU.pdf" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                        <a href="https://drive.3d-smartsolutions.com/shared/users/978/folders-9601/znGR2xGU.pdf" style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                            </td>
+                                                                                                                                                                        <![endif]-->
+                        </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+
+
+        <tr>
+        <td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td>
+        <p style="color: #757575; margin: 5px 0px;">Slides (VI)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Gioi-thieu-cong-ty.pptx&amp;obj=8254D0F7 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PPT</a></td>
+        <!--[endif]--><!-- [if mso]>
+                                                                                                                                                                        <td style="text-align: right; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Gioi-thieu-cong-ty.pptx&obj=8254D0F7
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PPT</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                        <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+        <tr>
+            <td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/9199f0f28818d4c744e6ac13924b5990d2685fc17e665d81e1683b9a1d788468 " alt=" "></td>
+        </tr>
+
+        <tr>
+        <td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
+        <p>Giới thiệu sản phẩm</p>
+        </td>
+        </tr>
+        <tr>
+        <td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">3D Printer Collection (VI)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3D+Printer+Collection.pdf&amp;obj=61A14380 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+                                                                                                                                                                        <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3D+Printer+Collection.pdf&obj=61A14380
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                        <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+        <tr>
+        <td style="padding-top: 5px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">3D Scanner Collection (VI)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3D+Scanner+Collection.pdf&amp;obj=4160686D " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+                                                                                                                                                                        <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3D+Scanner+Collection.pdf&obj=4160686D
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+        <tr>
+        <td style="padding-top: 5px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">Metrology Equipment Collection (EN)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Metrology+Equipment+Collection.pdf&amp;obj=E95FA131 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+
+                                                                                                                                                                        <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Metrology+Equipment+Collection.pdf&obj=E95FA131
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+        <tr>
+            <td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/eb333daca3895da575a286aad9740f36f7f3077e1a37b883121a28e632d6b023 " alt=" "></td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
+                <p>Ph&aacute;t triển kinh doanh</p>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td style="width: 50%;">
+                                <p style="color: #757575; margin: 5px 0px;">Proposal đại l&yacute; Entry Level (VI)</p>
+                            </td>
+                            <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Proposal_DaiLy_EntryLevel.pdf&amp;obj=AF6F0304 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+                            <!--[endif]--><!-- [if mso]>
+
+                                                                            <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                                    <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Proposal_DaiLy_EntryLevel.pdf&obj=AF6F0304
+                                                                                                                " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                                </td>
+                                                                                                                                                                                <![endif]-->
+                            </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+        <tr>
+        <td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">Proposal đại l&yacute; High-end (VI)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Proposal_DaiLy_HighEnd.pdf&amp;obj=35CFD8CF " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+                                                                                                                                                                        <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Proposal_DaiLy_HighEnd.pdf&obj=35CFD8CF
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+        <tr>
+        <td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">Maker-space General (VI)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=MakerSpace_General.pdf&amp;obj=D0F6B5F2 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+                                                                <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=MakerSpace_General.pdf&obj=D0F6B5F2
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+        <tr>
+        <td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">Maker-space Pro (VI)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=MakerSpace_Pro.pdf&amp;obj=0A76779C " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+                                                                                                                                                                        <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=MakerSpace_Pro.pdf&obj=0A76779C
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+        <tr>
+        <td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/08da36a59fd4dedff9e51a9339f571ad82bf839fda6d202cc7393ece16958a1d " alt=" "></td>
+        </tr>
+
+        <tr>
+        <td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
+        <p>Hồ sơ năng lực</p>
+        </td>
+        </tr>
+
+        <tr>
+        <td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">Hồ sơ năng lực Thương mại (VN)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3DS-Ho-so-nang-luc.pdf&amp;obj=68037ECB " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+                                                                <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS-Ho-so-nang-luc.pdf&obj=68037ECB
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+
+                                                                                                                                                                    <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+
+
+        <tr>
+        <td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+        <table style="width: 100%;">
+        <tbody>
+        <tr>
+        <td style="width: 50%;">
+        <p style="color: #757575; margin: 5px 0px;">Hồ sơ năng lực dịch vụ (VN)</p>
+        </td>
+        <!-- [if !gte mso 9]><!---->
+        <td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3DS-Nang-luc-cung-cap-dich-vu.pdf&amp;obj=FF35BE81 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+        <!--[endif]--><!-- [if mso]>
+
+                                                                                                                                                                        <td style="text-align: right;width: 50%; ">
+                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS-Nang-luc-cung-cap-dich-vu.pdf&obj=FF35BE81
+                                                                                                    " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
+                                                                                                                                                                    </td>
+                                                                                                                                                                    <![endif]--></tr>
+        </tbody>
+        </table>
+        </td>
+        </tr>
+    </tbody>
+</table>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      E
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+        QUY TRÌNH BÁN HÀNG
+      </span>
+    </td>
+  </tr>
 </table>
 <table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; color: #757575;" width="100% " class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/587f7bdde1c979113cb96688e85cdb7bf286538f8f0b532c5a5ed205a55b3de5 " alt=" "></td>
-</tr>
-<tr>
-<td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
-<p>Giới thiệu 3DS</p>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td>
-<p style="color: #757575; margin: 5px 0px;">Profile (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3DS+Profile.pdf&amp;obj=B7AFDA39 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                <td style="text-align: right; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS+Profile.pdf&obj=B7AFDA39 " style="text-decoration: none;padding: 1% 5%; border-radius:
-                                                                                                                                                                                                            15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                                <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td>
-<p style="color: #757575; margin: 5px 0px;">Profile (EN)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/tap-tin/xem-file-pdf/06cc7904845bc2a72d0104636aa285e7570cb0c126767522e6c4d0dc75503b93" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                                                                <td style="text-align: right; ">
-                                                                                                                                                                                                                        <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS+Profile+-+En.pdf&obj=0E5627A1
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                                                                                    </td>
-                                                                                                                                                                                                                        <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 10px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td>
-<p style="color: #757575; margin: 5px 0px;">Slides (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Gioi-thieu-cong-ty.pptx&amp;obj=8254D0F7 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PPT</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                 <td style="text-align: right; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Gioi-thieu-cong-ty.pptx&obj=8254D0F7
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PPT</a>
-                                                                                                                                                            </td>
-                                                                                                                                                                <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/9199f0f28818d4c744e6ac13924b5990d2685fc17e665d81e1683b9a1d788468 " alt=" "></td>
-</tr>
-<tr>
-<td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
-<p>Giới thiệu sản phẩm</p>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">3D Printer Collection (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3D+Printer+Collection.pdf&amp;obj=61A14380 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3D+Printer+Collection.pdf&obj=61A14380
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                                 <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 5px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">3D Scanner Collection (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3D+Scanner+Collection.pdf&amp;obj=4160686D " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                 <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3D+Scanner+Collection.pdf&obj=4160686D
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                            <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 5px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">Metrology Equipment Collection (EN)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Metrology+Equipment+Collection.pdf&amp;obj=E95FA131 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
+    <tbody>
+        <tr>
+            <td style="padding-top: 20px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+                <table style="width: 100%;">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p style="color: #757575; margin: 5px 0px;">Quy trình bán hàng</p>
+                            </td>
+                                <!-- [if !gte mso 9]><!---->
+                            <td style="text-align: right;"><a href="https://drive.3d-smartsolutions.com/tap-tin/51045a49390a96ea130b3c9a6c7f601c1e17ff0c219ef4026f9a6fe7e1354dbc/download" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+                                <!--[endif]--><!-- [if mso]>
+                                <td style="text-align: right; ">
+                                    <a href="https://drive.3d-smartsolutions.com/tap-tin/51045a49390a96ea130b3c9a6c7f601c1e17ff0c219ef4026f9a6fe7e1354dbc/download" style="text-decoration: none;padding: 1% 5%; border-radius:15px; border: solid 2px #ccc;color: #000; ">Download PPTX</a>
+                                </td>
+                                <![endif]-->
+                    </tr>
+                    </tbody>
+                </table>
+            </td>
+        </tr>
 
-                                                                                                                                                                <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Metrology+Equipment+Collection.pdf&obj=E95FA131
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                            <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/eb333daca3895da575a286aad9740f36f7f3077e1a37b883121a28e632d6b023 " alt=" "></td>
-</tr>
-<tr>
-<td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
-<p>Ph&aacute;t triển kinh doanh</p>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">Proposal đại l&yacute; Entry Level (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Proposal_DaiLy_EntryLevel.pdf&amp;obj=AF6F0304 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-
-                                                        <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Proposal_DaiLy_EntryLevel.pdf&obj=AF6F0304
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                            <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">Proposal đại l&yacute; High-end (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=Proposal_DaiLy_HighEnd.pdf&amp;obj=35CFD8CF " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                 <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=Proposal_DaiLy_HighEnd.pdf&obj=35CFD8CF
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                            <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">Maker-space General (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=MakerSpace_General.pdf&amp;obj=D0F6B5F2 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                         <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=MakerSpace_General.pdf&obj=D0F6B5F2
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                            <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">Maker-space Pro (VI)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=MakerSpace_Pro.pdf&amp;obj=0A76779C " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                                                                                                                                 <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=MakerSpace_Pro.pdf&obj=0A76779C
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                              <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/08da36a59fd4dedff9e51a9339f571ad82bf839fda6d202cc7393ece16958a1d " alt=" "></td>
-</tr>
-<tr>
-<td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
-<p>Hồ sơ năng lực</p>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">Hồ sơ năng lực Thương mại (VN)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3DS-Ho-so-nang-luc.pdf&amp;obj=68037ECB " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-                                                         <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS-Ho-so-nang-luc.pdf&obj=68037ECB
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-
-                                                                                                                                                            <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-<tr>
-<td style="padding-top: 05px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
-<table style="width: 100%;">
-<tbody>
-<tr>
-<td style="width: 50%;">
-<p style="color: #757575; margin: 5px 0px;">Hồ sơ năng lực dịch vụ (VN)</p>
-</td>
-<!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&amp;f=3DS-Nang-luc-cung-cap-dich-vu.pdf&amp;obj=FF35BE81 " style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
-<!--[endif]--><!-- [if mso]>
-
-                                                                                                                                                                 <td style="text-align: right;width: 50%; ">
-                                                                                                                                                                <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=3DS-Nang-luc-cung-cap-dich-vu.pdf&obj=FF35BE81
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; ">Download PDF</a>
-                                                                                                                                                            </td>
-                                                                                                                                                              <![endif]--></tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
+    </tbody>
 </table>
 <!-- [if mso]>
                                                                                                                                                 </td>
@@ -1198,26 +1456,32 @@
                                                                                                                                                 <![endif]--><!-- [if mso]>
                                                                                                                                                 <td valign="top " width="600 " style="width:750px; ">
                                                                                                                                                 <![endif]-->
-<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px;" width="100% " class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td valign="top " class=" " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; background-color: #e8e7e2;">
-<table style="width: 100%; border-spacing: 0px;">
-<tbody>
-<tr>
-<td style="padding: 0px; width: 20%; display: flex;"><img id="image-muc-lon " src="https://drive.3d-smartsolutions.com/tai-ve/532ae18efe0cd80a97e2f87f30e429377337768c2ae5720f4ff900fbdf3694b3" alt="" style="width: 100px; min-height: 50px;" width="150 "></td>
-<td align="center" valign="middle" colspan="" style="padding: 0px; width: 80%; vertical-align: middle;"><span style="text-align: center; margin: 0; padding: 0; font-family: Helvetica; font-size: 1.1rem;"><span><span style="color: #b81717;"><span style="color: #6b5d56;">CERTIFICATIONS </span></span> </span> </span></td>
-</tr>
-</tbody>
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      F
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+       CERTIFICATIONS
+      </span>
+    </td>
+  </tr>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
+
 <table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="padding-bottom: 20px; max-width: 100%; width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px;" width="100% " class="mcnTextContentContainer">
 <tbody><!-- [if !gte mso 9]><!---->
 <tr>
-<td valign="top " class=" " style="padding-top: 0; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
+<td valign="top " class=" " style="padding-top: 20px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
 <table style="width: 100%;">
 <tbody>
 <tr>
@@ -1244,96 +1508,111 @@
                                                                                                                                             </tr>
                                                                                                                                                   <![endif]--></tbody>
 </table>
-<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; margin-top: 25px;" width="100% " class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td valign="top " class=" " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; background-color: #e8e7e2;">
-<table style="width: 100%; border-spacing: 0px;">
-<tbody>
-<tr>
-<td style="padding: 0px; width: 20%; display: flex;"><img id="image-muc-lon " src="https://drive.3d-smartsolutions.com/tai-ve/8b9d77db4b962a797c8937e1a13787937935587ab46ef745c4693048c352bcca" alt="" style="width: 100px; min-height: 50px;" width="150 "></td>
-<td align="center" valign="middle" colspan="" style="padding: 0px; width: 80%; vertical-align: middle;"><span style="text-align: center; margin: 0; padding: 0; font-family: Helvetica; font-size: 1.1rem;"><span><span style="color: #b81717;"><span style="color: #6b5d56;">MEDIA</span></span> </span> </span></td>
-</tr>
-</tbody>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      G
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+            MEDIA
+      </span>
+    </td>
+  </tr>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
+
 <table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px;" width="100% " class="mcnTextContentContainer">
-<tbody><!-- [if !gte mso 9]><!---->
-<tr>
-<td align="center " valign="top " class=" " style="padding-top: 0; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: center; width: 100%;">
-<table style="width: 100%;">
-<tbody>
-<tr class=" ">
-<td class=" " style="width: 25%; text-align: center;"><span style="text-align: center;">C&ocirc;ng ty</span></td>
-<td class=" " style="width: 25%; text-align: center;"><span style="text-align: center;">Dịch vụ</span></td>
-<td class=" " style="display: grid; width: 50%;"><span>&nbsp;</span></td>
-</tr>
-<tr>
-<td style="padding: 15px 0px; text-align: center; width: 25%;"><a class="button_photo_mobile " href="https://drive.3d-smartsolutions.com/thu-muc/c9da446fd6a99b396bdb4b721246c19a06417a1f44aacd89c13a55e962f4650b
-                                                                                            " style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Photo</a></td>
-<td style="padding: 15px 0px; text-align: center; width: 25%;"><a class="button_photo_mobile " href="http://drive.3d-smartsolutions.com/xem-thu-muc/RDfbav3BUeQq528 " style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Photo</a></td>
-<td style="padding: 15px 0px; text-align: center; width: 50%;"><a class="button_photo_mobile " href="https://drive.3d-smartsolutions.com/thu-muc/54ea573035c1d4dbd1ba2c3e3b2cbb0d682d33f9dadbdadec9a28f6a958184eb" style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Folder tổng hợp</a></td>
-</tr>
-</tbody>
+    <tbody><!-- [if !gte mso 9]><!---->
+        <tr>
+            <td align="center " valign="top " class=" " style="padding-top: 20px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: center; width: 100%;">
+                <table style="width: 100%;">
+                <tbody>
+                <tr class=" ">
+                <td class=" " style="width: 25%; text-align: center;"><span style="text-align: center;">C&ocirc;ng ty</span></td>
+                <td class=" " style="width: 25%; text-align: center;"><span style="text-align: center;">Dịch vụ</span></td>
+                <td class=" " style="display: grid; width: 50%;"><span>&nbsp;</span></td>
+                </tr>
+                <tr>
+                <td style="padding: 15px 0px; text-align: center; width: 25%;"><a class="button_photo_mobile " href="https://drive.3d-smartsolutions.com/thu-muc/c9da446fd6a99b396bdb4b721246c19a06417a1f44aacd89c13a55e962f4650b
+                                                                                                            " style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Photo</a></td>
+                <td style="padding: 15px 0px; text-align: center; width: 25%;"><a class="button_photo_mobile " href="http://drive.3d-smartsolutions.com/xem-thu-muc/RDfbav3BUeQq528 " style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Photo</a></td>
+                <td style="padding: 15px 0px; text-align: center; width: 50%;"><a class="button_photo_mobile " href="https://drive.3d-smartsolutions.com/thu-muc/54ea573035c1d4dbd1ba2c3e3b2cbb0d682d33f9dadbdadec9a28f6a958184eb" style="text-decoration: none; padding: 10px 30px; border-radius: 15px; border: solid 2px #ccc; color: #000; text-align: center;">Folder tổng hợp</a></td>
+                </tr>
+                </tbody>
+                </table>
+            </td>
+        </tr>
+    <!--[endif]--><!-- [if mso]>
+                                                            <tr>
+
+                                                                                                                                                    <td align="center " valign="top " class=" " style="padding-top: 0;padding-bottom: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust:
+                                                                                                100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: center;width: 50%; ">
+                                                                                                                                                        <table style="width: 100%; ">
+                                                                                                                                                            <tr class="photo-mobile " style="display: flex;flex-direction: row;gap: 10px; ">
+                                                                                                                                                                <td class="photo1 " style="display: grid;flex-direction: row;gap: 10px;width: 20%;padding:10px 0px ">
+                                                                                                                                                                    <span style="text-align: center; ">Công ty</span><br>
+                                                                                                                                                                    <a href="https://drive.3d-smartsolutions.com/thu-muc/c9da446fd6a99b396bdb4b721246c19a06417a1f44aacd89c13a55e962f4650b
+                                                                                                " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000;text-align: center;display: flex;justify-content: center;align-items: center; ">Photo</a>
+
+                                                                                                                                                                </td>
+
+                                                                                                                                                                <td class="photo2 " style="display: grid;flex-direction: column;gap: 10px;width: 20%;padding:10px 0px ">
+                                                                                                                                                                    <span style=" text-align: center; ">Dịch vụ</span><br>
+                                                                                                                                                                    <a href="http://drive.3d-smartsolutions.com/xem-thu-muc/RDfbav3BUeQq528 " style="text-decoration:
+                                                                                                none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; text-align: center;display: flex;justify-content: center;align-items: center; ">Photo</a>
+                                                                                                                                                                </td>
+                                                                                                                                                                <td class="photo3 " style="display: grid;width: 20%;gap: 10px;padding:10px 0px ">
+                                                                                                                                                                    <span><br></span>
+                                                                                                                                                                    <a href="http://drive.3d-smartsolutions.com/xem-thu-muc/TReogdfJNCWq373 " style="text-decoration:
+                                                                                                none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000;text-align: center; ">Folder tổng hợp</a>
+                                                                                                                                                                </td>
+                                                                                                                                                            </tr>
+                                                                                                                                                        </table>
+
+                                                                                                                                                    </td>
+
+                                                                                                                                                </tr>
+
+                                                                                                                                                <![endif]-->
+    </tbody>
 </table>
-</td>
-</tr>
-<!--[endif]--><!-- [if mso]>
-                                                          <tr>
 
-                                                                                                                                                <td align="center " valign="top " class=" " style="padding-top: 0;padding-bottom: 0px;mso-line-height-rule: exactly;-ms-text-size-adjust:
-                                                                                            100%;-webkit-text-size-adjust: 100%;word-break: break-word;color: #757575;font-family: Helvetica;font-size: 16px;line-height: 150%;text-align: center;width: 50%; ">
-                                                                                                                                                    <table style="width: 100%; ">
-                                                                                                                                                        <tr class="photo-mobile " style="display: flex;flex-direction: row;gap: 10px; ">
-                                                                                                                                                            <td class="photo1 " style="display: grid;flex-direction: row;gap: 10px;width: 20%;padding:10px 0px ">
-                                                                                                                                                                <span style="text-align: center; ">Công ty</span><br>
-                                                                                                                                                                <a href="https://drive.3d-smartsolutions.com/thu-muc/c9da446fd6a99b396bdb4b721246c19a06417a1f44aacd89c13a55e962f4650b
-                                                                                            " style="text-decoration: none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000;text-align: center;display: flex;justify-content: center;align-items: center; ">Photo</a>
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      H
+    </td>
 
-                                                                                                                                                            </td>
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
 
-                                                                                                                                                            <td class="photo2 " style="display: grid;flex-direction: column;gap: 10px;width: 20%;padding:10px 0px ">
-                                                                                                                                                                <span style=" text-align: center; ">Dịch vụ</span><br>
-                                                                                                                                                                <a href="http://drive.3d-smartsolutions.com/xem-thu-muc/RDfbav3BUeQq528 " style="text-decoration:
-                                                                                            none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000; text-align: center;display: flex;justify-content: center;align-items: center; ">Photo</a>
-                                                                                                                                                            </td>
-                                                                                                                                                            <td class="photo3 " style="display: grid;width: 20%;gap: 10px;padding:10px 0px ">
-                                                                                                                                                                <span><br></span>
-                                                                                                                                                                <a href="http://drive.3d-smartsolutions.com/xem-thu-muc/TReogdfJNCWq373 " style="text-decoration:
-                                                                                            none;padding: 1% 5%; border-radius: 15px; border: solid 2px #ccc;color: #000;text-align: center; ">Folder tổng hợp</a>
-                                                                                                                                                            </td>
-                                                                                                                                                        </tr>
-                                                                                                                                                    </table>
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
 
-                                                                                                                                                </td>
-
-                                                                                                                                            </tr>
-
-                                                                                                                                            <![endif]--></tbody>
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+            TÀI LIỆU CÁC GIẢI PHÁP CỦA 3DS
+      </span>
+    </td>
+  </tr>
 </table>
-<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; margin-top: 25px;" width="100% " class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td valign="top " class=" " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; background-color: #e8e7e2;">
-<table style="width: 100%; border-spacing: 0px;">
-<tbody>
-<tr>
-<td style="padding: 0px; width: 20%; display: flex;"><img id="image-muc-lon " src="https://drive.3d-smartsolutions.com/tai-ve/c7c9b2985d01dbd174192ecd5ed9dc4acc1a6bea2d948f007c5f932f7bae7505 " alt="" style="width: 100px; min-height: 50px;" width="150 "></td>
-<td align="center" valign="middle" colspan="" style="padding: 0px; width: 80%; vertical-align: middle;"><span style="text-align: center; margin: 0; padding: 0; font-family: Helvetica; font-size: 1.1rem;"><span><span style="color: #b81717;"><span style="color: #6b5d56;">T&Agrave;I LIỆU C&Aacute;C GIẢI PH&Aacute;P CỦA 3DS </span></span> </span> </span></td>
-</tr>
-</tbody>
-</table>
-</td>
-</tr>
-</tbody>
-</table>
+
 <table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; color: #757575;" width="100% " class="mcnTextContentContainer">
 <tbody>
 <tr>
-<td valign="top " class="mcnTextContent " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/587f7bdde1c979113cb96688e85cdb7bf286538f8f0b532c5a5ed205a55b3de5 " alt=" "></td>
+<td valign="top " class="mcnTextContent " style="padding-top: 20px; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;"><img src="https://drive.3d-smartsolutions.com/tai-ve/587f7bdde1c979113cb96688e85cdb7bf286538f8f0b532c5a5ed205a55b3de5 " alt=" "></td>
 </tr>
 <tr>
 <td style="padding-top: 0; padding-bottom: 9px; padding-right: 10%; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left;">
@@ -1625,26 +1904,33 @@
 </tr>
 </tbody>
 </table>
-<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; margin-top: 25px;" width="100% " class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td valign="top " class=" " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; background-color: #e8e7e2;">
-<table style="width: 100%; border-spacing: 0px;">
-<tbody>
-<tr>
-<td style="padding: 0px; width: 20%; display: flex;"><img id="image-muc-lon " src="https://drive.3d-smartsolutions.com/tai-ve/dcbf360e592b91a74a80efdf41b0d89f523ffbec4b6be00c3b58d9f294b7d3ee" alt="" style="width: 100px; min-height: 50px;" width="150 "></td>
-<td align="center" valign="middle" colspan="" style="padding: 0px; width: 80%; vertical-align: middle;"><span style="text-align: center; margin: 0; padding: 0; font-family: Helvetica; font-size: 1.1rem;"><span><span style="color: #b81717;"><span style="color: #6b5d56;">T&Agrave;I LIỆU TRAINING SẢN PHẨM THƯƠNG MẠI </span></span> </span> </span></td>
-</tr>
-</tbody>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      I
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+            TÀI LIỆU TRAINING SẢN PHẨM THƯƠNG MẠI
+      </span>
+    </td>
+  </tr>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
+
 <table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; color: #757575;" width="100% " class="mcnTextContentContainer">
 <tbody>
 <tr>
-<td style="padding-top: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+<td style="padding-top: 20px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
 <table style="width: 100%;">
 <tbody>
 <tr>
@@ -1706,26 +1992,33 @@
 </tr>
 </tbody>
 </table>
-<table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px;" width="100% " class="mcnTextContentContainer">
-<tbody>
-<tr>
-<td valign="top " class=" " style="padding-top: 0; padding-right: 18px; padding-bottom: 0px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; background-color: #e8e7e2;">
-<table style="width: 100%; border-spacing: 0px;">
-<tbody>
-<tr>
-<td style="padding: 0px; width: 20%; display: flex;"><img id="image-muc-lon " src="https://drive.3d-smartsolutions.com/tai-ve/b8a5d024231e61982a8c2caab400aa1f189fae0151b4621810cd35f50f71e4c2" alt="" style="width: 100px; min-height: 50px;" width="150 "></td>
-<td align="center" valign="middle" colspan="" style="padding: 0px; width: 80%; vertical-align: middle;"><span style="text-align: center; margin: 0; padding: 0; font-family: Helvetica; font-size: 1.1rem;"><span><span style="color: #b81717;"><span style="color: #6b5d56;">T&Agrave;I LIỆU KH&Aacute;C</span></span> </span> </span></td>
-</tr>
-</tbody>
+
+<table cellpadding="0" cellspacing="0" border="0" style="width: 100%; height: 50px; background-color: #ebeae6; font-family: Helvetica, Arial, sans-serif;">
+  <tr>
+    <td style="width: 60px; background-color: #cc2b2b; color: #ffffff; text-align: center; font-size: 24px; font-weight: normal;">
+      J
+    </td>
+
+    <td style="width: 15px; background-color: #df7a7a; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #cc2b2b;"></div>
+    </td>
+
+    <td style="width: 15px; background-color: #ebeae6; padding: 0; line-height: 0;">
+      <div style="width: 0; height: 0; border-top: 25px solid transparent; border-bottom: 25px solid transparent; border-left: 15px solid #df7a7a;"></div>
+    </td>
+
+    <td style="text-align: center; vertical-align: middle; padding-right: 90px;">
+      <span style="color: #6b5d56; font-size: 1.1rem; line-height: 1.2rem; text-transform: uppercase;">
+            TÀI LIỆU CHUNG
+      </span>
+    </td>
+  </tr>
 </table>
-</td>
-</tr>
-</tbody>
-</table>
+
 <table align="left " border="0 " cellpadding="0 " cellspacing="0 " style="max-width: 100%; min-width: 100%; border-collapse: collapse; mso-table-lspace: 0pt; mso-table-rspace: 0pt; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; margin-bottom: 20px; color: #757575;" width="100% " class="mcnTextContentContainer">
 <tbody>
 <tr>
-<td style="padding-top: 0; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
+<td style="padding-top: 20px; mso-line-height-rule: exactly; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; word-break: break-word; color: #757575; font-family: Helvetica; font-size: 16px; line-height: 150%; text-align: left; padding-bottom: 10px;">
 <table style="width: 100%;">
 <tbody>
 <tr>
@@ -1870,7 +2163,10 @@
                             </td>
                         </tr>
                     </table>
-
+                </td>
+            </tr>
+            <tr>
+                <td style="padding: 15px;">
                     <table border="0" cellpadding="0" cellspacing="0" width="100%">
                         <tr>
                             <td width="40" valign="middle" style="font-size: 24px; line-height: 1;">🚀</td>
