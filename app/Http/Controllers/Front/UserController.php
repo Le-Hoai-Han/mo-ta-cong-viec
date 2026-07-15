@@ -91,12 +91,12 @@ class UserController extends RoutingController
        if ($ceo->user->email) {
            $nodeStructure['text']['email'] = 'Email: ' . $ceo->user->email;
        }
-       if ($ceo->user->sdt) {
-           $nodeStructure['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $ceo->user->sdt;
-       }
-       if ($ceo->user->profile->phone ?? null) {
-           $nodeStructure['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $ceo->user->profile->phone;
-       }
+        if ($ceo->user->profile->phone ?? null) {
+            $nodeStructure['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $ceo->user->profile->phone;
+        }
+        if ($ceo->user->profile->work_phone ?? null) {
+            $nodeStructure['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $ceo->user->profile->work_phone;
+        }
 
        $chartJson = [
            'chart' => $chartConfig,

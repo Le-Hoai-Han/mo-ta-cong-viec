@@ -98,7 +98,7 @@ class Vitri extends Model
                         'text' => [
                             'name' => $item->user != null ? $item->user->name : 'Đang cập nhật',
                             'title' => $item->ten_vi_tri,
-                            'contact' => $item->user != null ? $item->user->sdt : 'Đang cập nhật',
+                            'contact' => $item->user != null ? $item->user->profile->phone : 'Đang cập nhật',
                         ],
                         'stackChildren' => $item->hien_thi_nhanh,
                         'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path : '')),
@@ -111,7 +111,7 @@ class Vitri extends Model
                         'text' => [
                             'name' => $item->user != null ? $item->user->name : 'Đang cập nhật',
                             'title' => $item->ten_vi_tri,
-                            'contact' => $item->user ? $item->user->sdt : 'Đang cập nhật',
+                            'contact' => $item->user ? $item->user->profile->phone : 'Đang cập nhật',
                         ],
                         'stackChildren' => $item->hien_thi_nhanh,
                         'image' => asset('storage/'.($item->user != null ? $item->user->profile_photo_path : '')),
@@ -154,11 +154,11 @@ class Vitri extends Model
             if ($user?->email) {
                 $node['text']['email'] = 'Email: ' . $user->email;
             }
-            if ($user?->sdt) {
-                $node['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $user->sdt;
-            }
             if ($user?->profile?->phone) {
-                $node['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $user->profile->phone;
+                $node['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $user->profile->phone;
+            }
+            if ($user?->profile?->work_phone) {
+                $node['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $user->profile->work_phone;
             }
 
             $node['HTMLid'] = 'nhan-vien-'.$item->id;
