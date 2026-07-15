@@ -82,3 +82,21 @@ body {
     color: #bbb;
     font-size: 12px;
 }
+
+.node.big-commpany .node-email {
+    color: #666;
+    font-size: 11px;
+    padding: 2px 0;
+}
+
+.node.big-commpany .node-sdt_ca_nhan {
+    color: #666;
+    font-size: 11px;
+    padding: 2px 0;
+}
+
+.node.big-commpany .node-sdt_cong_viec {
+    color: #666;
+    font-size: 11px;
+    padding: 2px 0;
+}

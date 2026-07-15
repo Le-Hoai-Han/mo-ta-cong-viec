@@ -16,6 +16,7 @@ class Profile extends Model
         'birthday',
         'gender',
         'phone',
+        'work_phone',
         'address',
         'province_id',
         'district_id',

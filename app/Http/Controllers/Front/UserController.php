@@ -33,13 +33,11 @@ class UserController extends RoutingController
             ]
         ];
 
-        $nodeStructure = [
-            'text' => [
-                'name' => $ceo->user->name,
-                'title' => $ceo->ten_vi_tri,
-                'contact' => $ceo->user->sdt,
-                
-            ],
+       $nodeStructure = [
+           'text' => [
+               'name' => $ceo->user->name,
+               'title' => $ceo->ten_vi_tri,
+           ],
             'stackChildren' => $ceo->hien_thi_nhanh,
             'image' =>  asset('storage/'.$ceo->user->profile_photo_path),
             'HTMLid'=>'nhan-vien-' .$ceo->id,
@@ -54,9 +52,9 @@ class UserController extends RoutingController
 
      }
 
-     public function getData2(){
-        $ceo = Vitri::find(2);
-       
+    public function getData2(){
+       $ceo = Vitri::find(2);
+      
         $chartConfig = [
            'container' => '#OrganiseChart-big-commpany',
            'levelSeparation' => 45,
@@ -77,8 +75,6 @@ class UserController extends RoutingController
            'text' => [
                'name' => $ceo->user->name,
                'title' => $ceo->ten_vi_tri,
-            //    'contact' => $ceo->user->sdt,
-               
            ],
            'connectors'=>[
                 // 'type' =>'curve',
@@ -91,6 +87,16 @@ class UserController extends RoutingController
            'HTMLid'=>'nhan-vien-' .$ceo->id,
            'children' => $ceo->soDoToChucCapDuoi2($ceo),
        ];
+
+       if ($ceo->user->email) {
+           $nodeStructure['text']['email'] = 'Email: ' . $ceo->user->email;
+       }
+        if ($ceo->user->profile->phone ?? null) {
+            $nodeStructure['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $ceo->user->profile->phone;
+        }
+        if ($ceo->user->profile->work_phone ?? null) {
+            $nodeStructure['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $ceo->user->profile->work_phone;
+        }
 
        $chartJson = [
            'chart' => $chartConfig,
