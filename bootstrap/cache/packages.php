@@ -5,13 +5,10 @@
     array (
       'Debugbar' => 'Barryvdh\\Debugbar\\Facades\\Debugbar',
     ),
-<<<<<<< HEAD
-=======
     'providers' => 
     array (
       0 => 'Barryvdh\\Debugbar\\ServiceProvider',
     ),
->>>>>>> 0cb1f879acd695a5f59ae9c91a81b7b807eb1dd0
   ),
   'facade/ignition' => 
   array (

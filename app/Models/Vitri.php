@@ -131,7 +131,8 @@ class Vitri extends Model
         $nodeStructure = [];
 
         foreach ($viTri->capDuoi as $item) {
-            $userName = $item->user != null ? $item->user->name : 'Đang cập nhật';
+            $user = $item->user;
+            $userName = $user->name ?? 'Đang cập nhật';
 
             $node = [
                 'text' => [
@@ -149,6 +150,16 @@ class Vitri extends Model
                     // 'stackIndent' => $item->stackIndent
                 ],
             ];
+
+            if ($user?->email) {
+                $node['text']['email'] = 'Email: ' . $user->email;
+            }
+            if ($user?->sdt) {
+                $node['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $user->sdt;
+            }
+            if ($user?->profile?->phone) {
+                $node['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $user->profile->phone;
+            }
 
             $node['HTMLid'] = 'nhan-vien-'.$item->id;
             if (!$item->capDuoi->isEmpty()) {
