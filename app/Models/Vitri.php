@@ -138,6 +138,9 @@ class Vitri extends Model
                 'text' => [
                     'name' => $userName,
                     'title' => $item->ten_vi_tri,
+                    'email' => "Email: " . ($user?->email ?? "N/A"),
+                    'sdt_ca_nhan' => "Sđt Cá Nhân: " . ($user?->profile?->phone ?? "N/A"),
+                    'sdt_cong_viec' => "Sđt Công Việc: " . ($user?->profile?->work_phone ?? "N/A"),
                 ],
                 'stackChildren' => true,
                 'connectors' => [
@@ -150,16 +153,6 @@ class Vitri extends Model
                     // 'stackIndent' => $item->stackIndent
                 ],
             ];
-
-            if ($user?->email) {
-                $node['text']['email'] = 'Email: ' . $user->email;
-            }
-            if ($user?->profile?->phone) {
-                $node['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $user->profile->phone;
-            }
-            if ($user?->profile?->work_phone) {
-                $node['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $user->profile->work_phone;
-            }
 
             $node['HTMLid'] = 'nhan-vien-'.$item->id;
             if (!$item->capDuoi->isEmpty()) {

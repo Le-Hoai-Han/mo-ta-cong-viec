@@ -21,12 +21,12 @@ class UserController extends RoutingController
 
      public function getData(){
          $ceo = Vitri::find(2);
-        
+
          $chartConfig = [
             'container' => '#basic-example',
             'connectors' => [
                 'type' => 'step',
-                
+
             ],
             'node' => [
                 'HTMLclass' => 'nodeExample1'
@@ -54,7 +54,7 @@ class UserController extends RoutingController
 
     public function getData2(){
        $ceo = Vitri::find(2);
-      
+
         $chartConfig = [
            'container' => '#OrganiseChart-big-commpany',
            'levelSeparation' => 45,
@@ -75,6 +75,9 @@ class UserController extends RoutingController
            'text' => [
                'name' => $ceo->user->name,
                'title' => $ceo->ten_vi_tri,
+               'email' => "Email:" . ($ceo->email ?? "N/A"),
+               'sdt_ca_nhan' => "Sđt Cá Nhân: " . ($ceo->user->profile->phone ?? "N/A"),
+               'sdt_cong_viec' => "Sđt Công Việc: " . ($ceo->user->profile->work_phone ?? "N/A"),
            ],
            'connectors'=>[
                 // 'type' =>'curve',
@@ -88,15 +91,7 @@ class UserController extends RoutingController
            'children' => $ceo->soDoToChucCapDuoi2($ceo),
        ];
 
-       if ($ceo->user->email) {
-           $nodeStructure['text']['email'] = 'Email: ' . $ceo->user->email;
-       }
-        if ($ceo->user->profile->phone ?? null) {
-            $nodeStructure['text']['sdt_ca_nhan'] = 'Sđt Cá Nhân: ' . $ceo->user->profile->phone;
-        }
-        if ($ceo->user->profile->work_phone ?? null) {
-            $nodeStructure['text']['sdt_cong_viec'] = 'Sđt Công Việc: ' . $ceo->user->profile->work_phone;
-        }
+
 
        $chartJson = [
            'chart' => $chartConfig,
@@ -108,7 +103,7 @@ class UserController extends RoutingController
 
     public function getData3(){
         $ceo = Vitri::find(2);
-       
+
         $chartConfig = [
            'container' => '#OrganiseChart-big-commpany',
            'levelSeparation' => 45,
@@ -130,7 +125,7 @@ class UserController extends RoutingController
                'name' => $ceo->user->name,
                'title' => $ceo->ten_vi_tri,
             //    'contact' => $ceo->user->sdt,
-               
+
            ],
            'connectors'=>[
                 // 'type' =>'curve',
@@ -196,7 +191,7 @@ class UserController extends RoutingController
         $file = $request->file();
 
         if ($user->save()) {
-            
+
             //lưu profile
 
             // $profile->user_id= $user->id;
@@ -260,7 +255,7 @@ class UserController extends RoutingController
             'profile_photo_url' => 'files|max:2048'
         ]);
         $file = $request->file();
-        //if($validate['password'] == null && )    
+        //if($validate['password'] == null && )
         // Update user
         $user->fill($request->except('roles', 'permissions', 'password'));
 
@@ -268,7 +263,7 @@ class UserController extends RoutingController
         if ($request->get('password')) {
             $user->password = bcrypt($request->get('password'));
         }
-        
+
         if(($request->file()) != null){
             $user->updateProfilePhoto($file['photo_file_path']);
 
@@ -278,7 +273,7 @@ class UserController extends RoutingController
         $this->syncPermissions($request, $user);
         $user->status=$request->status;
         $user->save();
-        
+
         //$request->session->flash()->success('User has been updated.');
         return redirect()->back()->withMessage('status', "User has been updated.");
     }
@@ -298,7 +293,7 @@ class UserController extends RoutingController
     {
         // Get the submitted roles
         $roles = $request->get('roles', []);
-    
+
         $permissions = $request->get('permissions', []);
         //trao vai trò cho người dùng
         $user->syncRoles($roles);
