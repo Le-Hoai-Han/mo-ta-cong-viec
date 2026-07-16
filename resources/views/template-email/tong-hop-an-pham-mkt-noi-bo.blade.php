@@ -2066,7 +2066,7 @@
 <p style="color: #757575; margin: 5px 0px;">Sổ tay nh&acirc;n vi&ecirc;n</p>
 </td>
 <!-- [if !gte mso 9]><!---->
-<td style="text-align: right; width: 50%;"><a href="https://crm.3d-smartsolutions.com/file_uploads/raw/786a53526d6163396a6b444a416c67494841364c3941425678442b2f523958767a616967426d524a486869495674726e312b676e4b644f663244387750616861346463424e70336e71537565423135496355346a2f5265316d6f4861437a2f68446f6463484a456c5a45513d.pdf" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
+<td style="text-align: right; width: 50%;"><a href="https://drive.3d-smartsolutions.com/shared/users/777/folders-112/7in8RsJd.pdf" style="text-decoration: none; padding: 3% 5%; border-radius: 15px; border: solid 2px #ccc; color: #000;">Download PDF</a></td>
 <!--[endif]--><!-- [if mso]>
                                                                                                     <td style="text-align: right;width: 50%; ">
                                                                                                                                         <a href="https://crm.3d-smartsolutions.com/preview/upload?m=file&f=SO+TAY+NHAN+VIEN.pdf&obj=A76E4B99 " style="text-decoration:
