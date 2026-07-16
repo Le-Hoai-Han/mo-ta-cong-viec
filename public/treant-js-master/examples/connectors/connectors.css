@@ -87,19 +87,22 @@ body {
     color: #666;
     font-size: 11px;
     padding: 4px 0 2px 4px;
-    text-align: left;
+    text-align: center;
+
 }
 
 .node.big-commpany .node-sdt_ca_nhan {
     color: #666;
     font-size: 11px;
     padding: 4px 0 2px 4px;
-    text-align: left;
+    text-align: center;
+
 }
 
 .node.big-commpany .node-sdt_cong_viec {
     color: #666;
     font-size: 11px;
     padding: 4px 0 2px 4px;
-    text-align: left;
+    text-align: center;
+
 }

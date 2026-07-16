@@ -138,7 +138,7 @@ class Vitri extends Model
                 'text' => [
                     'name' => $userName,
                     'title' => $item->ten_vi_tri,
-                    'email' => "Email: " . ($user?->email ?? "N/A"),
+                    'email' => "Email: " .  ($item->ten_vi_tri=="Thợ nguội" ||  $item->ten_vi_tri=="DRIVER" || (!$user?->email)   ?  "N/A" : $user->email ),
                     'sdt_ca_nhan' => "Sđt Cá Nhân: " . ($user?->profile?->phone ?? "N/A"),
                     'sdt_cong_viec' => "Sđt Công Việc: " . ($user?->profile?->work_phone ?? "N/A"),
                 ],
