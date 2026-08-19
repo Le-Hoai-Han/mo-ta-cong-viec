@@ -6,15 +6,13 @@
     <meta name="viewport" content="width=device-width">
     <title> Sơ đồ tổ chức </title>
     <link rel="stylesheet" href="{{asset('treant-js-master/Treant.css')}}">
-    {{-- <link rel="stylesheet" href="{{asset('treant-js-master/examples/connectors/connectors.css')}}"> --}}
     <link rel="stylesheet" href="{{asset('treant-js-master/examples/connectors/connectors.css')}}">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    {{-- <link rel="stylesheet" href="../../perfect-scrollbar/perfect-scrollbar.css"> --}}
     
 </head>
 <body>
     <div class="chart" id="OrganiseChart-big-commpany"></div>
-    <script src="{{asset('treant-js-master/vendor/raphael.js')}}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.3.0/raphael.min.js"></script>
     <script src="{{asset('treant-js-master/Treant.js')}}"></script>
     
     {{-- <script src="{{asset('treant-js-master/examples/basic-example/basic-example.js')}}"></script> --}}
