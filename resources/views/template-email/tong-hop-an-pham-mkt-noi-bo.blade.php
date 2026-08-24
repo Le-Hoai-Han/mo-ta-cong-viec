@@ -2155,7 +2155,7 @@
                                     Tài liệu TruTech
                                     <span style="display: inline-block; background-color: #b81717; color: #ffffff; font-size: 10px; font-weight: bold; padding: 2px 6px; border-radius: 4px; margin-left: 8px; vertical-align: middle; letter-spacing: 0.5px;">MỚI</span>
                                 </p>
-                                <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">Cập nhật hệ thống TruTech Connect</p>
+                                <p style="margin: 4px 0 0 0; font-size: 13px; color: #666;">Cập nhật tài liệu TruTech</p>
                             </td>
 
                             <td align="right" valign="middle" width="100">
