@@ -79,6 +79,7 @@ class User extends Authenticatable
     const TT_Khong_Hoat_Dong = 0;
     const EMPLOYEE = 1;
     const PUBLIC_USER = 2;
+    const TTS = 3;
     protected static function booted()
     {
         static::created(function ($user) {
@@ -103,7 +104,7 @@ class User extends Authenticatable
     public function scopeActiveEmployees($query)
     {
         return $query->where('status', self::TT_Hoat_Dong)
-                     ->where('type', self::EMPLOYEE)
+                     ->whereIn('type', [self::EMPLOYEE,self::TTS])
                      ->whereNotIn('id', [94, 138, 197]);
     }
 
